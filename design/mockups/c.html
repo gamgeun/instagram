@@ -1,0 +1,21 @@
+<html><head><link rel="stylesheet" href="base.css"><style>
+body{background:#000;color:#fff;font-family:'Noto Sans KR'}
+.glow{position:absolute;width:900px;height:900px;left:90px;top:620px;border-radius:50%;background:radial-gradient(circle,rgba(90,110,255,.45),rgba(170,70,255,.18) 45%,transparent 70%);filter:blur(40px)}
+.pill{display:inline-block;padding:10px 26px;border-radius:40px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);font-weight:700;font-size:26px}
+h1{font-weight:900;font-size:78px;letter-spacing:-3px;margin-top:26px;white-space:nowrap}
+.cap{font-weight:700;font-size:46px;margin-top:30px;color:rgba(255,255,255,.75)}
+.cap b{color:#fff;background:linear-gradient(90deg,#7d8bff,#c77dff);-webkit-background-clip:text;color:transparent}
+.card{position:absolute;left:110px;right:110px;top:720px;height:520px;border-radius:44px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(20px);padding:50px}
+.card h3{font-weight:700;font-size:30px;color:rgba(255,255,255,.6)}
+.meter{margin-top:60px;height:300px;position:relative;border-left:2px solid rgba(255,255,255,.2);border-bottom:2px solid rgba(255,255,255,.2)}
+.meter i{position:absolute;bottom:0;width:60px;border-radius:14px 14px 0 0;background:rgba(255,255,255,.18)}
+.meter i.on{background:linear-gradient(180deg,#9aa4ff,#7d5bff)}
+.meter .t{position:absolute;left:0;right:0;bottom:41%;border-top:2px dashed rgba(255,255,255,.6)}
+.meter .t span{position:absolute;right:0;top:-44px;font-weight:700;font-size:28px}
+</style></head><body>
+<div class="glow"></div>
+<div class="top"><div class="pill">📷 S-Log3 · 노출</div><h1>S-Log3 노출 맞추는 법</h1><div class="cap">회색 카드를 화면 밝기 <b>41%</b>에 맞춥니다</div></div>
+<div class="card"><h3>화면 밝기 (IRE)</h3><div class="meter">
+<i style="left:30px;height:18%"></i><i style="left:130px;height:29%"></i><i class="on" style="left:230px;height:41%"></i><i style="left:330px;height:55%"></i><i style="left:430px;height:70%"></i><i style="left:530px;height:86%"></i>
+<div class="t"><span>41%</span></div></div></div>
+<div class="safe"></div></body></html>

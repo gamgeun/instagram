@@ -1,0 +1,15 @@
+@import url("node_modules/@fontsource/noto-sans-kr/400.css");
+@import url("node_modules/@fontsource/noto-sans-kr/700.css");
+@import url("node_modules/@fontsource/noto-sans-kr/900.css");
+@import url("node_modules/@fontsource/noto-serif-kr/700.css");
+@import url("node_modules/@fontsource/noto-serif-kr/900.css");
+@import url("node_modules/@fontsource/black-han-sans/400.css");
+@import url("node_modules/@fontsource/ibm-plex-mono/400.css");
+@import url("node_modules/@fontsource/space-grotesk/500.css");
+@import url("node_modules/@fontsource/space-grotesk/700.css");
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#000;word-break:keep-all}
+/* 인스타 릴스 UI가 덮는 영역 표시(시안 확인용) */
+.safe{position:absolute;left:0;right:0;bottom:0;height:380px;border-top:2px dashed rgba(255,255,255,.12)}
+.safe:after{content:"릴스 UI 영역";position:absolute;right:24px;top:12px;font:400 20px 'Noto Sans KR';color:rgba(255,255,255,.25)}
+.top{position:absolute;left:80px;right:80px;top:230px;text-align:center}
