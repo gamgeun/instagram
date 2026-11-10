@@ -31,7 +31,7 @@ const Shell: React.FC<{children: React.ReactNode; tag: string}> = ({children, ta
 
 /** 1953년 거실을 깊이 레이어로 쌓는다. camX는 카메라 좌우 이동 */
 /** 글자는 항상 원근 밖 맨 앞 레이어에 둔다. 뒤 그림과 겹쳐도 읽히도록 어두운 받침을 깐다 */
-const FrontTitle: React.FC<{text: string}> = ({text}) => {
+export const FrontTitle: React.FC<{text: string}> = ({text}) => {
   const f = useCurrentFrame();
   return (
     <div style={{position: 'absolute', left: 80, top: 130, padding: '18px 40px 22px', borderRadius: 18, background: 'rgba(4,14,16,0.72)', backdropFilter: 'blur(6px)', opacity: interpolate(f, [0, 8], [0, 1], {extrapolateRight: 'clamp'}), zIndex: 15}}>
@@ -40,7 +40,7 @@ const FrontTitle: React.FC<{text: string}> = ({text}) => {
   );
 };
 
-const Room3D: React.FC<{camX: number; camZ: number; tvOn?: number; title?: string}> = ({camX, camZ, tvOn = 1, title}) => (
+export const Room3D: React.FC<{camX: number; camZ: number; tvOn?: number; title?: string}> = ({camX, camZ, tvOn = 1, title}) => (
   <AbsoluteFill style={{perspective: 1100, overflow: 'hidden'}}>
     <div style={{position: 'absolute', inset: 0, transformStyle: 'preserve-3d', transform: `translate3d(${-camX}px,0,${camZ}px)`}}>
       <div style={{position: 'absolute', left: -1400, top: -900, width: 4700, height: 2900, transform: 'translateZ(-900px)'}}>{LivingRoomLayers.wall(4700, 2900)}</div>

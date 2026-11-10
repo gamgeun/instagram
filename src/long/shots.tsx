@@ -2,8 +2,10 @@ import React from 'react';
 import {AbsoluteFill, useCurrentFrame, interpolate, random, Easing} from 'remotion';
 import {FONT, prog} from '../theme';
 import {Era, INK, MONO, SERIF} from './eras';
+import {Room3D} from './samples';
+import {RetroTv, Person} from './people';
 
-type P = {dur: number; opt: any};
+type P = {dur: number; opt: any; marks?: number[]};
 const GRAD = 'linear-gradient(90deg,#8E9BFF,#C77DFF)';
 const center: React.CSSProperties = {display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column'};
 const ease = (f: number, a: number, b: number) => interpolate(f, [a, b], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
@@ -181,14 +183,55 @@ const SepiaFlash: React.FC<P> = () => {
     </AbsoluteFill>
   );
 };
-const SepiaTease: React.FC<P> = () => {
+const SepiaTease: React.FC<P> = ({marks = []}) => {
   const f = useCurrentFrame();
+  const m = marks[0] ?? 50;
+  const a = interpolate(f, [m - 8, m + 4], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   return (
     <AbsoluteFill style={center}>
-      <div style={{fontFamily: SERIF, fontWeight: 900, fontSize: 240, color: '#3b2614', opacity: ease(f, 0, 10)}}>1927</div>
-      <div style={{fontFamily: SERIF, fontWeight: 700, fontSize: 52, color: '#5c4128', marginTop: 20, opacity: ease(f, 8, 16)}}>다음 장 · 손으로 돌리던 카메라</div>
+      <div style={{position: 'absolute', fontFamily: SERIF, fontWeight: 900, fontSize: 460, color: '#3b2614', opacity: a * ease(f, 0, 10), transform: `scale(${1 + f * 0.002})`}}>24</div>
+      <div style={{...center, opacity: ease(f, m, m + 12)}}>
+        <div style={{fontFamily: SERIF, fontWeight: 900, fontSize: 240, color: '#3b2614'}}>1927</div>
+        <div style={{fontFamily: SERIF, fontWeight: 700, fontSize: 52, color: '#5c4128', marginTop: 20}}>다음 장 · 손으로 돌리던 카메라</div>
+      </div>
     </AbsoluteFill>
   );
+};
+
+/* ---------- 연도 터널: 2026 → 1953, 이어서 TV가 깊은 곳에서 다가옴 ---------- */
+const TUN_YEARS = [2026, 1990, 1953];
+const Tunnel: React.FC<P> = ({dur, marks = []}) => {
+  const f = useCurrentFrame();
+  const m = marks[0] ?? dur * 0.35; // 둘째 문장이 시작되는 프레임
+  const io2 = (a: number, b: number, x: number, y: number) => interpolate(f, [a, b], [x, y], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.inOut(Easing.cubic)});
+  const camZ = io2(0, m, 0, 1300) + io2(m, dur, 0, 1000);
+  const bgT = io2(0, m, 0, 1);
+  return (
+    <AbsoluteFill style={{background: `rgba(6,19,26,${bgT})`}}>
+      <AbsoluteFill style={{perspective: 1000, overflow: 'hidden'}}>
+        <div style={{position: 'absolute', inset: 0, transformStyle: 'preserve-3d', transform: `translateZ(${camZ}px)`}}>
+          {TUN_YEARS.map((y, i) => {
+            const rel = -i * 700 + camZ;
+            const last = i === TUN_YEARS.length - 1;
+            const op = last
+              ? interpolate(rel, [-500, -300], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}) * interpolate(f, [m, m + 14], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})
+              : interpolate(rel, [-560, -380, -60, 100], [0, 1, 1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+            return (
+              <div key={y} style={{position: 'absolute', left: 0, right: 0, top: 330, textAlign: 'center', opacity: op, transform: `translate3d(0,0,${-i * 700 + (last ? Math.min(0, camZ - 1400) : 0)}px)`, fontFamily: MONO, fontSize: 300, color: last ? '#c9fff4' : 'rgba(255,255,255,.85)', textShadow: last ? '0 0 40px rgba(120,255,230,.6)' : 'none'}}>
+                {y}
+              </div>
+            );
+          })}
+          <div style={{position: 'absolute', left: 750, top: 260, transform: 'translateZ(-2450px)', opacity: interpolate(f, [m - 6, m + 10], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})}}><RetroTv w={420} /></div>
+        </div>
+      </AbsoluteFill>
+    </AbsoluteFill>
+  );
+};
+const Room: React.FC<P> = ({dur}) => {
+  const f = useCurrentFrame();
+  const t = interpolate(f, [0, dur], [0, 1], {extrapolateRight: 'clamp', easing: Easing.inOut(Easing.sin)});
+  return <Room3D camX={-160 + 320 * t} camZ={140 * t} title="1953 · 미국" />;
 };
 
 /* ---------- 1953 ---------- */
@@ -351,6 +394,8 @@ const SlowDial: React.FC<P> = ({dur}) => {
         <circle cx={450} cy={480} r={24} fill="#FFD27A" />
         <text x={450} y={120} textAnchor="middle" fill="#c9fff4" fontFamily={MONO} fontSize={56}>{(30 + a * 0.00333).toFixed(2)}</text>
       </svg>
+      <div style={{position: 'absolute', left: 180, bottom: 150, opacity: ease(f, 0, 10)}}><Person kind="engineer" h={520} color="#081a1d" nod={3} /></div>
+      <div style={{position: 'absolute', right: 180, bottom: 150, opacity: ease(f, 4, 14), transform: 'scaleX(-1)'}}><Person kind="engineer" h={480} color="#081a1d" nod={5} /></div>
     </AbsoluteFill>
   );
 };
@@ -443,7 +488,7 @@ const Equation: React.FC<P> = () => {
 
 export const SHOT_ERA: Record<string, Era> = {
   menuScroll: 'now', bigNum: 'now', filmLook: 'now', glitchNum: 'now', versus: 'now', diff: 'now', menuHighlight: 'now',
-  yearRoll: 'now', tvOn: 'crt', yearCard: 'crt', houses: 'crt', colorStandard: 'crt', condition: 'crt', bwReceive: 'crt',
+  yearRoll: 'now', tunnel: 'now', room: 'crt', tvOn: 'crt', yearCard: 'crt', houses: 'crt', colorStandard: 'crt', condition: 'crt', bwReceive: 'crt',
   signalAdd: 'crt', signalClash: 'crt', soundMove: 'crt', tvGrid: 'crt', slowDial: 'crt', fraction: 'crt', bigCrt: 'crt',
   strike: 'crt', filmToTv: 'crt', filmSlow: 'crt', equation: 'crt', sepiaFlash: 'sepia', sepiaTease: 'sepia',
 };
@@ -451,7 +496,7 @@ export const SHOT_ERA: Record<string, Era> = {
 export const SHOTS: Record<string, React.FC<any>> = {
   menuScroll: MenuScroll, bigNum: BigNum, filmLook: FilmLook, glitchNum: GlitchNum, frameCount: FrameCount, versus: Versus,
   diff: Diff, menuHighlight: MenuHighlight, yearRoll: YearRoll, tvOn: TvOn, sepiaFlash: SepiaFlash, sepiaTease: SepiaTease,
-  yearCard: YearCard, houses: Houses, colorStandard: ColorStandard, condition: Condition, bwReceive: BwReceive,
+  tunnel: Tunnel, room: Room, yearCard: YearCard, houses: Houses, colorStandard: ColorStandard, condition: Condition, bwReceive: BwReceive,
   signalAdd: SignalAdd, signalClash: SignalClash, soundMove: SoundMove, tvGrid: TvGrid, slowDial: SlowDial,
   fraction: Fraction, bigCrt: BigCrt, strike: Strike, filmToTv: FilmToTv, filmSlow: FilmSlow, equation: Equation,
 };
