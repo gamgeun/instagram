@@ -1,144 +1,192 @@
 import React from 'react';
 import {AbsoluteFill, Sequence, useCurrentFrame, interpolate} from 'remotion';
 import {Episode as Ep, Scene} from './types';
-import {C, FONT_KR, FONT_MONO, H, prog} from './theme';
-import {Grid, Header, Heading, TitleBlock} from './blueprint/Frame';
-import {Caption} from './blueprint/Caption';
+import {C, FONT, prog, fitOneLine} from './theme';
 import {RenderVisual} from './visuals';
-import {TITLE_FRAMES, OUTRO_FRAMES, sceneFrames} from './timing';
+import {chunkFrames, layout, SCENE_LEAD, OVERLAP} from './timing';
 
-export const WIPE = 12;
+/** *단어* 부분은 그라데이션 강조 */
+const marked = (t: string) =>
+  t.split(/(\*[^*]+\*)/g).map((p, i) =>
+    p.startsWith('*') ? (
+      <span key={i} style={{background: C.grad, WebkitBackgroundClip: 'text', color: 'transparent'}}>
+        {p.slice(1, -1)}
+      </span>
+    ) : (
+      <span key={i}>{p}</span>
+    ),
+  );
 
-/** 새 장면이 노란 스캔선을 따라 위에서 아래로 드러난다 */
-const ScanReveal: React.FC<{children: React.ReactNode; enabled?: boolean}> = ({children, enabled = true}) => {
+/** 검은 바탕 위 빛 번짐. 천천히 위치가 움직인다 */
+const Glow: React.FC = () => {
   const f = useCurrentFrame();
-  if (!enabled) return <AbsoluteFill>{children}</AbsoluteFill>;
-  const p = interpolate(f, [0, WIPE], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  const y = p * H;
+  const x = Math.sin(f / 90) * 60;
+  const y = Math.cos(f / 110) * 50;
   return (
-    <AbsoluteFill>
-      <AbsoluteFill style={{clipPath: `inset(0 0 ${(1 - p) * 100}% 0)`}}>{children}</AbsoluteFill>
-      {p < 1 && (
-        <>
-          <div style={{position: 'absolute', left: 0, right: 0, top: y - 3, height: 6, background: C.accent, boxShadow: `0 0 30px ${C.accent}`}} />
-          <div style={{position: 'absolute', right: 70, top: y - 34, fontFamily: FONT_MONO, fontSize: 20, color: C.accent, letterSpacing: 3}}>
-            SCAN {String(Math.round(p * 100)).padStart(3, '0')}
-          </div>
-        </>
-      )}
+    <AbsoluteFill style={{background: C.bg}}>
+      <div
+        style={{
+          position: 'absolute',
+          width: 1000,
+          height: 1000,
+          left: 40 + x,
+          top: 560 + y,
+          borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(90,110,255,0.42), rgba(170,70,255,0.16) 45%, transparent 70%)',
+          filter: 'blur(50px)',
+        }}
+      />
     </AbsoluteFill>
   );
 };
 
-const TitleCard: React.FC<{ep: Ep}> = ({ep}) => {
+/** 상단 고정: 알약 라벨 + 한 줄 제목 */
+const TopTitle: React.FC<{ep: Ep}> = ({ep}) => {
   const f = useCurrentFrame();
+  const p = prog(f, 0, 12);
+  const size = fitOneLine(ep.title, 920, 80);
   return (
-    <AbsoluteFill>
-      <Grid />
-      <Header series={ep.series} id={ep.id} sheet="00" label="COVER" />
-      <div style={{position: 'absolute', left: 90, right: 90, top: 640, fontFamily: FONT_KR, color: C.line}}>
-        <div style={{fontFamily: FONT_MONO, fontSize: 30, color: C.accent, letterSpacing: 6, opacity: prog(f, 4, 10)}}>{ep.id}</div>
-        <div
-          style={{
-            fontSize: 108,
-            fontWeight: 900,
-            lineHeight: 1.12,
-            letterSpacing: -4,
-            marginTop: 24,
-            whiteSpace: 'pre-line',
-            opacity: prog(f, 8, 12),
-            transform: `translateY(${(1 - prog(f, 8, 12)) * 30}px)`,
-          }}
-        >
-          {ep.title}
-        </div>
-        <div style={{height: 4, width: 900 * prog(f, 16, 18), background: C.accent, marginTop: 36}} />
-        <div style={{fontSize: 42, fontWeight: 700, color: C.lineDim, marginTop: 30, opacity: prog(f, 22, 12)}}>{ep.subtitle}</div>
+    <div style={{position: 'absolute', top: 220, left: 80, right: 80, textAlign: 'center', fontFamily: FONT, color: C.text, opacity: p}}>
+      <div
+        style={{
+          display: 'inline-block',
+          padding: '10px 28px',
+          borderRadius: 40,
+          background: 'rgba(255,255,255,0.1)',
+          border: `1px solid ${C.cardLine}`,
+          fontWeight: 700,
+          fontSize: 28,
+        }}
+      >
+        {ep.tag}
       </div>
-      <TitleBlock id={ep.id} title={ep.title.replace(/\n/g, ' ')} date={ep.date} sheet="00" />
-    </AbsoluteFill>
+      <div style={{fontWeight: 900, fontSize: size, letterSpacing: -3, marginTop: 24, whiteSpace: 'nowrap'}}>{ep.title}</div>
+    </div>
   );
 };
 
-const SceneView: React.FC<{ep: Ep; s: Scene; i: number}> = ({ep, s, i}) => {
-  const sheet = String(i + 1).padStart(2, '0');
+/** 상단 가운데 말자막. 새 마디는 4프레임 동안 올라오며 나타난다 */
+const TopCaption: React.FC<{captions: string[]}> = ({captions}) => {
+  const f = useCurrentFrame();
+  let t = SCENE_LEAD;
+  let idx = -1;
+  let local = 0;
+  captions.forEach((c, i) => {
+    if (f >= t) {
+      idx = i;
+      local = f - t;
+    }
+    t += chunkFrames(c);
+  });
+  if (idx < 0) return null;
+  const p = interpolate(local, [0, 4], [0, 1], {extrapolateRight: 'clamp'});
   return (
-    <AbsoluteFill>
-      <Grid />
-      <Header series={ep.series} id={ep.id} sheet={sheet} label={s.label} />
-      <Heading text={s.heading} />
-      <RenderVisual v={s.visual} />
-      <Caption captions={s.captions} />
-      <TitleBlock id={ep.id} title={ep.title.replace(/\n/g, ' ')} date={ep.date} sheet={sheet} />
-    </AbsoluteFill>
+    <div
+      style={{
+        position: 'absolute',
+        top: 420,
+        left: 70,
+        right: 70,
+        textAlign: 'center',
+        fontFamily: FONT,
+        fontWeight: 700,
+        fontSize: 54,
+        lineHeight: 1.38,
+        color: C.sub,
+        letterSpacing: -1,
+        opacity: p,
+        transform: `translateY(${(1 - p) * 14}px)`,
+        wordBreak: 'keep-all',
+      }}
+    >
+      {marked(captions[idx])}
+    </div>
   );
 };
+
+/** 가운데 반투명 카드. 들어올 때 살짝 커지고, 나갈 때 흐려진다 */
+export const GlassCard: React.FC<{dur: number; children: React.ReactNode; title?: string}> = ({dur, children, title}) => {
+  const f = useCurrentFrame();
+  const inP = prog(f, 0, SCENE_LEAD);
+  const outP = interpolate(f, [dur - OVERLAP, dur], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  return (
+    <div
+      style={{
+        position: 'absolute',
+        left: 90,
+        right: 90,
+        top: 690,
+        height: 720,
+        borderRadius: 48,
+        background: C.card,
+        border: `1px solid ${C.cardLine}`,
+        backdropFilter: 'blur(20px)',
+        opacity: inP * outP,
+        transform: `scale(${0.96 + 0.04 * inP})`,
+        fontFamily: FONT,
+        color: C.text,
+        overflow: 'hidden',
+      }}
+    >
+      {title && (
+        <div style={{position: 'absolute', top: 44, left: 52, right: 52, fontWeight: 900, fontSize: 40, letterSpacing: -1}}>{title}</div>
+      )}
+      <div style={{position: 'absolute', top: title ? 120 : 40, left: 52, right: 52, bottom: 40, display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
+        <div>{children}</div>
+      </div>
+    </div>
+  );
+};
+
+const SceneView: React.FC<{s: Scene; dur: number}> = ({s, dur}) => (
+  <AbsoluteFill>
+    <GlassCard dur={dur} title={s.step}>
+      <RenderVisual v={s.visual} />
+    </GlassCard>
+    <TopCaption captions={s.captions} />
+  </AbsoluteFill>
+);
 
 const Outro: React.FC<{ep: Ep}> = ({ep}) => {
   const f = useCurrentFrame();
   return (
-    <AbsoluteFill>
-      <Grid />
-      <Header series={ep.series} id={ep.id} sheet="END" label="NEXT SHEET" />
-      <div style={{position: 'absolute', left: 90, right: 90, top: 700, fontFamily: FONT_KR, color: C.line}}>
-        {ep.outro.map((t, k) => (
+    <GlassCard dur={9999}>
+      <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', height: '100%', textAlign: 'center'}}>
+        {ep.outro.map((t, i) => (
           <div
-            key={k}
+            key={i}
             style={{
-              fontSize: k === 0 ? 76 : 44,
-              fontWeight: k === 0 ? 900 : 700,
-              color: k === 0 ? C.line : C.lineDim,
-              marginTop: k ? 30 : 0,
-              letterSpacing: -2,
-              opacity: prog(f, 6 + k * 8, 12),
+              fontWeight: i === 0 ? 900 : 700,
+              fontSize: i === 0 ? 60 : 40,
+              color: i === 0 ? C.text : C.sub,
+              marginTop: i ? 28 : 0,
+              opacity: prog(f, 4 + i * 8, 12),
               wordBreak: 'keep-all',
-              whiteSpace: 'pre-line',
+              lineHeight: 1.35,
             }}
           >
-            {t}
+            {marked(t)}
           </div>
         ))}
-        <div style={{fontFamily: FONT_MONO, fontSize: 30, letterSpacing: 6, color: C.accent, marginTop: 70, opacity: prog(f, 30, 12)}}>
-          {ep.series}
-        </div>
       </div>
-      <TitleBlock id={ep.id} title={ep.title.replace(/\n/g, ' ')} date={ep.date} sheet="END" />
-    </AbsoluteFill>
+    </GlassCard>
   );
-};
-
-/** 각 구간 시작 프레임. 다음 구간은 앞 구간 끝 WIPE 프레임과 겹친다 */
-export const layout = (ep: Ep) => {
-  const segs: {from: number; dur: number}[] = [];
-  let t = 0;
-  const push = (dur: number) => {
-    segs.push({from: t, dur});
-    t += dur - WIPE;
-  };
-  push(TITLE_FRAMES);
-  ep.scenes.forEach((s) => push(sceneFrames(s.captions)));
-  push(OUTRO_FRAMES);
-  return {segs, total: t + WIPE};
 };
 
 export const EpisodeVideo: React.FC<{ep: Ep}> = ({ep}) => {
   const {segs} = layout(ep);
+  const last = segs[segs.length - 1];
   return (
-    <AbsoluteFill style={{background: C.bgDeep}}>
-      <Sequence from={segs[0].from} durationInFrames={segs[0].dur}>
-        <TitleCard ep={ep} />
-      </Sequence>
+    <AbsoluteFill>
+      <Glow />
+      <TopTitle ep={ep} />
       {ep.scenes.map((s, i) => (
-        <Sequence key={i} from={segs[i + 1].from} durationInFrames={segs[i + 1].dur}>
-          <ScanReveal>
-            <SceneView ep={ep} s={s} i={i} />
-          </ScanReveal>
+        <Sequence key={i} from={segs[i].from} durationInFrames={segs[i].dur}>
+          <SceneView s={s} dur={segs[i].dur} />
         </Sequence>
       ))}
-      <Sequence from={segs[segs.length - 1].from} durationInFrames={segs[segs.length - 1].dur}>
-        <ScanReveal>
-          <Outro ep={ep} />
-        </ScanReveal>
+      <Sequence from={last.from} durationInFrames={last.dur}>
+        <Outro ep={ep} />
       </Sequence>
     </AbsoluteFill>
   );

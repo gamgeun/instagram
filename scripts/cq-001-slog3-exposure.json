@@ -1,0 +1,43 @@
+{
+  "id": "CQ-001",
+  "tag": "S-Log3 · 노출",
+  "title": "S-Log3 노출 맞추는 법",
+  "scenes": [
+    {
+      "step": "로그로 찍으면 생기는 일",
+      "visual": {"type": "flatVsNormal", "props": {"left": "S-Log3 원본", "right": "보정한 영상"}},
+      "captions": ["S-Log3로 찍으면 화면이 *뿌옇게* 보입니다", "그래서 밝기를 어디에 맞춰야 할지 헷갈립니다"]
+    },
+    {
+      "step": "회색 카드 대신 얼굴",
+      "visual": {"type": "levelBars", "props": {"bars": [{"label": "회색 카드", "value": 41}, {"label": "사람 얼굴", "value": 50, "on": true}, {"label": "흰 종이", "value": 61}]}},
+      "captions": ["원래 기준은 회색 카드 41%입니다", "그런데 회색 카드를 들고 다니는 사람은 거의 없습니다", "그래서 *사람 얼굴*을 기준으로 씁니다"]
+    },
+    {
+      "step": "① 감마 표시 어시스트 켜기",
+      "visual": {"type": "toggleMenu", "props": {"label": "감마 표시 어시스트", "at": 34}},
+      "captions": ["메뉴에서 *감마 표시 어시스트*를 켭니다", "카메라 화면이 평소 영상처럼 진하게 보입니다", "녹화되는 파일은 그대로 S-Log3입니다"]
+    },
+    {
+      "step": "② 제브라를 50으로",
+      "visual": {"type": "faceZebra", "props": {"level": 50}},
+      "captions": ["제브라는 정해 둔 밝기에 줄무늬를 그려 주는 기능입니다", "기준값을 *50*으로 정합니다", "얼굴에 줄무늬가 살짝 생기면 알맞은 밝기입니다"]
+    },
+    {
+      "step": "③ 줄무늬로 밝기 확인",
+      "visual": {"type": "threeStates", "props": {"items": [{"label": "어두움", "cover": 0, "tone": "dim"}, {"label": "알맞음", "cover": 0.4, "tone": "good"}, {"label": "너무 밝음", "cover": 1, "tone": "warn"}]}},
+      "captions": ["얼굴에 줄무늬가 없으면 어두운 겁니다", "얼굴 전체가 줄무늬로 덮이면 너무 밝은 겁니다"]
+    },
+    {
+      "step": "헷갈리면 조금 밝게",
+      "visual": {"type": "noiseCompare", "props": {"left": "어둡게 찍고 밝힘", "right": "알맞게 찍음"}},
+      "captions": ["S-Log3는 어둡게 찍으면 *노이즈*가 많이 생깁니다", "헷갈릴 때는 조금 밝게 찍는 쪽이 낫습니다"]
+    },
+    {
+      "step": "정리",
+      "visual": {"type": "checklist", "props": {"rows": ["감마 표시 어시스트 켜기", "제브라 기준값 50", "얼굴에 줄무늬 살짝", "헷갈리면 조금 밝게"]}},
+      "captions": ["이 네 가지만 기억하면 됩니다", "얼굴 밝기는 사람마다 조금 다릅니다", "50은 *출발점*으로 쓰세요"]
+    }
+  ],
+  "outro": ["*저장*해 두고", "촬영 전에 한 번 보세요"]
+}

@@ -1,12 +1,12 @@
 # GEAR NOTES
 
-카메라 정보를 청사진 도면 스타일로 설명하는 세로 릴스(1080x1920, 30fps) 템플릿입니다. Remotion으로 렌더합니다.
+카메라 촬영 질문을 검은 바탕 글로우 카드 스타일로 설명하는 세로 릴스(1080x1920, 30fps) 템플릿입니다. Remotion으로 렌더합니다.
 
 ## 새 편 만들기
 
-1. `scripts/`에 대본 JSON을 하나 추가합니다. 기존 `gn-01-zr-r3d-ne.json`을 복사해서 고치면 됩니다.
+1. `scripts/`에 대본 JSON을 하나 추가합니다. 기존 `cq-001-slog3-exposure.json`을 복사해서 고치면 됩니다.
 2. `src/Root.tsx`의 `EPISODES` 배열에 그 파일을 import해서 넣습니다.
-3. `npm install` 후 `./render.sh GN-03`을 실행하면 `out/GN-03.mp4`가 나옵니다.
+3. `npm install` 후 `./render.sh CQ-002`를 실행하면 `out/CQ-002.mp4`가 나옵니다.
 
 미리보기는 `npx remotion studio src/Root.tsx`로 엽니다.
 
@@ -14,31 +14,29 @@
 
 | 필드 | 내용 |
 |---|---|
-| `id` | 편 번호. 컴포지션 이름과 표제란에 씁니다 (예: `GN-03`) |
-| `title` / `subtitle` | 표지 제목. `\n`으로 줄을 나눕니다 |
-| `scenes[].label` | 머리띠 아래 영문 라벨 |
-| `scenes[].heading` | 장면 큰 제목 |
+| `id` | 편 번호 (예: `CQ-002`) |
+| `tag` | 제목 위 알약 라벨 |
+| `title` | 한 줄 제목. 모든 장면 상단에 고정되고, 길면 글자 크기가 자동으로 줄어듭니다 |
+| `scenes[].step` | 카드 위쪽 단계 이름 |
 | `scenes[].visual` | 도식 종류(`type`)와 값(`props`) |
-| `scenes[].captions` | 자막 마디. 한 마디씩 교체되고 `*단어*`는 노란색으로 표시합니다 |
-| `outro` | 마지막 장면 문구. 첫 줄이 큰 글씨입니다 |
+| `scenes[].captions` | 상단 가운데 말자막 마디. `*단어*`는 강조색 |
+| `outro` | 마지막 카드 문구 |
 
-장면 길이는 자막 글자 수로 자동 계산합니다(`src/timing.ts`, 공백 뺀 글자당 4.2프레임 + 18프레임, 최소 42 · 최대 120프레임).
+말자막 한 마디 길이는 공백 뺀 글자당 4.4프레임 + 20프레임입니다(최소 45, 최대 130프레임, `src/timing.ts`).
 
-## 도식 11종 (`src/visuals/`)
+## 도식 7종 (`src/visuals/index.tsx`)
 
 | type | 그리는 것 | 주요 props |
 |---|---|---|
-| `cameraSheet` | 카메라 정면 도면 + 치수선 | `name`, `notes[]` |
-| `dataStack` | 정보량 비교 층 막대 | `cols[{label, sub, rows}]` |
-| `monitorMenu` | 카메라 화면 메뉴, 선택 항목 강조 | `title`, `items[]`, `selected`, `note` |
-| `logCurve` | 로그 곡선과 일반 곡선 비교 | `logLabel`, `stdLabel` |
-| `dualIso` | 기본 감도 두 개와 노이즈 막대 | `bases[]`, `scale[]` |
-| `capacity` | 같은 길이 기준 파일 크기 막대 | `caption`, `items[{label, value, note}]` |
-| `partsTable` | 번호 붙은 표 / 확인표 | `title`, `rows[[항목, 값]]` |
-| `twoCam` | 두 카메라와 색 샘플 비교 | `a`, `b` (`name`, `profile`, `tint`), `result` |
-| `colorChart` | 두 카메라 컬러차트, 맞춰지는 과정 | `aLabel`, `bLabel`, `matched` |
-| `nodePipeline` | 순서대로 이어진 처리 단계 | `nodes[{title, sub}]` |
-| `vectorscope` | 피부색 선과 두 카메라 점 | `aLabel`, `bLabel` |
+| `flatVsNormal` | 로그 원본과 보정 영상 나란히 | `left`, `right` |
+| `levelBars` | 밝기 % 막대 | `bars[{label, value, on}]` |
+| `toggleMenu` | 메뉴 스위치가 켜지며 화면이 바뀜 | `label`, `at` |
+| `faceZebra` | 얼굴 위 제브라 줄무늬 + 큰 숫자 | `level` |
+| `threeStates` | 어두움/알맞음/너무 밝음 비교 | `items[{label, cover, tone}]` |
+| `noiseCompare` | 노이즈 낀 화면과 깨끗한 화면 | `left`, `right` |
+| `checklist` | 체크 표시가 차례로 켜지는 정리 | `rows[]` |
+
+이전 청사진 스타일 대본은 `scripts/archive/`에 있습니다. 지금 코드로는 렌더되지 않습니다.
 
 ## 폰트
 
