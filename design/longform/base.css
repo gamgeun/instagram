@@ -1,0 +1,14 @@
+@import url("node_modules/@fontsource/noto-sans-kr/400.css");
+@import url("node_modules/@fontsource/noto-sans-kr/700.css");
+@import url("node_modules/@fontsource/noto-sans-kr/900.css");
+@import url("node_modules/@fontsource/noto-serif-kr/700.css");
+@import url("node_modules/@fontsource/noto-serif-kr/900.css");
+@import url("node_modules/@fontsource/ibm-plex-mono/400.css");
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;word-break:keep-all;font-family:'Noto Sans KR'}
+/* 모든 톤 공통: 장 이름(왼쪽 위), 자막(아래 가운데) */
+.chap{position:absolute;left:80px;top:64px;font:700 28px 'Noto Sans KR';letter-spacing:2px;z-index:10}
+.chap i{font-style:normal;opacity:.6;margin-right:16px}
+.sub{position:absolute;left:0;right:0;bottom:70px;text-align:center;z-index:10}
+.sub span{display:inline-block;padding:14px 34px;border-radius:12px;background:rgba(0,0,0,.62);color:#fff;font:700 46px 'Noto Sans KR';letter-spacing:-1px}
+.sub b{font-weight:900}
