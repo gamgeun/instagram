@@ -79,8 +79,11 @@ const SepiaBg: React.FC = () => {
 
 export const EraBg: React.FC<{era: Era}> = ({era}) => (era === 'now' ? <NowBg /> : era === 'crt' ? <CrtBg /> : <SepiaBg />);
 
-export const ChapterLabel: React.FC<{era: Era}> = ({era}) => {
-  const [a, b] = ERA_LABEL[era];
+export const CH_LABEL: Record<number, string> = {1: '지금 당신 카메라', 2: '1953년, 컬러TV', 3: '24는 어디서 왔나', 4: '그래서 무엇을 고를까'};
+export const ChapterLabel: React.FC<{era: Era; ch?: number}> = ({era, ch}) => {
+  const [a0, b0] = ERA_LABEL[era];
+  const a = ch ? `CHAPTER ${ch}` : a0;
+  const b = ch ? CH_LABEL[ch] ?? b0 : b0;
   const c = INK[era];
   return (
     <div style={{position: 'absolute', left: era === 'sepia' ? 110 : 80, top: 60, fontFamily: FONT, fontWeight: 700, fontSize: 28, letterSpacing: 2, color: c.main, zIndex: 20}}>

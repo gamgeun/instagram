@@ -283,7 +283,7 @@ const ColorStandard: React.FC<P> = () => {
         ))}
       </div>
       <div style={{marginTop: 50, padding: '14px 40px', border: '4px solid #FF7A8A', color: '#FF7A8A', fontFamily: MONO, fontSize: 46, transform: `rotate(-4deg) scale(${1.6 - 0.6 * ease(f, 8, 14)})`, opacity: ease(f, 8, 12)}}>
-        1953 컬러 승인
+        1953.12.17 승인
       </div>
     </AbsoluteFill>
   );
@@ -442,7 +442,10 @@ const Strike: React.FC<P> = ({opt}) => {
         <CrtText size={260} style={{opacity: 1 - s * 0.55}}>{opt.from}</CrtText>
         <div style={{position: 'absolute', left: -10, top: '50%', height: 12, width: `${s * 105}%`, background: '#FF7A8A'}} />
       </div>
-      <CrtText size={140} style={{opacity: ease(f, 8, 14)}}>→</CrtText>
+      <div style={{...center, opacity: ease(f, 8, 14)}}>
+        <CrtText size={44} style={{marginBottom: 10}}>× 1000/1001</CrtText>
+        <CrtText size={140}>→</CrtText>
+      </div>
       <CrtText size={300} style={pop(f, 12)}>{opt.to}</CrtText>
     </AbsoluteFill>
   );

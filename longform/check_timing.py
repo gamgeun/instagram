@@ -8,7 +8,10 @@ ON = {'menuScroll': (8, 1.2), 'bigNum': (2, 0.2), 'filmLook': (2, 0.7), 'glitchN
       'versus': (8, 0.3), 'diff': (5, 0.7), 'tunnel': (2, 0.3), 'room': (4, 0.3), 'colorStandard': (6, 0.4), 'condition': (3, 0.2),
       'bwReceive': (0, 0.7), 'signalAdd': (8, 0.9), 'signalClash': (9, 1.0), 'soundMove': (0, 0.0), 'tvGrid': (0, 0.9),
       'slowDial': (2, 0.3), 'fraction': (3, 0.1), 'bigCrt': (1, 0.2), 'strike': (3, 0.6), 'filmToTv': (6, 0.3),
-      'filmSlow': (2, 0.3), 'equation': (7, 1.6), 'menuHighlight': (6, 0.2), 'sepiaTease': (6, 0.4)}
+      'filmSlow': (2, 0.3), 'equation': (7, 1.6), 'menuHighlight': (6, 0.2), 'sepiaTease': (6, 0.4),
+      'cbsWithdraw': (14, 0.4), 'dotPattern': (14, 0.4), 'crank': (9, 0.7), 'speedBars': (16, 0.8), 'vitaphone': (18, 0.5),
+      'syncDrift': (14, 0.3), 'engineerAsk': (24, 0.8), 'ninety': (8, 0.2), 'filmCalc': (12, 0.6), 'movietone': (20, 0.5),
+      'chain': (16, 2.0), 'choose': (16, 0.5), 'drift': (12, 0.4), 'twoCams': (14, 0.3), 'shutter60': (16, 0.3), 'endCard': (10, 1.0)}
 t = json.load(open(sys.argv[1]))
 sh = []
 for b in t['beats']:
@@ -25,7 +28,7 @@ for s in sh:
     # 첫 컷은 들어오는 전환이 없어서 나가는 전환(0.2초)만 뺀다
     fade = 0.2 if s is sh[0] else 0.5
     read = d - fade - delay; need = 0.6 + c / 6
-    tag = '부족' if read < need - 0.05 else ('6초 넘음' if d > 6 else 'OK')
+    tag = '부족' if read < need - 0.05 else ('12초 넘음(구도 이동만으로 버티는지 확인)' if d > 12 and not s['marks'] else 'OK')
     bad += tag == '부족'
     print(f"{s['from']:6.2f}s {s['shot']:13s} 컷 {d:4.1f}s  읽는 시간 {read:4.1f}s / 필요 {need:3.1f}s  {tag}  | {s['sub']}")
 print(f"\n부족 {bad} / {len(sh)}")

@@ -1,2 +1,10 @@
 node_modules
 out
+# 큰 음성 파일·라이선스 음악은 올리지 않는다 (저장소가 공개 상태)
+public/*/lines/*.wav
+public/*/narration.wav
+public/*/mix.wav
+public/*/concat.txt
+public/*/sfx/music.*
+# 서명이 들어간 파일 주소
+longform/*/voice_urls.json

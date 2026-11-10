@@ -1,0 +1,331 @@
+{
+ "id": "LF-01",
+ "title": "23.98p는 왜 24가 아닐까",
+ "note": "sub = 화면 자막(숫자 그대로), tts = 음성 원고(숫자를 한글로). shot = 그림 종류, join = 앞 문장 그림을 이어 씀, mood = 움직임 분위기. src = 출처 번호(sources 참고)",
+ "lines": [
+  {
+   "ch": 1,
+   "shot": "menuScroll",
+   "opt": {
+    "stop": true
+   },
+   "mood": "calm",
+   "sub": "카메라 동영상 메뉴에서 프레임레이트를 열면 23.98이라는 숫자가 있습니다.",
+   "tts": "카메라 동영상 메뉴에서 프레임레이트를 열면, 이십삼 점 구팔이라는 숫자가 있습니다."
+  },
+  {
+   "ch": 1,
+   "shot": "filmLook",
+   "mood": "calm",
+   "sub": "영화처럼 찍고 싶을 때 많이 고르는 값입니다.",
+   "tts": "영화처럼 찍고 싶을 때 많이 고르는 값입니다."
+  },
+  {
+   "ch": 1,
+   "shot": "versus",
+   "mood": "question",
+   "sub": "그런데 영화는 1초에 24장입니다. 카메라는 왜 24가 아니라 23.98을 줄까요?",
+   "tts": "그런데 영화는 일 초에 스물네 장입니다. 카메라는 왜 이십사가 아니라 이십삼 점 구팔을 줄까요?"
+  },
+  {
+   "ch": 1,
+   "shot": "tunnel",
+   "mood": "travel",
+   "src": [
+    1,
+    2
+   ],
+   "sub": "24보다 조금 모자란 이 숫자는 1953년 미국에서 정해졌습니다.",
+   "tts": "이십사보다 조금 모자란 이 숫자는, 천구백오십삼 년 미국에서 정해졌습니다."
+  },
+  {
+   "ch": 2,
+   "shot": "room",
+   "mood": "calm",
+   "sub": "1953년 미국에는 이미 흑백 TV를 가진 집이 많았습니다.",
+   "tts": "천구백오십삼 년 미국에는, 이미 흑백 티비를 가진 집이 많았습니다."
+  },
+  {
+   "ch": 2,
+   "shot": "frameCount",
+   "opt": {
+    "n": 30,
+    "era": "crt"
+   },
+   "mood": "calm",
+   "src": [
+    1
+   ],
+   "sub": "흑백 방송은 화면을 1초에 30장씩 보냈습니다.",
+   "tts": "흑백 방송은 화면을 일 초에 서른 장씩 보냈습니다."
+  },
+  {
+   "ch": 2,
+   "shot": "cbsWithdraw",
+   "mood": "tense",
+   "src": [
+    1
+   ],
+   "sub": "1950년에 먼저 승인된 CBS의 컬러 방식은 흑백 TV에서 볼 수 없었고, 1953년 3월에 철회됐습니다.",
+   "tts": "천구백오십 년에 먼저 승인된 씨비에스의 컬러 방식은, 흑백 티비에서 볼 수 없었고, 천구백오십삼 년 삼 월에 철회됐습니다."
+  },
+  {
+   "ch": 2,
+   "shot": "colorStandard",
+   "mood": "reveal",
+   "src": [
+    1,
+    2,
+    3
+   ],
+   "sub": "그해 12월 17일, 미국 연방통신위원회는 흑백 TV에서도 볼 수 있는 새 컬러 방식을 승인했습니다.",
+   "tts": "그해 십이 월 십칠 일, 미국 연방통신위원회는, 흑백 티비에서도 볼 수 있는 새 컬러 방식을 승인했습니다."
+  },
+  {
+   "ch": 2,
+   "shot": "signalAdd",
+   "mood": "calm",
+   "src": [
+    1,
+    4
+   ],
+   "sub": "NTSC 위원회 기술자들은 기존 흑백 신호 안에 색 정보를 함께 실어 보냈습니다.",
+   "tts": "엔티에스씨 위원회 기술자들은, 기존 흑백 신호 안에 색 정보를 함께 실어 보냈습니다."
+  },
+  {
+   "ch": 2,
+   "shot": "dotPattern",
+   "mood": "tense",
+   "src": [
+    4,
+    5
+   ],
+   "sub": "그런데 색 신호와 소리 신호의 주파수가 너무 가까워서, 두 신호의 차이가 흑백 화면에 작은 점무늬로 나타났습니다.",
+   "tts": "그런데 색 신호와 소리 신호의 주파수가 너무 가까워서, 두 신호의 차이가 흑백 화면에 작은 점무늬로 나타났습니다."
+  },
+  {
+   "ch": 2,
+   "shot": "tvGrid",
+   "mood": "tense",
+   "src": [
+    4,
+    5
+   ],
+   "sub": "소리 신호의 주파수를 옮기면 이미 팔린 TV는 소리를 받지 못합니다. 연방통신위원회도 이 안을 받아들이지 않았습니다.",
+   "tts": "소리 신호의 주파수를 옮기면, 이미 팔린 티비는 소리를 받지 못합니다. 연방통신위원회도 이 안을 받아들이지 않았습니다."
+  },
+  {
+   "ch": 2,
+   "shot": "slowDial",
+   "mood": "calm",
+   "src": [
+    4
+   ],
+   "sub": "남은 방법은 화면 속도를 아주 조금 늦추는 것이었습니다. 흑백 TV는 방송 신호에 맞춰 화면 속도를 따라가기 때문에, 0.1% 느려져도 그대로 보였습니다.",
+   "tts": "남은 방법은 화면 속도를 아주 조금 늦추는 것이었습니다. 흑백 티비는 방송 신호에 맞춰 화면 속도를 따라가기 때문에, 영 점 일 퍼센트 느려져도 그대로 보였습니다."
+  },
+  {
+   "ch": 2,
+   "shot": "strike",
+   "opt": {
+    "from": "30",
+    "to": "29.97"
+   },
+   "mood": "reveal",
+   "src": [
+    4,
+    5
+   ],
+   "sub": "화면 속도를 1001분의 1000으로 늦추자, 1초에 30장이던 화면은 29.97장이 됐습니다.",
+   "tts": "화면 속도를 천일 분의 천으로 늦추자, 일 초에 서른 장이던 화면은 이십구 점 구칠 장이 됐습니다."
+  },
+  {
+   "ch": 2,
+   "shot": "filmToTv",
+   "mood": "calm",
+   "src": [
+    6,
+    7
+   ],
+   "sub": "극장 영화는 1초에 24장입니다. 이 영화를 TV로 내보내려면 영화도 같은 비율로 늦춰야 했습니다.",
+   "tts": "극장 영화는 일 초에 스물네 장입니다. 이 영화를 티비로 내보내려면, 영화도 같은 비율로 늦춰야 했습니다."
+  },
+  {
+   "ch": 2,
+   "shot": "equation",
+   "mood": "reveal",
+   "sub": "24에 1001분의 1000을 곱하면 23.976. 지금 카메라 메뉴에 있는 23.98입니다.",
+   "tts": "이십사에 천일 분의 천을 곱하면, 이십삼 점 구칠육. 지금 카메라 메뉴에 있는 이십삼 점 구팔입니다."
+  },
+  {
+   "ch": 2,
+   "shot": "sepiaTease",
+   "mood": "question",
+   "sub": "그렇다면 처음의 24라는 숫자는 누가, 왜 정했을까요?",
+   "tts": "그렇다면 처음의 이십사라는 숫자는, 누가, 왜 정했을까요?"
+  },
+  {
+   "ch": 3,
+   "shot": "crank",
+   "mood": "calm",
+   "src": [
+    8
+   ],
+   "sub": "1920년대 무성영화는 카메라 옆 손잡이를 사람이 돌려서 찍었습니다.",
+   "tts": "천구백이십 년대 무성영화는, 카메라 옆 손잡이를 사람이 돌려서 찍었습니다."
+  },
+  {
+   "ch": 3,
+   "shot": "speedBars",
+   "mood": "calm",
+   "src": [
+    9,
+    10
+   ],
+   "sub": "극장도 영사기를 저마다 다른 속도로 돌렸습니다. 큰 개봉관은 1분에 필름 80~90피트, 작은 극장은 100피트 넘게 돌렸습니다.",
+   "tts": "극장도 영사기를 저마다 다른 속도로 돌렸습니다. 큰 개봉관은 일 분에 필름 팔십에서 구십 피트, 작은 극장은 백 피트 넘게 돌렸습니다."
+  },
+  {
+   "ch": 3,
+   "shot": "vitaphone",
+   "mood": "reveal",
+   "src": [
+    11
+   ],
+   "sub": "1926년, 워너 브라더스는 소리를 레코드판에 따로 담아 영사기와 함께 돌리는 바이타폰을 선보였습니다.",
+   "tts": "천구백이십육 년, 워너 브라더스는 소리를 레코드판에 따로 담아 영사기와 함께 돌리는 바이타폰을 선보였습니다."
+  },
+  {
+   "ch": 3,
+   "shot": "vitaphone",
+   "join": true,
+   "src": [
+    11
+   ],
+   "sub": "레코드판 한 면은 약 11분으로, 필름 한 릴 길이에 맞췄습니다.",
+   "tts": "레코드판 한 면은 약 십일 분으로, 필름 한 릴 길이에 맞췄습니다."
+  },
+  {
+   "ch": 3,
+   "shot": "syncDrift",
+   "mood": "tense",
+   "sub": "이제 영사기가 조금만 빨라도 배우의 입 모양과 소리가 어긋났습니다. 속도를 하나로 정해야 했습니다.",
+   "tts": "이제 영사기가 조금만 빨라도, 배우의 입 모양과 소리가 어긋났습니다. 속도를 하나로 정해야 했습니다."
+  },
+  {
+   "ch": 3,
+   "shot": "engineerAsk",
+   "mood": "calm",
+   "src": [
+    9
+   ],
+   "sub": "웨스턴 일렉트릭의 기술자 스탠리 왓킨스는 영사 기사에게 극장에서 실제로 얼마나 빨리 돌리는지 물었습니다.",
+   "tts": "웨스턴 일렉트릭의 기술자 스탠리 왓킨스는, 영사 기사에게 극장에서 실제로 얼마나 빨리 돌리는지 물었습니다."
+  },
+  {
+   "ch": 3,
+   "shot": "ninety",
+   "mood": "reveal",
+   "src": [
+    9
+   ],
+   "sub": "그리고 1분에 90피트로 정했습니다. 왓킨스는 훗날 인터뷰에서 이 숫자가 짐작이었다고 말했습니다.",
+   "tts": "그리고 일 분에 구십 피트로 정했습니다. 왓킨스는 훗날 인터뷰에서, 이 숫자가 짐작이었다고 말했습니다."
+  },
+  {
+   "ch": 3,
+   "shot": "filmCalc",
+   "mood": "reveal",
+   "sub": "35mm 필름은 1피트에 16장이 들어갑니다. 1분에 90피트면 1초에 24장입니다.",
+   "tts": "삼십오 밀리 필름은 일 피트에 열여섯 장이 들어갑니다. 일 분에 구십 피트면, 일 초에 스물네 장입니다."
+  },
+  {
+   "ch": 3,
+   "shot": "movietone",
+   "mood": "calm",
+   "src": [
+    12
+   ],
+   "sub": "필름에 소리를 새기는 폭스의 무비톤도 같은 24장을 택했고, 1초에 24장은 유성영화의 표준이 됐습니다.",
+   "tts": "필름에 소리를 새기는 폭스의 무비톤도 같은 스물네 장을 택했고, 일 초에 스물네 장은 유성영화의 표준이 됐습니다."
+  },
+  {
+   "ch": 4,
+   "shot": "chain",
+   "mood": "travel",
+   "sub": "정리하면, 1927년 무렵 정한 24장이 1953년 TV에 맞추느라 23.976장이 됐고, 그 숫자가 지금 카메라 메뉴에 남았습니다.",
+   "tts": "정리하면, 천구백이십칠 년 무렵 정한 스물네 장이, 천구백오십삼 년 티비에 맞추느라 이십삼 점 구칠육 장이 됐고, 그 숫자가 지금 카메라 메뉴에 남았습니다."
+  },
+  {
+   "ch": 4,
+   "shot": "choose",
+   "mood": "question",
+   "sub": "그럼 무엇을 고르면 될까요? 극장 상영용이라면 24를 고릅니다. 극장 상영 파일은 23.98을 받지 않고 1초에 24장으로 바꿔 틉니다.",
+   "tts": "그럼 무엇을 고르면 될까요? 극장 상영용이라면 이십사를 고릅니다. 극장 상영 파일은 이십삼 점 구팔을 받지 않고, 일 초에 스물네 장으로 바꿔 틉니다.",
+   "src": [
+    13
+   ]
+  },
+  {
+   "ch": 4,
+   "shot": "choose",
+   "join": true,
+   "sub": "유튜브나 SNS용이라면 23.98과 24 어느 쪽도 괜찮습니다. 다만 한 작업 안에서는 하나로 통일해야 합니다.",
+   "tts": "유튜브나 에스엔에스용이라면, 이십삼 점 구팔과 이십사 어느 쪽도 괜찮습니다. 다만 한 작업 안에서는 하나로 통일해야 합니다."
+  },
+  {
+   "ch": 4,
+   "shot": "drift",
+   "mood": "tense",
+   "src": [
+    14
+   ],
+   "sub": "가장 피해야 할 것은 섞어 쓰는 것입니다. 24와 23.98은 0.1% 차이라서, 한 시간이면 소리가 3.6초 어긋납니다.",
+   "tts": "가장 피해야 할 것은 섞어 쓰는 것입니다. 이십사와 이십삼 점 구팔은 영 점 일 퍼센트 차이라서, 한 시간이면 소리가 삼 점 육 초 어긋납니다."
+  },
+  {
+   "ch": 4,
+   "shot": "twoCams",
+   "mood": "calm",
+   "sub": "카메라 두 대로 찍는다면, 촬영 전에 두 카메라의 프레임레이트부터 똑같이 맞추세요.",
+   "tts": "카메라 두 대로 찍는다면, 촬영 전에 두 카메라의 프레임레이트부터 똑같이 맞추세요."
+  },
+  {
+   "ch": 4,
+   "shot": "shutter60",
+   "mood": "calm",
+   "sub": "실내에서 찍을 때는 셔터속도를 1/60초로 두세요. 한국 전기는 60Hz라서, 1/50초에서는 조명이 깜빡일 수 있습니다.",
+   "tts": "실내에서 찍을 때는 셔터속도를 육십 분의 일 초로 두세요. 한국 전기는 육십 헤르츠라서, 오십 분의 일 초에서는 조명이 깜빡일 수 있습니다."
+  },
+  {
+   "ch": 4,
+   "shot": "endCard",
+   "mood": "calm",
+   "sub": "카메라 메뉴의 23.98은 1927년 무렵 정한 24에, 1953년에 정한 1001분의 1000을 곱한 숫자입니다.",
+   "tts": "카메라 메뉴의 이십삼 점 구팔은, 천구백이십칠 년 무렵 정한 이십사에, 천구백오십삼 년에 정한 천일 분의 천을 곱한 숫자입니다."
+  },
+  {
+   "ch": 4,
+   "shot": "endCard",
+   "join": true,
+   "sub": "다음 편에서는 셔터 180도가 어디서 왔는지 알아보겠습니다.",
+   "tts": "다음 편에서는, 셔터 백팔십 도가 어디서 왔는지 알아보겠습니다."
+  }
+ ],
+ "sources": {
+  "1": "NTSC, Wikipedia — https://en.wikipedia.org/wiki/NTSC",
+  "2": "December 17, 1953…FCC Approves RCA Color — https://eyesofageneration.com/december-17-1953-fcc-approves-rca-color-a-first-hand-accountthursday-after/",
+  "3": "65 Years Ago Today: The First Color TVs Arrive — https://www.soundandvision.com/content/65-years-ago-today-first-color-tvs-arrive",
+  "4": "Color burst, Wikipedia — https://en.wikipedia.org/wiki/Color_burst",
+  "5": "Will the End of NTSC Be the End of 59.94? — https://www.tvtechnology.com/opinions/will-the-end-of-ntsc-be-the-end-of-5994",
+  "6": "Telecine, Wikipedia — https://en.wikipedia.org/wiki/Telecine",
+  "7": "Two-Three Pull-Down (Steinberg) — https://steinberg.help/nuendo/v8/en/cubase_nuendo/topics/film_transfers/video_telecine_process_three_two_pull_down_c.html",
+  "8": "Frame rate, Wikipedia — https://en.wikipedia.org/wiki/Frame_rate",
+  "9": "Interview with Stanley Watkins (BEHP no.727, 1970) — http://historyproject.org.uk/interview/stanley-watkins",
+  "10": "Film-Tech Forum: How did 24 frames a sec come about — https://www.film-tech.com/ubb/f1/t006820.html",
+  "11": "Vitaphone, Wikipedia — https://en.wikipedia.org/wiki/Vitaphone",
+  "12": "Movietone sound system, Wikipedia — https://en.wikipedia.org/wiki/Movietone_sound_system",
+  "13": "When exact 24 fps beats 23.976 (ProVideo Coalition) — https://www.provideocoalition.com/when-exact-24-fps-beats-23976-and-when-it-doesnt/",
+  "14": "0.1% × 3600초 = 3.6초 (계산)"
+ }
+}

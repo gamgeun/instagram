@@ -1,261 +1,877 @@
 {
- "duration": 81.946063,
+ "duration": 283.961063,
  "beats": [
   {
-   "sub": "카메라 동영상 메뉴를 열면",
+   "sub": "카메라 동영상 메뉴에서 프레임레이트를",
    "shot": "menuScroll",
    "opt": {
     "stop": true,
     "mood": "calm"
    },
+   "line": 0,
+   "ch": 1,
    "start": 0.0,
-   "end": 1.965
+   "end": 3.286
   },
   {
-   "sub": "이런 숫자가 있습니다",
+   "sub": "열면 23.98이라는 숫자가 있습니다.",
    "shot": "menuScroll",
    "opt": {
+    "stop": true,
+    "mood": "calm",
     "join": true
    },
-   "start": 1.965,
-   "end": 3.567
+   "line": 0,
+   "ch": 1,
+   "start": 3.286,
+   "end": 7.116
   },
   {
-   "sub": "23.98",
-   "shot": "bigNum",
-   "opt": {
-    "text": "23.98",
-    "mood": "reveal"
-   },
-   "start": 3.567,
-   "end": 5.923
-  },
-  {
-   "sub": "영화처럼 찍고 싶을 때 고르는 설정입니다",
+   "sub": "영화처럼 찍고 싶을 때 많이 고르는 값입니다.",
    "shot": "filmLook",
    "opt": {
     "mood": "calm"
    },
-   "start": 5.923,
-   "end": 8.858
+   "line": 1,
+   "ch": 1,
+   "start": 7.116,
+   "end": 11.15
   },
   {
-   "sub": "그런데 이상합니다",
-   "shot": "glitchNum",
-   "opt": {
-    "mood": "tense"
-   },
-   "start": 8.858,
-   "end": 10.43
-  },
-  {
-   "sub": "영화는 1초에 24장인데",
-   "shot": "frameCount",
-   "opt": {
-    "n": 24,
-    "era": "now"
-   },
-   "start": 10.43,
-   "end": 13.159
-  },
-  {
-   "sub": "왜 24가 아니라 23.98일까요?",
+   "sub": "그런데 영화는 1초에 24장입니다.",
    "shot": "versus",
    "opt": {
     "mood": "question"
    },
-   "start": 13.159,
-   "end": 16.532
+   "line": 2,
+   "ch": 1,
+   "start": 11.15,
+   "end": 14.595
   },
   {
-   "sub": "이 0.02는",
+   "sub": "카메라는 왜 24가 아니라 23.98을 줄까요?",
    "shot": "versus",
    "opt": {
+    "mood": "question",
     "join": true
    },
-   "start": 16.532,
-   "end": 17.688
+   "line": 2,
+   "ch": 1,
+   "start": 14.595,
+   "end": 20.171
   },
   {
-   "sub": "70년도 더 전에",
+   "sub": "24보다 조금 모자란 이 숫자는",
    "shot": "tunnel",
    "opt": {
     "mood": "travel"
    },
-   "start": 17.688,
-   "end": 19.141
+   "line": 3,
+   "ch": 1,
+   "start": 20.171,
+   "end": 22.892
   },
   {
-   "sub": "미국 텔레비전 때문에 생겼습니다",
+   "sub": "1953년 미국에서 정해졌습니다.",
    "shot": "tunnel",
    "opt": {
+    "mood": "travel",
     "join": true
    },
-   "start": 19.141,
-   "end": 22.407
+   "line": 3,
+   "ch": 1,
+   "start": 22.892,
+   "end": 27.141
   },
   {
-   "sub": "1953년 미국",
+   "sub": "1953년 미국에는 이미 흑백 TV를 가진 집이 많았습니다.",
    "shot": "room",
    "opt": {
     "mood": "calm"
    },
-   "start": 22.407,
-   "end": 24.784
+   "line": 4,
+   "ch": 2,
+   "start": 27.141,
+   "end": 33.447
   },
   {
-   "sub": "집집마다 흑백 텔레비전이 있었습니다",
-   "shot": "room",
-   "opt": {
-    "join": true
-   },
-   "start": 24.784,
-   "end": 27.632
-  },
-  {
-   "sub": "흑백 방송은 화면을 1초에 30장씩 보냈습니다",
+   "sub": "흑백 방송은 화면을 1초에 30장씩 보냈습니다.",
    "shot": "frameCount",
    "opt": {
     "n": 30,
-    "era": "crt"
+    "era": "crt",
+    "mood": "calm"
    },
-   "start": 27.632,
-   "end": 31.297
+   "line": 5,
+   "ch": 2,
+   "start": 33.447,
+   "end": 37.915
   },
   {
-   "sub": "그해 미국은 컬러 방송 규격을 정했습니다",
-   "shot": "colorStandard",
-   "opt": {},
-   "start": 31.297,
-   "end": 34.925
-  },
-  {
-   "sub": "조건이 하나 있었습니다",
-   "shot": "condition",
-   "opt": {},
-   "start": 34.925,
-   "end": 36.816
-  },
-  {
-   "sub": "이미 팔린 흑백 TV에서도 컬러 방송이 나와야 했습니다",
-   "shot": "bwReceive",
-   "opt": {},
-   "start": 36.816,
-   "end": 41.38
-  },
-  {
-   "sub": "그래서 기존 신호에 색 정보를 덧붙였는데",
-   "shot": "signalAdd",
-   "opt": {},
-   "start": 41.38,
-   "end": 44.861
-  },
-  {
-   "sub": "이 색 신호가 소리 신호와 부딪혀 잡음을 냈습니다",
-   "shot": "signalClash",
+   "sub": "1950년에 먼저 승인된 CBS의 컬러",
+   "shot": "cbsWithdraw",
    "opt": {
     "mood": "tense"
    },
-   "start": 44.861,
-   "end": 48.935
+   "line": 6,
+   "ch": 2,
+   "start": 37.915,
+   "end": 41.273
   },
   {
-   "sub": "소리 신호를 옮기면",
-   "shot": "soundMove",
-   "opt": {},
-   "start": 48.935,
-   "end": 50.244
+   "sub": "방식은 흑백 TV에서 볼 수 없었고",
+   "shot": "cbsWithdraw",
+   "opt": {
+    "mood": "tense",
+    "join": true
+   },
+   "line": 6,
+   "ch": 2,
+   "start": 41.273,
+   "end": 44.218
   },
   {
-   "sub": "집에 있는 TV를 전부 고쳐야 합니다",
+   "sub": "1953년 3월에 철회됐습니다.",
+   "shot": "cbsWithdraw",
+   "opt": {
+    "mood": "tense",
+    "join": true
+   },
+   "line": 6,
+   "ch": 2,
+   "start": 44.218,
+   "end": 47.35
+  },
+  {
+   "sub": "그해 12월 17일",
+   "shot": "colorStandard",
+   "opt": {
+    "mood": "reveal"
+   },
+   "line": 7,
+   "ch": 2,
+   "start": 47.35,
+   "end": 49.027
+  },
+  {
+   "sub": "미국 연방통신위원회는 흑백 TV에서도 볼",
+   "shot": "colorStandard",
+   "opt": {
+    "mood": "reveal",
+    "join": true
+   },
+   "line": 7,
+   "ch": 2,
+   "start": 49.027,
+   "end": 51.33
+  },
+  {
+   "sub": "수 있는 새 컬러 방식을 승인했습니다.",
+   "shot": "colorStandard",
+   "opt": {
+    "mood": "reveal",
+    "join": true
+   },
+   "line": 7,
+   "ch": 2,
+   "start": 51.33,
+   "end": 55.897
+  },
+  {
+   "sub": "NTSC 위원회 기술자들은 기존 흑백 신호",
+   "shot": "signalAdd",
+   "opt": {
+    "mood": "calm"
+   },
+   "line": 8,
+   "ch": 2,
+   "start": 55.897,
+   "end": 59.13
+  },
+  {
+   "sub": "안에 색 정보를 함께 실어 보냈습니다.",
+   "shot": "signalAdd",
+   "opt": {
+    "mood": "calm",
+    "join": true
+   },
+   "line": 8,
+   "ch": 2,
+   "start": 59.13,
+   "end": 62.354
+  },
+  {
+   "sub": "그런데 색 신호와 소리 신호의 주파수가 너무 가까워서",
+   "shot": "dotPattern",
+   "opt": {
+    "mood": "tense"
+   },
+   "line": 9,
+   "ch": 2,
+   "start": 62.354,
+   "end": 67.206
+  },
+  {
+   "sub": "두 신호의 차이가 흑백 화면에 작은 점무늬로 나타났습니다.",
+   "shot": "dotPattern",
+   "opt": {
+    "mood": "tense",
+    "join": true
+   },
+   "line": 9,
+   "ch": 2,
+   "start": 67.206,
+   "end": 72.093
+  },
+  {
+   "sub": "소리 신호의 주파수를 옮기면 이미",
    "shot": "tvGrid",
    "opt": {
     "mood": "tense"
    },
-   "start": 50.244,
-   "end": 53.915
+   "line": 10,
+   "ch": 2,
+   "start": 72.093,
+   "end": 74.825
   },
   {
-   "sub": "기술자들은 화면 쪽을 아주 조금 늦추기로 했습니다",
-   "shot": "slowDial",
-   "opt": {},
-   "start": 53.915,
-   "end": 57.495
-  },
-  {
-   "sub": "1001분의 1000으로",
-   "shot": "fraction",
-   "opt": {},
-   "start": 57.495,
-   "end": 59.19
-  },
-  {
-   "sub": "1초에 30장이던 화면은",
-   "shot": "bigCrt",
+   "sub": "팔린 TV는 소리를 받지 못합니다.",
+   "shot": "tvGrid",
    "opt": {
-    "text": "30"
+    "mood": "tense",
+    "join": true
    },
-   "start": 59.19,
-   "end": 61.438
+   "line": 10,
+   "ch": 2,
+   "start": 74.825,
+   "end": 77.839
   },
   {
-   "sub": "29.97장이 됐습니다",
+   "sub": "연방통신위원회도 이 안을 받아들이지 않았습니다.",
+   "shot": "tvGrid",
+   "opt": {
+    "mood": "tense",
+    "join": true
+   },
+   "line": 10,
+   "ch": 2,
+   "start": 77.839,
+   "end": 82.396
+  },
+  {
+   "sub": "남은 방법은 화면 속도를 아주 조금 늦추는 것이었습니다.",
+   "shot": "slowDial",
+   "opt": {
+    "mood": "calm"
+   },
+   "line": 11,
+   "ch": 2,
+   "start": 82.396,
+   "end": 86.413
+  },
+  {
+   "sub": "흑백 TV는 방송 신호에 맞춰 화면 속도를 따라가기 때문에",
+   "shot": "slowDial",
+   "opt": {
+    "mood": "calm",
+    "join": true
+   },
+   "line": 11,
+   "ch": 2,
+   "start": 86.413,
+   "end": 90.941
+  },
+  {
+   "sub": "0.1% 느려져도 그대로 보였습니다.",
+   "shot": "slowDial",
+   "opt": {
+    "mood": "calm",
+    "join": true
+   },
+   "line": 11,
+   "ch": 2,
+   "start": 90.941,
+   "end": 94.457
+  },
+  {
+   "sub": "화면 속도를 1001분의 1000으로 늦추자",
    "shot": "strike",
    "opt": {
     "from": "30",
     "to": "29.97",
     "mood": "reveal"
    },
-   "start": 61.438,
-   "end": 63.794
+   "line": 12,
+   "ch": 2,
+   "start": 94.457,
+   "end": 97.921
   },
   {
-   "sub": "24장짜리 영화를 이 TV로 틀려면",
+   "sub": "1초에 30장이던 화면은 29.97장이 됐습니다.",
+   "shot": "strike",
+   "opt": {
+    "from": "30",
+    "to": "29.97",
+    "mood": "reveal",
+    "join": true
+   },
+   "line": 12,
+   "ch": 2,
+   "start": 97.921,
+   "end": 102.255
+  },
+  {
+   "sub": "극장 영화는 1초에 24장입니다.",
    "shot": "filmToTv",
-   "opt": {},
-   "start": 63.794,
-   "end": 67.505
+   "opt": {
+    "mood": "calm"
+   },
+   "line": 13,
+   "ch": 2,
+   "start": 102.255,
+   "end": 105.224
   },
   {
-   "sub": "영화도 같은 비율로 늦춰야 했습니다",
-   "shot": "filmSlow",
-   "opt": {},
-   "start": 67.505,
-   "end": 70.223
+   "sub": "이 영화를 TV로 내보내려면 영화도",
+   "shot": "filmToTv",
+   "opt": {
+    "mood": "calm",
+    "join": true
+   },
+   "line": 13,
+   "ch": 2,
+   "start": 105.224,
+   "end": 107.632
   },
   {
-   "sub": "24 × 1000/1001 = 23.976",
+   "sub": "같은 비율로 늦춰야 했습니다.",
+   "shot": "filmToTv",
+   "opt": {
+    "mood": "calm",
+    "join": true
+   },
+   "line": 13,
+   "ch": 2,
+   "start": 107.632,
+   "end": 110.573
+  },
+  {
+   "sub": "24에 1001분의 1000을 곱하면 23.976.",
    "shot": "equation",
    "opt": {
     "mood": "reveal"
    },
-   "start": 70.223,
-   "end": 74.938
+   "line": 14,
+   "ch": 2,
+   "start": 110.573,
+   "end": 115.492
   },
   {
-   "sub": "지금 카메라에 있는 23.98입니다",
-   "shot": "menuHighlight",
-   "opt": {},
-   "start": 74.938,
-   "end": 78.432
+   "sub": "지금 카메라 메뉴에 있는 23.98입니다.",
+   "shot": "equation",
+   "opt": {
+    "mood": "reveal",
+    "join": true
+   },
+   "line": 14,
+   "ch": 2,
+   "start": 115.492,
+   "end": 119.893
   },
   {
-   "sub": "그럼 처음의 24라는 숫자는",
+   "sub": "그렇다면 처음의 24라는 숫자는 누가",
    "shot": "sepiaTease",
    "opt": {
     "mood": "question"
    },
-   "start": 78.432,
-   "end": 80.237
+   "line": 15,
+   "ch": 2,
+   "start": 119.893,
+   "end": 123.877
   },
   {
-   "sub": "어디서 왔을까요?",
+   "sub": "왜 정했을까요?",
    "shot": "sepiaTease",
+   "opt": {
+    "mood": "question",
+    "join": true
+   },
+   "line": 15,
+   "ch": 2,
+   "start": 123.877,
+   "end": 126.236
+  },
+  {
+   "sub": "1920년대 무성영화는 카메라 옆",
+   "shot": "crank",
+   "opt": {
+    "mood": "calm"
+   },
+   "line": 16,
+   "ch": 3,
+   "start": 126.236,
+   "end": 128.59
+  },
+  {
+   "sub": "손잡이를 사람이 돌려서 찍었습니다.",
+   "shot": "crank",
+   "opt": {
+    "mood": "calm",
+    "join": true
+   },
+   "line": 16,
+   "ch": 3,
+   "start": 128.59,
+   "end": 132.27
+  },
+  {
+   "sub": "극장도 영사기를 저마다 다른 속도로 돌렸습니다.",
+   "shot": "speedBars",
+   "opt": {
+    "mood": "calm"
+   },
+   "line": 17,
+   "ch": 3,
+   "start": 132.27,
+   "end": 136.727
+  },
+  {
+   "sub": "큰 개봉관은 1분에 필름 80~90피트",
+   "shot": "speedBars",
+   "opt": {
+    "mood": "calm",
+    "join": true
+   },
+   "line": 17,
+   "ch": 3,
+   "start": 136.727,
+   "end": 140.938
+  },
+  {
+   "sub": "작은 극장은 100피트 넘게 돌렸습니다.",
+   "shot": "speedBars",
+   "opt": {
+    "mood": "calm",
+    "join": true
+   },
+   "line": 17,
+   "ch": 3,
+   "start": 140.938,
+   "end": 144.741
+  },
+  {
+   "sub": "1926년, 워너 브라더스는 소리를 레코드판에 따로 담아",
+   "shot": "vitaphone",
+   "opt": {
+    "mood": "reveal"
+   },
+   "line": 18,
+   "ch": 3,
+   "start": 144.741,
+   "end": 149.241
+  },
+  {
+   "sub": "영사기와 함께 돌리는 바이타폰을 선보였습니다.",
+   "shot": "vitaphone",
+   "opt": {
+    "mood": "reveal",
+    "join": true
+   },
+   "line": 18,
+   "ch": 3,
+   "start": 149.241,
+   "end": 153.372
+  },
+  {
+   "sub": "레코드판 한 면은 약 11분으로",
+   "shot": "vitaphone",
    "opt": {
     "join": true
    },
-   "start": 80.237,
-   "end": 81.946
+   "line": 19,
+   "ch": 3,
+   "start": 153.372,
+   "end": 156.343
+  },
+  {
+   "sub": "필름 한 릴 길이에 맞췄습니다.",
+   "shot": "vitaphone",
+   "opt": {
+    "join": true
+   },
+   "line": 19,
+   "ch": 3,
+   "start": 156.343,
+   "end": 158.948
+  },
+  {
+   "sub": "이제 영사기가 조금만 빨라도 배우의",
+   "shot": "syncDrift",
+   "opt": {
+    "mood": "tense"
+   },
+   "line": 20,
+   "ch": 3,
+   "start": 158.948,
+   "end": 161.51
+  },
+  {
+   "sub": "입 모양과 소리가 어긋났습니다.",
+   "shot": "syncDrift",
+   "opt": {
+    "mood": "tense",
+    "join": true
+   },
+   "line": 20,
+   "ch": 3,
+   "start": 161.51,
+   "end": 164.48
+  },
+  {
+   "sub": "속도를 하나로 정해야 했습니다.",
+   "shot": "syncDrift",
+   "opt": {
+    "mood": "tense",
+    "join": true
+   },
+   "line": 20,
+   "ch": 3,
+   "start": 164.48,
+   "end": 167.416
+  },
+  {
+   "sub": "웨스턴 일렉트릭의 기술자 스탠리 왓킨스는 영사 기사에게",
+   "shot": "engineerAsk",
+   "opt": {
+    "mood": "calm"
+   },
+   "line": 21,
+   "ch": 3,
+   "start": 167.416,
+   "end": 172.599
+  },
+  {
+   "sub": "극장에서 실제로 얼마나 빨리 돌리는지 물었습니다.",
+   "shot": "engineerAsk",
+   "opt": {
+    "mood": "calm",
+    "join": true
+   },
+   "line": 21,
+   "ch": 3,
+   "start": 172.599,
+   "end": 176.36
+  },
+  {
+   "sub": "그리고 1분에 90피트로 정했습니다.",
+   "shot": "ninety",
+   "opt": {
+    "mood": "reveal"
+   },
+   "line": 22,
+   "ch": 3,
+   "start": 176.36,
+   "end": 178.889
+  },
+  {
+   "sub": "왓킨스는 훗날 인터뷰에서 이 숫자가 짐작이었다고 말했습니다.",
+   "shot": "ninety",
+   "opt": {
+    "mood": "reveal",
+    "join": true
+   },
+   "line": 22,
+   "ch": 3,
+   "start": 178.889,
+   "end": 183.659
+  },
+  {
+   "sub": "35mm 필름은 1피트에 16장이 들어갑니다.",
+   "shot": "filmCalc",
+   "opt": {
+    "mood": "reveal"
+   },
+   "line": 23,
+   "ch": 3,
+   "start": 183.659,
+   "end": 187.498
+  },
+  {
+   "sub": "1분에 90피트면 1초에 24장입니다.",
+   "shot": "filmCalc",
+   "opt": {
+    "mood": "reveal",
+    "join": true
+   },
+   "line": 23,
+   "ch": 3,
+   "start": 187.498,
+   "end": 191.323
+  },
+  {
+   "sub": "필름에 소리를 새기는 폭스의 무비톤도 같은 24장을 택했고",
+   "shot": "movietone",
+   "opt": {
+    "mood": "calm"
+   },
+   "line": 24,
+   "ch": 3,
+   "start": 191.323,
+   "end": 196.319
+  },
+  {
+   "sub": "1초에 24장은 유성영화의 표준이 됐습니다.",
+   "shot": "movietone",
+   "opt": {
+    "mood": "calm",
+    "join": true
+   },
+   "line": 24,
+   "ch": 3,
+   "start": 196.319,
+   "end": 200.818
+  },
+  {
+   "sub": "정리하면, 1927년 무렵 정한 24장이 1953년",
+   "shot": "chain",
+   "opt": {
+    "mood": "travel"
+   },
+   "line": 25,
+   "ch": 4,
+   "start": 200.818,
+   "end": 205.191
+  },
+  {
+   "sub": "TV에 맞추느라 23.976장이 됐고",
+   "shot": "chain",
+   "opt": {
+    "mood": "travel",
+    "join": true
+   },
+   "line": 25,
+   "ch": 4,
+   "start": 205.191,
+   "end": 210.825
+  },
+  {
+   "sub": "그 숫자가 지금 카메라 메뉴에 남았습니다.",
+   "shot": "chain",
+   "opt": {
+    "mood": "travel",
+    "join": true
+   },
+   "line": 25,
+   "ch": 4,
+   "start": 210.825,
+   "end": 214.071
+  },
+  {
+   "sub": "그럼 무엇을 고르면 될까요?",
+   "shot": "choose",
+   "opt": {
+    "mood": "question"
+   },
+   "line": 26,
+   "ch": 4,
+   "start": 214.071,
+   "end": 216.251
+  },
+  {
+   "sub": "극장 상영용이라면 24를 고릅니다.",
+   "shot": "choose",
+   "opt": {
+    "mood": "question",
+    "join": true
+   },
+   "line": 26,
+   "ch": 4,
+   "start": 216.251,
+   "end": 219.563
+  },
+  {
+   "sub": "극장 상영 파일은 23.98을 받지",
+   "shot": "choose",
+   "opt": {
+    "mood": "question",
+    "join": true
+   },
+   "line": 26,
+   "ch": 4,
+   "start": 219.563,
+   "end": 223.89
+  },
+  {
+   "sub": "않고 1초에 24장으로 바꿔 틉니다.",
+   "shot": "choose",
+   "opt": {
+    "mood": "question",
+    "join": true
+   },
+   "line": 26,
+   "ch": 4,
+   "start": 223.89,
+   "end": 226.742
+  },
+  {
+   "sub": "유튜브나 SNS용이라면 23.98과",
+   "shot": "choose",
+   "opt": {
+    "join": true
+   },
+   "line": 27,
+   "ch": 4,
+   "start": 226.742,
+   "end": 230.303
+  },
+  {
+   "sub": "24 어느 쪽도 괜찮습니다.",
+   "shot": "choose",
+   "opt": {
+    "join": true
+   },
+   "line": 27,
+   "ch": 4,
+   "start": 230.303,
+   "end": 233.529
+  },
+  {
+   "sub": "다만 한 작업 안에서는 하나로 통일해야 합니다.",
+   "shot": "choose",
+   "opt": {
+    "join": true
+   },
+   "line": 27,
+   "ch": 4,
+   "start": 233.529,
+   "end": 237.358
+  },
+  {
+   "sub": "가장 피해야 할 것은 섞어 쓰는 것입니다.",
+   "shot": "drift",
+   "opt": {
+    "mood": "tense"
+   },
+   "line": 28,
+   "ch": 4,
+   "start": 237.358,
+   "end": 240.121
+  },
+  {
+   "sub": "24와 23.98은 0.1% 차이라서",
+   "shot": "drift",
+   "opt": {
+    "mood": "tense",
+    "join": true
+   },
+   "line": 28,
+   "ch": 4,
+   "start": 240.121,
+   "end": 244.139
+  },
+  {
+   "sub": "한 시간이면 소리가 3.6초 어긋납니다.",
+   "shot": "drift",
+   "opt": {
+    "mood": "tense",
+    "join": true
+   },
+   "line": 28,
+   "ch": 4,
+   "start": 244.139,
+   "end": 248.079
+  },
+  {
+   "sub": "카메라 두 대로 찍는다면",
+   "shot": "twoCams",
+   "opt": {
+    "mood": "calm"
+   },
+   "line": 29,
+   "ch": 4,
+   "start": 248.079,
+   "end": 249.945
+  },
+  {
+   "sub": "촬영 전에 두 카메라의 프레임레이트부터 똑같이 맞추세요.",
+   "shot": "twoCams",
+   "opt": {
+    "mood": "calm",
+    "join": true
+   },
+   "line": 29,
+   "ch": 4,
+   "start": 249.945,
+   "end": 254.776
+  },
+  {
+   "sub": "실내에서 찍을 때는 셔터속도를 1/60초로 두세요.",
+   "shot": "shutter60",
+   "opt": {
+    "mood": "calm"
+   },
+   "line": 30,
+   "ch": 4,
+   "start": 254.776,
+   "end": 259.074
+  },
+  {
+   "sub": "한국 전기는 60Hz라서",
+   "shot": "shutter60",
+   "opt": {
+    "mood": "calm",
+    "join": true
+   },
+   "line": 30,
+   "ch": 4,
+   "start": 259.074,
+   "end": 262.161
+  },
+  {
+   "sub": "1/50초에서는 조명이 깜빡일 수 있습니다.",
+   "shot": "shutter60",
+   "opt": {
+    "mood": "calm",
+    "join": true
+   },
+   "line": 30,
+   "ch": 4,
+   "start": 262.161,
+   "end": 266.855
+  },
+  {
+   "sub": "카메라 메뉴의 23.98은 1927년 무렵 정한 24에",
+   "shot": "endCard",
+   "opt": {
+    "mood": "calm"
+   },
+   "line": 31,
+   "ch": 4,
+   "start": 266.855,
+   "end": 272.437
+  },
+  {
+   "sub": "1953년에 정한 1001분의 1000을 곱한 숫자입니다.",
+   "shot": "endCard",
+   "opt": {
+    "mood": "calm",
+    "join": true
+   },
+   "line": 31,
+   "ch": 4,
+   "start": 272.437,
+   "end": 277.472
+  },
+  {
+   "sub": "다음 편에서는 셔터 180도가 어디서 왔는지 알아보겠습니다.",
+   "shot": "endCard",
+   "opt": {
+    "join": true
+   },
+   "line": 32,
+   "ch": 4,
+   "start": 277.472,
+   "end": 283.961
   }
  ]
 }
