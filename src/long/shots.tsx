@@ -26,16 +26,16 @@ const RATES = ['120p', '60p', '59.94p', '30p', '29.97p', '25p', '24p', '23.98p']
 const MenuScroll: React.FC<P> = ({opt, dur}) => {
   const f = useCurrentFrame();
   const target = RATES.indexOf('23.98p');
-  const pos = opt.stop ? interpolate(f, [0, dur * 0.7], [target - 2.5, target], {extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)}) : (f / 9) % RATES.length;
+  const pos = opt.stop ? interpolate(f, [0, dur * 0.33], [target - 2.5, target], {extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)}) : (f / 9) % RATES.length;
   return (
     <AbsoluteFill style={center}>
       <Card style={{width: 820, height: 640, position: 'relative', overflow: 'hidden'}}>
         <div style={{fontFamily: MONO, fontSize: 28, color: 'rgba(255,255,255,.55)', letterSpacing: 3}}>REC FRAME RATE</div>
         <div style={{position: 'absolute', left: 0, right: 0, top: 110, bottom: 0, overflow: 'hidden'}}>
-        <div style={{position: 'absolute', left: 40, right: 40, top: 190, height: 96, borderRadius: 22, background: GRAD, opacity: opt.stop ? ease(f, dur * 0.6, dur * 0.75) : 0.25}} />
+        <div style={{position: 'absolute', left: 40, right: 40, top: 190, height: 96, borderRadius: 22, background: GRAD, opacity: opt.stop ? ease(f, dur * 0.28, dur * 0.36) : 0.25}} />
         {RATES.map((r, i) => {
           const y = 190 + (i - pos) * 110;
-          const on = opt.stop && i === target && f > dur * 0.65;
+          const on = opt.stop && i === target && f > dur * 0.33;
           return (
             <div key={r} style={{position: 'absolute', left: 80, top: y + 18, fontFamily: MONO, fontWeight: 600, fontSize: 52, color: on ? '#0a0a14' : '#fff', opacity: Math.max(0, 1 - Math.abs(i - pos) * 0.3)}}>
               {r}
@@ -80,7 +80,7 @@ const GlitchNum: React.FC<P> = () => {
         <div style={{position: 'absolute', left: j('c'), top: j('d'), fontFamily: FONT, fontWeight: 900, fontSize: 380, color: 'rgba(60,180,255,.6)', mixBlendMode: 'screen'}}>23.98</div>
         <div style={{fontFamily: FONT, fontWeight: 900, fontSize: 380, color: '#fff'}}>23.98</div>
       </div>
-      <div style={{position: 'absolute', right: 220, top: 160, fontFamily: FONT, fontWeight: 900, fontSize: 220, color: '#A99BFF', ...pop(f, 6)}}>?</div>
+      <div style={{position: 'absolute', right: 220, top: 160, fontFamily: FONT, fontWeight: 900, fontSize: 220, color: '#A99BFF', ...pop(f, 2)}}>?</div>
     </AbsoluteFill>
   );
 };
@@ -105,18 +105,25 @@ const FrameCount: React.FC<P & {era: Era}> = ({opt, era}) => {
     </AbsoluteFill>
   );
 };
-const Versus: React.FC<P> = () => {
+const Versus: React.FC<P> = ({marks = []}) => {
   const f = useCurrentFrame();
+  const m = marks[0] ?? 9999;
+  const d = ease(f, m - 12, m - 4);
   return (
-    <AbsoluteFill style={{...center, flexDirection: 'row', gap: 80}}>
-      <div style={{...pop(f), textAlign: 'center'}}>
-        <div style={{fontFamily: FONT, fontWeight: 900, fontSize: 300, color: '#fff'}}>24</div>
-        <div style={{fontFamily: FONT, fontWeight: 700, fontSize: 40, color: 'rgba(255,255,255,.6)'}}>영화</div>
+    <AbsoluteFill style={center}>
+      <div style={{...center, flexDirection: 'row', gap: 80, transform: `translateY(${-d * 70}px)`}}>
+        <div style={{...pop(f), textAlign: 'center'}}>
+          <div style={{fontFamily: FONT, fontWeight: 900, fontSize: 300, color: '#fff', lineHeight: 1}}>24</div>
+          <div style={{fontFamily: FONT, fontWeight: 700, fontSize: 40, color: 'rgba(255,255,255,.6)', marginTop: 20}}>영화</div>
+        </div>
+        <div style={{fontFamily: FONT, fontWeight: 900, fontSize: 200, color: '#FF7A8A', ...pop(f, 4)}}>≠</div>
+        <div style={{...pop(f, 8), textAlign: 'center'}}>
+          <GradText size={300}>23.98</GradText>
+          <div style={{fontFamily: FONT, fontWeight: 700, fontSize: 40, color: 'rgba(255,255,255,.6)', marginTop: 20}}>카메라</div>
+        </div>
       </div>
-      <div style={{fontFamily: FONT, fontWeight: 900, fontSize: 200, color: '#FF7A8A', ...pop(f, 10)}}>≠</div>
-      <div style={{...pop(f, 18), textAlign: 'center'}}>
-        <GradText size={300}>23.98</GradText>
-        <div style={{fontFamily: FONT, fontWeight: 700, fontSize: 40, color: 'rgba(255,255,255,.6)', marginTop: 20}}>카메라</div>
+      <div style={{position: 'absolute', bottom: 190, opacity: d, transform: `scale(${0.8 + 0.2 * d})`}}>
+        <GradText size={150}>차이 0.02</GradText>
       </div>
     </AbsoluteFill>
   );
@@ -141,10 +148,8 @@ const MenuHighlight: React.FC<P> = () => {
           <div key={r} style={{padding: '22px 30px', marginTop: 14, borderRadius: 22, fontFamily: MONO, fontWeight: 600, fontSize: 50, background: r === '23.98p' ? GRAD : 'transparent', color: r === '23.98p' ? '#0a0a14' : '#fff'}}>{r}</div>
         ))}
       </Card>
-      <div style={{...pop(f, 10)}}>
-        <div style={{fontFamily: MONO, fontSize: 44, color: 'rgba(255,255,255,.6)'}}>24 × 1000/1001</div>
-        <GradText size={170} style={{marginTop: 20}}>= 23.976</GradText>
-        <div style={{fontFamily: FONT, fontWeight: 700, fontSize: 40, color: 'rgba(255,255,255,.7)', marginTop: 30}}>1953년의 흔적</div>
+      <div style={{...pop(f, 4)}}>
+        <GradText size={190}>23.976</GradText>
       </div>
     </AbsoluteFill>
   );
@@ -192,7 +197,6 @@ const SepiaTease: React.FC<P> = ({marks = []}) => {
       <div style={{position: 'absolute', fontFamily: SERIF, fontWeight: 900, fontSize: 460, color: '#3b2614', opacity: a * ease(f, 0, 10), transform: `scale(${1 + f * 0.002})`}}>24</div>
       <div style={{...center, opacity: ease(f, m, m + 12)}}>
         <div style={{fontFamily: SERIF, fontWeight: 900, fontSize: 240, color: '#3b2614'}}>1927</div>
-        <div style={{fontFamily: SERIF, fontWeight: 700, fontSize: 52, color: '#5c4128', marginTop: 20}}>다음 장 · 손으로 돌리던 카메라</div>
       </div>
     </AbsoluteFill>
   );
@@ -206,8 +210,15 @@ const Tunnel: React.FC<P> = ({dur, marks = []}) => {
   const io2 = (a: number, b: number, x: number, y: number) => interpolate(f, [a, b], [x, y], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.inOut(Easing.cubic)});
   const camZ = io2(0, m, 0, 1300) + io2(m, dur, 0, 1000);
   const bgT = io2(0, m, 0, 1);
+  const carry = interpolate(f, [0, 22], [0, 1], {extrapolateRight: 'clamp', easing: Easing.in(Easing.cubic)});
   return (
     <AbsoluteFill style={{background: `rgba(6,19,26,${bgT})`}}>
+      {/* 앞 컷의 "차이 0.02"가 터널 안쪽으로 물러나며 이어진다 */}
+      <AbsoluteFill style={{perspective: 1000, ...center}}>
+        <div style={{position: 'absolute', bottom: 190, opacity: 1 - carry, transform: `translateZ(${-carry * 900}px)`}}>
+          <GradText size={150}>차이 0.02</GradText>
+        </div>
+      </AbsoluteFill>
       <AbsoluteFill style={{perspective: 1000, overflow: 'hidden'}}>
         <div style={{position: 'absolute', inset: 0, transformStyle: 'preserve-3d', transform: `translateZ(${camZ}px)`}}>
           {TUN_YEARS.map((y, i) => {
@@ -268,11 +279,11 @@ const ColorStandard: React.FC<P> = () => {
     <AbsoluteFill style={center}>
       <div style={{display: 'flex', width: 1300, height: 460}}>
         {BARS.map((c, i) => (
-          <div key={i} style={{flex: 1, background: c, transform: `scaleY(${ease(f, i * 2, i * 2 + 8)})`, transformOrigin: 'bottom'}} />
+          <div key={i} style={{flex: 1, background: c, transform: `scaleY(${ease(f, i, i + 6)})`, transformOrigin: 'bottom'}} />
         ))}
       </div>
-      <div style={{marginTop: 50, padding: '14px 40px', border: '4px solid #FF7A8A', color: '#FF7A8A', fontFamily: MONO, fontSize: 46, transform: `rotate(-4deg) scale(${1.6 - 0.6 * ease(f, 16, 22)})`, opacity: ease(f, 16, 20)}}>
-        COLOR TV STANDARD · 1953
+      <div style={{marginTop: 50, padding: '14px 40px', border: '4px solid #FF7A8A', color: '#FF7A8A', fontFamily: MONO, fontSize: 46, transform: `rotate(-4deg) scale(${1.6 - 0.6 * ease(f, 8, 14)})`, opacity: ease(f, 8, 12)}}>
+        1953 컬러 승인
       </div>
     </AbsoluteFill>
   );
@@ -327,8 +338,8 @@ const SignalAdd: React.FC<P> = () => {
 };
 const SignalClash: React.FC<P> = ({dur}) => {
   const f = useCurrentFrame();
-  const meet = interpolate(f, [0, dur * 0.4], [0, 1], {extrapolateRight: 'clamp'});
-  const hit = f > dur * 0.4;
+  const meet = interpolate(f, [0, dur * 0.25], [0, 1], {extrapolateRight: 'clamp'});
+  const hit = f > dur * 0.25;
   const shake = hit ? (random(`s${f}`) - 0.5) * 30 : 0;
   return (
     <AbsoluteFill style={{...center, transform: `translate(${shake}px, ${shake / 2}px)`}}>
@@ -345,7 +356,7 @@ const SignalClash: React.FC<P> = ({dur}) => {
       {hit && (
         <AbsoluteFill style={{opacity: 0.35, backgroundImage: `repeating-radial-gradient(circle at ${random(`x${f}`) * 100}% ${random(`y${f}`) * 100}%, #fff 0 1px, transparent 1px 3px)`}} />
       )}
-      {hit && <div style={{position: 'absolute', top: 200, fontFamily: FONT, fontWeight: 900, fontSize: 130, color: '#FF7A8A', ...pop(f, Math.ceil(dur * 0.4))}}>잡음</div>}
+      {hit && <div style={{position: 'absolute', top: 200, fontFamily: FONT, fontWeight: 900, fontSize: 130, color: '#FF7A8A', ...pop(f, Math.ceil(dur * 0.25))}}>잡음</div>}
     </AbsoluteFill>
   );
 };
@@ -358,7 +369,6 @@ const SoundMove: React.FC<P> = ({dur}) => {
         <svg width={600} height={240}><path d={wave(60, 6, -f / 3, 600, 240)} fill="none" stroke="#FFD27A" strokeWidth={7} /></svg>
         <div style={{fontFamily: MONO, fontSize: 120, color: '#FFD27A'}}>⇄</div>
       </div>
-      <div style={{fontFamily: FONT, fontWeight: 900, fontSize: 70, color: '#FFD27A', marginTop: 30}}>소리 신호 위치 바꾸기?</div>
     </AbsoluteFill>
   );
 };
@@ -403,7 +413,7 @@ const Fraction: React.FC<P> = () => {
   const f = useCurrentFrame();
   return (
     <AbsoluteFill style={center}>
-      <div style={{...center, ...pop(f)}}>
+      <div style={{...center, opacity: ease(f, 0, 3)}}>
         <CrtText size={230}>1000</CrtText>
         <div style={{width: 760, height: 10, background: '#8FE9DC', margin: '30px 0', boxShadow: '0 0 30px #8FE9DC'}} />
         <CrtText size={230}>1001</CrtText>
