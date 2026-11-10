@@ -8,6 +8,8 @@ export type Timeline = {duration: number; beats: Beat[]};
 export const LFPS = 30;
 /** 앞뒤 컷이 겹치며 바뀌는 프레임 수 (0.5초) */
 const XF = 15;
+/** 그림 하나의 최소 길이 (2.6초). 화면 글자 12자를 읽고, 0.5초 전환을 빼도 2초가 남는다 */
+export const MIN_SHOT = 78;
 
 type Mood = 'calm' | 'tense' | 'reveal' | 'question' | 'travel';
 type Shot = {shot: string; opt: any; era: Era; from: number; to: number; marks: number[]; mood: Mood};
@@ -32,6 +34,25 @@ export const buildShots = (tl: Timeline): Shot[] => {
     }
     const era: Era = (b.opt?.era as Era) ?? SHOT_ERA[b.shot] ?? 'now';
     shots.push({shot: b.shot, opt: b.opt ?? {}, era, from, to, marks: [], mood: (b.opt?.mood as Mood) ?? DEFAULT_MOOD[b.shot] ?? 'calm'});
+  }
+  // 그림 하나는 최소 MIN_SHOT 동안 보여야 화면 글자를 읽을 수 있다.
+  // 짧은 컷은 같은 시대의 앞 컷에 붙이고(그림은 앞 컷 유지), 앞이 다른 시대면 뒤 컷에 붙인다.
+  for (let i = 0; i < shots.length; i++) {
+    const s = shots[i];
+    if (s.to - s.from >= MIN_SHOT) continue;
+    const prev = shots[i - 1];
+    const next = shots[i + 1];
+    if (prev && prev.era === s.era) {
+      prev.marks.push(s.from - prev.from, ...s.marks.map((m) => m + s.from - prev.from));
+      prev.to = s.to;
+      shots.splice(i, 1);
+      i -= 1;
+    } else if (next) {
+      next.marks = [next.from - s.from, ...next.marks.map((m) => m + next.from - s.from)];
+      next.from = s.from;
+      shots.splice(i, 1);
+      i -= 1;
+    }
   }
   return shots;
 };
