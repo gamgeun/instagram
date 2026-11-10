@@ -7,18 +7,11 @@ export type Beat = {sub: string; shot: string; opt: any; start: number; end: num
 export type Timeline = {duration: number; beats: Beat[]};
 export const LFPS = 30;
 
-/** 컷 안 카메라: 천천히 다가가고, 긴 컷(3.2초 이상)은 가운데서 한 번 더 끊어 확대한다 */
-const Cam: React.FC<{dur: number; seed: number; children: React.ReactNode}> = ({dur, seed, children}) => {
+/** 컷 안 카메라: 컷 길이 내내 3%만 천천히 다가간다. 컷 중간 급확대는 멀미가 나서 뺐다 */
+const Cam: React.FC<{dur: number; seed: number; children: React.ReactNode}> = ({dur, children}) => {
   const f = useCurrentFrame();
-  const split = dur > 3.2 * LFPS;
-  const half = split && f >= dur / 2;
-  const local = half ? f - dur / 2 : f;
-  const len = split ? dur / 2 : dur;
-  const base = half ? 1.16 : 1;
-  const s = base + (local / len) * 0.04;
-  const ox = half ? (seed % 2 ? 42 : 58) : 50;
-  const oy = half ? 46 : 50;
-  return <AbsoluteFill style={{transform: `scale(${s})`, transformOrigin: `${ox}% ${oy}%`}}>{children}</AbsoluteFill>;
+  const s = 1 + (f / dur) * 0.03;
+  return <AbsoluteFill style={{transform: `scale(${s})`}}>{children}</AbsoluteFill>;
 };
 
 /** 시대가 바뀌는 컷 첫 3프레임은 밝게 번쩍인다 */
