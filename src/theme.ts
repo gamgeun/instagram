@@ -1,6 +1,10 @@
 import '@fontsource/noto-sans-kr/400.css';
 import '@fontsource/noto-sans-kr/700.css';
 import '@fontsource/noto-sans-kr/900.css';
+import '@fontsource/noto-serif-kr/700.css';
+import '@fontsource/noto-serif-kr/900.css';
+import '@fontsource/ibm-plex-mono/400.css';
+import '@fontsource/ibm-plex-mono/600.css';
 import {interpolate, Easing} from 'remotion';
 
 // 폰트 파일은 node_modules에서 함께 묶인다. 렌더할 때 외부 네트워크가 필요 없다
