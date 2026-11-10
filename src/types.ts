@@ -10,6 +10,7 @@ export type Scene = {
 
 export type Episode = {
   id: string; // 예: CQ-001
+  level: 'basic' | 'intermediate'; // 입문 / 중급. 색과 라벨이 바뀐다
   tag: string; // 제목 위 작은 알약 라벨
   title: string; // 한 줄 제목. 모든 장면 상단에 고정
   scenes: Scene[];

@@ -85,7 +85,7 @@ const LevelBars: React.FC<{bars: {label: string; value: number; on?: boolean}[]}
                 width: 130,
                 height: h,
                 borderRadius: '18px 18px 0 0',
-                background: b.on ? 'linear-gradient(180deg,#9aa4ff,#7d5bff)' : 'rgba(255,255,255,0.18)',
+                background: b.on ? C.fill : 'rgba(255,255,255,0.18)',
               }}
             />
             <div style={{position: 'absolute', left: x - 30, width: 190, bottom: 90 + h + 10, textAlign: 'center', fontWeight: 900, fontSize: 40, opacity: p}}>
@@ -218,7 +218,7 @@ const Checklist: React.FC<{rows: string[]}> = ({rows}) => {
                 height: 56,
                 flex: '0 0 56px',
                 borderRadius: '50%',
-                background: p > 0.5 ? 'linear-gradient(180deg,#9aa4ff,#7d5bff)' : 'rgba(255,255,255,0.12)',
+                background: p > 0.5 ? C.fill : 'rgba(255,255,255,0.12)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -236,7 +236,82 @@ const Checklist: React.FC<{rows: string[]}> = ({rows}) => {
   );
 };
 
+
+/* 8. 셔터속도별 움직임: 공이 지나간 자리 */
+const MotionCompare: React.FC<{rows: {label: string; blur: number; gap: number; tone: 'good' | 'warn'}[]}> = ({rows}) => {
+  const f = useCurrentFrame();
+  return (
+    <div>
+      {rows.map((r, i) => {
+        const p = prog(f, 6 + i * 10, 12);
+        const shift = ((f * 6) % 120) - 60;
+        return (
+          <div key={i} style={{marginBottom: 46, opacity: p}}>
+            <div style={{display: 'flex', justifyContent: 'space-between', fontWeight: 700, fontSize: 34, marginBottom: 16}}>
+              <span>{r.label}</span>
+              <span style={{color: r.tone === 'good' ? C.good : C.warn}}>{r.tone === 'good' ? '자연스러움' : '뚝뚝 끊김'}</span>
+            </div>
+            <div style={{position: 'relative', height: 110, borderRadius: 24, background: 'rgba(255,255,255,0.05)', border: `1px solid ${C.cardLine}`, overflow: 'hidden'}}>
+              {Array.from({length: 5}).map((_, k) => (
+                <div
+                  key={k}
+                  style={{
+                    position: 'absolute',
+                    top: 25,
+                    left: 80 + k * r.gap + shift,
+                    width: 60 + r.blur,
+                    height: 60,
+                    borderRadius: 30,
+                    background: r.blur > 0 ? 'linear-gradient(90deg, transparent, var(--solid))' : 'var(--solid)',
+                    opacity: 0.35 + k * 0.16,
+                  }}
+                />
+              ))}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
+/* 9. 큰 공식 */
+const Formula: React.FC<{left: string; right: string; note: string}> = ({left, right, note}) => {
+  const f = useCurrentFrame();
+  return (
+    <div style={{textAlign: 'center'}}>
+      <div style={{fontSize: 40, fontWeight: 700, color: C.sub, opacity: prog(f, 6, 10)}}>{left}</div>
+      <div style={{fontSize: 40, color: C.dim, margin: '10px 0', opacity: prog(f, 12, 10)}}>↓</div>
+      <div style={{fontSize: 190, fontWeight: 900, lineHeight: 1.05, letterSpacing: -6, background: C.grad, WebkitBackgroundClip: 'text', color: 'transparent', opacity: prog(f, 16, 12)}}>{right}</div>
+      <div style={{fontSize: 32, fontWeight: 700, color: C.sub, marginTop: 20, opacity: prog(f, 24, 10)}}>{note}</div>
+    </div>
+  );
+};
+
+/* 10. 조명 깜빡임: 화면에 가로 줄이 흐른다 */
+const Flicker: React.FC<{bad: string; good: string}> = ({bad, good}) => {
+  const f = useCurrentFrame();
+  const band = (f * 9) % 340;
+  return (
+    <div style={{display: 'flex', justifyContent: 'space-between'}}>
+      {[bad, good].map((l, i) => (
+        <div key={i} style={{opacity: prog(f, 6 + i * 10, 12)}}>
+          <div style={{position: 'relative', width: 376, height: 300, borderRadius: 24, overflow: 'hidden', background: 'linear-gradient(180deg,#5a4a3a,#2c241c)', border: `1px solid ${C.cardLine}`}}>
+            <div style={{position: 'absolute', left: 150, top: 30, width: 76, height: 76, borderRadius: '50%', background: '#ffe6a8', boxShadow: '0 0 60px #ffd27a'}} />
+            <div style={{position: 'absolute', left: 120, bottom: 0, width: 136, height: 150, borderRadius: '68px 68px 0 0', background: '#1a1a1a'}} />
+            {i === 0 && <div style={{position: 'absolute', left: 0, right: 0, top: band - 60, height: 90, background: 'linear-gradient(180deg,transparent,rgba(0,0,0,0.55),transparent)'}} />}
+          </div>
+          <Label color={i === 0 ? C.warn : C.good}>{l}</Label>
+        </div>
+      ))}
+    </div>
+  );
+};
+
 const MAP: Record<string, React.FC<any>> = {
+  motionCompare: MotionCompare,
+  formula: Formula,
+  flicker: Flicker,
   flatVsNormal: FlatVsNormal,
   levelBars: LevelBars,
   toggleMenu: ToggleMenu,

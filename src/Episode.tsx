@@ -1,7 +1,7 @@
 import React from 'react';
 import {AbsoluteFill, Sequence, useCurrentFrame, interpolate} from 'remotion';
 import {Episode as Ep, Scene} from './types';
-import {C, FONT, prog, fitOneLine} from './theme';
+import {C, FONT, prog, fitOneLine, LEVEL} from './theme';
 import {RenderVisual} from './visuals';
 import {chunkFrames, layout, SCENE_LEAD, OVERLAP} from './timing';
 
@@ -32,7 +32,7 @@ const Glow: React.FC = () => {
           left: 40 + x,
           top: 560 + y,
           borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(90,110,255,0.42), rgba(170,70,255,0.16) 45%, transparent 70%)',
+          background: 'radial-gradient(circle, var(--glow1), var(--glow2) 45%, transparent 70%)',
           filter: 'blur(50px)',
         }}
       />
@@ -52,12 +52,14 @@ const TopTitle: React.FC<{ep: Ep}> = ({ep}) => {
           display: 'inline-block',
           padding: '10px 28px',
           borderRadius: 40,
-          background: 'rgba(255,255,255,0.1)',
+          background: 'var(--pill)',
           border: `1px solid ${C.cardLine}`,
           fontWeight: 700,
           fontSize: 28,
         }}
       >
+        <span style={{color: 'var(--solid)', fontWeight: 900}}>{LEVEL[ep.level].label}</span>
+        <span style={{color: C.dim}}>{'  ·  '}</span>
         {ep.tag}
       </div>
       <div style={{fontWeight: 900, fontSize: size, letterSpacing: -3, marginTop: 24, whiteSpace: 'nowrap'}}>{ep.title}</div>
@@ -177,7 +179,7 @@ export const EpisodeVideo: React.FC<{ep: Ep}> = ({ep}) => {
   const {segs} = layout(ep);
   const last = segs[segs.length - 1];
   return (
-    <AbsoluteFill>
+    <AbsoluteFill style={LEVEL[ep.level].vars as React.CSSProperties}>
       <Glow />
       <TopTitle ep={ep} />
       {ep.scenes.map((s, i) => (
@@ -188,6 +190,23 @@ export const EpisodeVideo: React.FC<{ep: Ep}> = ({ep}) => {
       <Sequence from={last.from} durationInFrames={last.dur}>
         <Outro ep={ep} />
       </Sequence>
+    </AbsoluteFill>
+  );
+};
+
+/** 프로필 그리드 표지. 그리드는 3:4로 잘라 보여 주므로(위아래 240px씩 잘림) 제목을 가운데 영역에 둔다 */
+export const Cover: React.FC<{ep: Ep}> = ({ep}) => {
+  const size = fitOneLine(ep.title, 900, 104);
+  return (
+    <AbsoluteFill style={{...(LEVEL[ep.level].vars as React.CSSProperties), fontFamily: FONT, color: C.text}}>
+      <Glow />
+      <div style={{position: 'absolute', left: 70, right: 70, top: 790, textAlign: 'center'}}>
+        <div style={{display: 'inline-block', padding: '14px 40px', borderRadius: 60, background: 'var(--pill)', border: `1px solid ${C.cardLine}`, fontWeight: 900, fontSize: 44, color: 'var(--solid)'}}>
+          {LEVEL[ep.level].label} · {ep.id.replace('CQ-', '')}
+        </div>
+        <div style={{fontWeight: 900, fontSize: size, letterSpacing: -4, marginTop: 50, whiteSpace: 'nowrap'}}>{ep.title}</div>
+        <div style={{fontWeight: 700, fontSize: 46, color: C.sub, marginTop: 40}}>{ep.tag}</div>
+      </div>
     </AbsoluteFill>
   );
 };
