@@ -30,11 +30,20 @@ const Shell: React.FC<{children: React.ReactNode; tag: string}> = ({children, ta
 };
 
 /** 1953년 거실을 깊이 레이어로 쌓는다. camX는 카메라 좌우 이동 */
-const Room3D: React.FC<{camX: number; camZ: number; tvOn?: number}> = ({camX, camZ, tvOn = 1}) => (
+/** 글자는 항상 원근 밖 맨 앞 레이어에 둔다. 뒤 그림과 겹쳐도 읽히도록 어두운 받침을 깐다 */
+const FrontTitle: React.FC<{text: string}> = ({text}) => {
+  const f = useCurrentFrame();
+  return (
+    <div style={{position: 'absolute', left: 80, top: 130, padding: '18px 40px 22px', borderRadius: 18, background: 'rgba(4,14,16,0.72)', backdropFilter: 'blur(6px)', opacity: interpolate(f, [0, 8], [0, 1], {extrapolateRight: 'clamp'}), zIndex: 15}}>
+      <div style={{fontFamily: MONO, fontSize: 120, lineHeight: 1, color: '#c9fff4', textShadow: '0 0 30px rgba(120,255,230,.45)'}}>{text}</div>
+    </div>
+  );
+};
+
+const Room3D: React.FC<{camX: number; camZ: number; tvOn?: number; title?: string}> = ({camX, camZ, tvOn = 1, title}) => (
   <AbsoluteFill style={{perspective: 1100, overflow: 'hidden'}}>
     <div style={{position: 'absolute', inset: 0, transformStyle: 'preserve-3d', transform: `translate3d(${-camX}px,0,${camZ}px)`}}>
-      <div style={{position: 'absolute', left: -600, top: -400, width: 3120, height: 1880, transform: 'translateZ(-900px)'}}>{LivingRoomLayers.wall(3120, 1880)}</div>
-      <div style={{position: 'absolute', left: 230, top: -170, transform: 'translateZ(-860px)', fontFamily: MONO, fontSize: 210, color: 'rgba(201,255,244,.85)', textShadow: '0 0 40px rgba(120,255,230,.5)'}}>1953</div>
+      <div style={{position: 'absolute', left: -1400, top: -900, width: 4700, height: 2900, transform: 'translateZ(-900px)'}}>{LivingRoomLayers.wall(4700, 2900)}</div>
       <div style={{position: 'absolute', left: 820, top: 300, transform: 'translateZ(-420px)'}}><RetroTv w={420} on={tvOn} /></div>
       <div style={{position: 'absolute', left: 380, top: 760, transform: 'translateZ(120px)'}}><Sofa w={1160} /></div>
       <div style={{position: 'absolute', left: 520, top: 470, transform: 'translateZ(170px)', display: 'flex', gap: 60, alignItems: 'flex-end'}}>
@@ -44,7 +53,8 @@ const Room3D: React.FC<{camX: number; camZ: number; tvOn?: number}> = ({camX, ca
       </div>
       <div style={{position: 'absolute', left: -300, top: 980, width: 2600, height: 300, transform: 'translateZ(260px)', background: 'linear-gradient(180deg,#040c0d,#000)'}} />
     </div>
-    <AbsoluteFill style={{background: 'repeating-linear-gradient(0deg, rgba(0,0,0,0.18) 0 2px, transparent 2px 5px)', pointerEvents: 'none'}} />
+    <AbsoluteFill style={{background: 'repeating-linear-gradient(0deg, rgba(0,0,0,0.12) 0 2px, transparent 2px 5px)', pointerEvents: 'none'}} />
+    {title && <FrontTitle text={title} />}
   </AbsoluteFill>
 );
 
@@ -64,10 +74,10 @@ export const SampleA: React.FC = () => {
               const rel = -i * 700 + camZ; // 0 = 카메라 바로 앞 기준 위치, 양수 = 이미 지나감
               const last = i === YEARS.length - 1;
               const op = last
-                ? interpolate(rel, [-1400, -300], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}) * interpolate(f, [P1, P1 + 14], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})
-                : interpolate(rel, [-1400, -500, 0, 250], [0, 1, 1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+                ? interpolate(rel, [-500, -300], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}) * interpolate(f, [P1, P1 + 14], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})
+                : interpolate(rel, [-620, -450, -80, 80], [0, 1, 1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
               return (
-              <div key={y} style={{position: 'absolute', left: 0, right: 0, top: 330, textAlign: 'center', opacity: op, transform: `translate3d(${(i % 2 ? 1 : -1) * i * 60}px, 0, ${-i * 700 + (last ? Math.min(0, camZ - 2800) : 0)}px)`, fontFamily: MONO, fontSize: 300, color: i === 4 ? '#c9fff4' : 'rgba(255,255,255,.85)', textShadow: i === 4 ? '0 0 40px rgba(120,255,230,.6)' : 'none'}}>
+              <div key={y} style={{position: 'absolute', left: 0, right: 0, top: 330, textAlign: 'center', opacity: op, transform: `translate3d(0, 0, ${-i * 700 + (last ? Math.min(0, camZ - 2800) : 0)}px)`, fontFamily: MONO, fontSize: 300, color: i === 4 ? '#c9fff4' : 'rgba(255,255,255,.85)', textShadow: i === 4 ? '0 0 40px rgba(120,255,230,.6)' : 'none'}}>
                 {y}
               </div>
               );
@@ -76,7 +86,7 @@ export const SampleA: React.FC = () => {
           </div>
         </AbsoluteFill>
       )}
-      {f >= P2 && <Room3D camX={io(f, P2, SAMPLE_FRAMES, -140, 140)} camZ={io(f, P2, SAMPLE_FRAMES, 0, 120)} />}
+      {f >= P2 && <Sequence from={P2}><Room3D camX={io(f, P2, SAMPLE_FRAMES, -140, 140)} camZ={io(f, P2, SAMPLE_FRAMES, 0, 120)} title="1953 · 미국" /></Sequence>}
       <AbsoluteFill style={{background: '#d9fff8', opacity: white}} />
     </Shell>
   );
