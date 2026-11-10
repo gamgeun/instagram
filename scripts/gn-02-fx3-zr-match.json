@@ -1,0 +1,52 @@
+{
+  "id": "GN-02",
+  "series": "GEAR NOTES",
+  "title": "FX3 + 니콘 ZR\n2캠 색 맞추기",
+  "subtitle": "두 카메라 화면 색을 같게 만드는 순서",
+  "date": "2026.11",
+  "scenes": [
+    {
+      "label": "PROBLEM",
+      "heading": "같은 장면인데\n색이 다릅니다",
+      "visual": {"type": "twoCam", "props": {"a": {"name": "FX3", "profile": "SONY", "tint": "#b98a6e"}, "b": {"name": "NIKON ZR", "profile": "NIKON", "tint": "#c99a62"}, "result": "센서와 색 처리 방식이 다름"}},
+      "captions": ["FX3와 니콘 ZR로 같은 장면을 찍으면", "두 화면의 *색이 다르게* 나옵니다.", "두 회사의 센서와 색 처리 방식이 다르기 때문입니다."]
+    },
+    {
+      "label": "LOG PROFILE",
+      "heading": "둘 다 로그로\n찍습니다",
+      "visual": {"type": "partsTable", "props": {"title": "PROFILE", "rows": [["FX3 감마", "S-Log3"], ["FX3 색 공간", "S-Gamut3.Cine"], ["ZR 형식", "R3D NE"], ["ZR 감마", "Log3G10"], ["ZR 색 공간", "REDWideGamutRGB"]]}},
+      "captions": ["FX3는 *S-Log3*로 찍습니다.", "ZR은 R3D NE로 찍으면 *Log3G10*으로 기록됩니다.", "카메라마다 쓰는 이름을 적어 둡니다."]
+    },
+    {
+      "label": "WHITE BALANCE",
+      "heading": "화이트밸런스를\n숫자로 고정",
+      "visual": {"type": "monitorMenu", "props": {"title": "WHITE BALANCE", "items": ["AUTO", "DAYLIGHT", "5600K", "3200K"], "selected": 2, "note": "두 카메라 모두 같은 값"}},
+      "captions": ["두 카메라 모두 *같은 켈빈 값*을 넣습니다.", "오토로 두면 컷마다 색이 바뀝니다."]
+    },
+    {
+      "label": "COLOR CHART",
+      "heading": "같은 컬러차트를\n먼저 찍습니다",
+      "visual": {"type": "colorChart", "props": {"aLabel": "FX3 촬영본", "bLabel": "ZR 촬영본", "matched": true}},
+      "captions": ["촬영을 시작하기 전에", "두 카메라로 *같은 컬러차트*를 찍습니다.", "편집할 때 이 화면을 보고 색을 맞춥니다."]
+    },
+    {
+      "label": "RESOLVE NODES",
+      "heading": "같은 색 공간으로\n바꿉니다",
+      "visual": {"type": "nodePipeline", "props": {"nodes": [{"title": "FX3 클립 · ZR 클립", "sub": "S-LOG3 / LOG3G10"}, {"title": "Color Space Transform", "sub": "→ DAVINCI WIDE GAMUT"}, {"title": "컬러차트로 맞춤", "sub": "COLOR MATCH"}, {"title": "Rec.709로 출력", "sub": "OUTPUT"}]}},
+      "captions": ["리졸브에서 *Color Space Transform* 노드를 씁니다.", "두 클립을 같은 색 공간으로 바꾼 뒤", "컬러차트를 보며 차이를 줄입니다."]
+    },
+    {
+      "label": "VECTORSCOPE",
+      "heading": "피부색 위치를\n비교합니다",
+      "visual": {"type": "vectorscope", "props": {"aLabel": "FX3", "bLabel": "NIKON ZR"}},
+      "captions": ["마지막으로 *벡터스코프*를 엽니다.", "두 카메라의 피부색 점이", "같은 선 위에 오면 맞춘 것입니다."]
+    },
+    {
+      "label": "CHECKLIST",
+      "heading": "2캠 확인표",
+      "visual": {"type": "partsTable", "props": {"title": "CHECKLIST · GN-02", "rows": [["촬영 형식", "둘 다 로그"], ["화이트밸런스", "같은 켈빈 값"], ["촬영 시작", "컬러차트 먼저"], ["편집", "CST로 색 공간 통일"], ["마지막 확인", "벡터스코프 피부색"]]}},
+      "captions": ["촬영 때 세 가지,", "편집 때 두 가지를 지키면 됩니다."]
+    }
+  ],
+  "outro": ["GEAR NOTES", "카메라 설정을 도면으로 정리합니다"]
+}
