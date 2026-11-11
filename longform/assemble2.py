@@ -64,7 +64,8 @@ def place(text, wav, d, maxlen):
         cand = [g for g in gaps if abs(g - est) < 1.2 and g > b[-1] + 0.6]
         b.append(min(cand, key=lambda g: abs(g - est)) if cand else est)
     b.append(d)
-    return [(c, b[k], b[k + 1]) for k, c in enumerate(cs)]
+    # 자막 끝의 온점은 뺀다 (물음표·따옴표는 둔다). 23.976 같은 소수점은 끝이 아니라서 남는다
+    return [(re.sub(r'\.(?=[\s,]|["”’〉]?$)', '', c), b[k], b[k + 1]) for k, c in enumerate(cs)]
 
 
 lines, beats, t = [], [], HEAD

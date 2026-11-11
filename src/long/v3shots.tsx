@@ -301,18 +301,45 @@ const InterviewDoc: React.FC<P> = ({dur, marks}) => {
     </AbsoluteFill>
   );
 };
-/** 필름 1피트에 칸 16개 → 1초에 24칸이 켜진다 */
+/** 1피트 = 칸 16개 → 영사기 옆 시계가 1분을 도는 동안 필름이 감긴다 → 1초에 24칸이 켜진다 */
 const FilmFoot: React.FC<P> = ({dur, marks}) => {
   const f = useCurrentFrame();
-  const m = at(marks, 1, dur * 0.5);
-  const lit = Math.max(0, Math.floor(((f - m) / 30) * 24) % 25);
+  const m0 = at(marks, 0, dur * 0.4);
+  const m1 = at(marks, 1, dur * 0.7);
+  const s1 = 1 - ease(f, m0 - 10, m0);
+  const s2 = ease(f, m0 - 6, m0 + 6) * (1 - ease(f, m1 - 8, m1));
+  const s3 = ease(f, m1 - 4, m1 + 8);
+  // 시계 초침: 둘째 마디 동안 한 바퀴(1분)
+  const sweep = interpolate(f, [m0, m1 - 4], [0, 360], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.inOut(Easing.sin)});
+  const wound = sweep / 360;
+  const lit = Math.max(0, Math.floor(((f - m1) / 30) * 24) % 25);
   return (
     <AbsoluteFill style={center}>
-      <div style={{display: 'flex', gap: 10, padding: 16, background: '#1b120a', opacity: 1 - ease(f, m - 10, m)}}>
-        {Array.from({length: 16}).map((_, i) => <div key={i} style={{width: 70, height: 52, background: '#d9c39a', opacity: ease(f, i * 1.5, i * 1.5 + 6)}} />)}
+      <div style={{position: 'absolute', ...center, opacity: s1}}>
+        <div style={{display: 'flex', gap: 10, padding: 16, background: '#1b120a'}}>
+          {Array.from({length: 16}).map((_, i) => <div key={i} style={{width: 70, height: 52, background: '#d9c39a', opacity: ease(f, i * 1.5, i * 1.5 + 6)}} />)}
+        </div>
+        <div style={{width: 1300, height: 6, background: INK, marginTop: 30}} />
       </div>
-      <div style={{width: 1300, height: 6, background: INK, marginTop: 30, opacity: 1 - ease(f, m - 10, m)}} />
-      <div style={{position: 'absolute', display: 'grid', gridTemplateColumns: 'repeat(8, 120px)', gap: 18, opacity: ease(f, m - 4, m + 8)}}>
+      <div style={{position: 'absolute', display: 'flex', alignItems: 'flex-end', gap: 160, opacity: s2}}>
+        <div style={{position: 'relative'}}>
+          <Projector w={560} speed={wound > 0 && wound < 1 ? 14 : 0} />
+          {/* 감기는 쪽 릴에 필름이 두꺼워진다 */}
+          <div style={{position: 'absolute', left: 560 * 0.52 + 118 - (40 + 70 * wound), top: 118 - (40 + 70 * wound), width: (40 + 70 * wound) * 2, height: (40 + 70 * wound) * 2, borderRadius: '50%', background: 'rgba(27,18,10,.55)'}} />
+        </div>
+        <div style={{position: 'relative', width: 420, height: 420, borderRadius: '50%', background: '#efe2c4', border: `16px solid ${INK}`, marginBottom: 60}}>
+          {Array.from({length: 12}).map((_, i) => (
+            <div key={i} style={{position: 'absolute', left: 194, top: 14, width: 0, height: 0, transform: `rotate(${i * 30}deg)`, transformOrigin: '0 180px'}}>
+              <div style={{width: 6, height: 26, marginLeft: -3, background: INK}} />
+            </div>
+          ))}
+          {/* 지나간 시간만큼 채워지는 부채꼴 */}
+          <div style={{position: 'absolute', inset: 30, borderRadius: '50%', background: `conic-gradient(rgba(122,53,16,.35) 0 ${sweep}deg, transparent ${sweep}deg)`}} />
+          <div style={{position: 'absolute', left: 191, top: 40, width: 6, height: 154, background: '#7a3510', transformOrigin: '3px 154px', transform: `rotate(${sweep}deg)`}} />
+          <div style={{position: 'absolute', left: 178, top: 178, width: 32, height: 32, borderRadius: '50%', background: INK}} />
+        </div>
+      </div>
+      <div style={{position: 'absolute', display: 'grid', gridTemplateColumns: 'repeat(8, 120px)', gap: 18, opacity: s3}}>
         {Array.from({length: 24}).map((_, i) => <div key={i} style={{width: 120, height: 86, background: i < lit ? '#7a3510' : 'rgba(59,38,20,.2)', border: `4px solid ${INK}`}} />)}
       </div>
     </AbsoluteFill>

@@ -13,7 +13,7 @@
    "end": 2.16
   },
   {
-   "sub": "23.98이라는 숫자가 있습니다.",
+   "sub": "23.98이라는 숫자가 있습니다",
    "shot": "menuOpen",
    "opt": {
     "mood": "calm",
@@ -25,7 +25,7 @@
    "end": 6.692
   },
   {
-   "sub": "이 숫자에는, 백 년 전에 내린 두 번의 결정이 숨어 있습니다.",
+   "sub": "이 숫자에는, 백 년 전에 내린 두 번의 결정이 숨어 있습니다",
    "shot": "yearRewind",
    "opt": {
     "mood": "travel"
@@ -36,7 +36,7 @@
    "end": 12.233
   },
   {
-   "sub": "1926년 8월, 뉴욕.",
+   "sub": "1926년 8월, 뉴욕",
    "shot": "theaterOutside",
    "opt": {
     "mood": "calm"
@@ -47,7 +47,7 @@
    "end": 15.688
   },
   {
-   "sub": "워너 브라더스 극장에서 영화 〈돈 후안〉이 막을 올렸습니다.",
+   "sub": "워너 브라더스 극장에서 영화 〈돈 후안〉이 막을 올렸습니다",
    "shot": "theaterInside",
    "opt": {
     "mood": "calm"
@@ -58,7 +58,7 @@
    "end": 20.814
   },
   {
-   "sub": "화면이 밝아지자 오케스트라 소리가 흘러나옵니다.",
+   "sub": "화면이 밝아지자 오케스트라 소리가 흘러나옵니다",
    "shot": "emptyPit",
    "opt": {
     "mood": "calm"
@@ -69,7 +69,7 @@
    "end": 24.448
   },
   {
-   "sub": "그런데 무대에는 연주자가 한 명도 없었죠.",
+   "sub": "그런데 무대에는 연주자가 한 명도 없었죠",
    "shot": "emptyPit",
    "opt": {
     "mood": "calm",
@@ -81,7 +81,7 @@
    "end": 27.873
   },
   {
-   "sub": "소리는 영사실에서 나오고 있었습니다.",
+   "sub": "소리는 영사실에서 나오고 있었습니다",
    "shot": "booth",
    "opt": {
     "mood": "reveal"
@@ -92,7 +92,7 @@
    "end": 30.466
   },
   {
-   "sub": "영사기 옆, 영사기와 같은 모터로 돌아가는 커다란 레코드판에서요.",
+   "sub": "영사기 옆, 영사기와 같은 모터로 돌아가는 커다란 레코드판에서요",
    "shot": "booth",
    "opt": {
     "mood": "reveal",
@@ -104,7 +104,7 @@
    "end": 37.074
   },
   {
-   "sub": "워너 브라더스가 '바이타폰'이라고 부른 방식이었습니다.",
+   "sub": "워너 브라더스가 '바이타폰'이라고 부른 방식이었습니다",
    "shot": "booth",
    "opt": {
     "join": true
@@ -115,7 +115,7 @@
    "end": 40.972
   },
   {
-   "sub": "그런데 이 방식에는 약점이 있었습니다.",
+   "sub": "그런데 이 방식에는 약점이 있었습니다",
    "shot": "needle",
    "opt": {
     "mood": "tense"
@@ -138,7 +138,7 @@
    "end": 45.854
   },
   {
-   "sub": "소리가 화면보다 앞서거나 뒤처졌습니다.",
+   "sub": "소리가 화면보다 앞서거나 뒤처졌습니다",
    "shot": "needle",
    "opt": {
     "mood": "tense",
@@ -150,7 +150,7 @@
    "end": 49.39
   },
   {
-   "sub": "그러면 영사 기사가 손으로 바늘 위치를 다시 맞춰야 했습니다.",
+   "sub": "그러면 영사 기사가 손으로 바늘 위치를 다시 맞춰야 했습니다",
    "shot": "needle",
    "opt": {
     "join": true
@@ -161,7 +161,7 @@
    "end": 54.316
   },
   {
-   "sub": "문제는 하나 더 있었습니다.",
+   "sub": "문제는 하나 더 있었습니다",
    "shot": "theaterSpeeds",
    "opt": {
     "mood": "tense"
@@ -172,7 +172,7 @@
    "end": 57.226
   },
   {
-   "sub": "극장마다, 영사기를 돌리는 속도가 달랐던 겁니다.",
+   "sub": "극장마다, 영사기를 돌리는 속도가 달랐던 겁니다",
    "shot": "theaterSpeeds",
    "opt": {
     "mood": "tense",
@@ -184,7 +184,7 @@
    "end": 62.103
   },
   {
-   "sub": "바이타폰 장비를 만든 회사는 웨스턴 일렉트릭이었습니다.",
+   "sub": "바이타폰 장비를 만든 회사는 웨스턴 일렉트릭이었습니다",
    "shot": "company",
    "opt": {
     "mood": "calm"
@@ -195,7 +195,7 @@
    "end": 66.341
   },
   {
-   "sub": "이 회사 기술자 스탠리 왓킨스는 영사 기사에게 물었습니다.",
+   "sub": "이 회사 기술자 스탠리 왓킨스는 영사 기사에게 물었습니다",
    "shot": "watkinsAsk",
    "opt": {
     "mood": "calm"
@@ -206,7 +206,7 @@
    "end": 71.27
   },
   {
-   "sub": "극장에서 실제로 필름을 얼마나 빨리 돌리느냐고요.",
+   "sub": "극장에서 실제로 필름을 얼마나 빨리 돌리느냐고요",
    "shot": "watkinsAsk",
    "opt": {
     "mood": "calm",
@@ -229,7 +229,7 @@
    "end": 79.085
   },
   {
-   "sub": "작은 극장은 100피트가 넘는다는 답이 돌아왔습니다.",
+   "sub": "작은 극장은 100피트가 넘는다는 답이 돌아왔습니다",
    "shot": "speedsAlign",
    "opt": {
     "mood": "calm",
@@ -241,7 +241,7 @@
    "end": 84.501
   },
   {
-   "sub": "왓킨스는 그 사이에서 숫자 하나를 골랐습니다.",
+   "sub": "왓킨스는 그 사이에서 숫자 하나를 골랐습니다",
    "shot": "speedsAlign",
    "opt": {
     "join": true
@@ -252,7 +252,7 @@
    "end": 88.166
   },
   {
-   "sub": "1분에 90피트.",
+   "sub": "1분에 90피트",
    "shot": "speedsAlign",
    "opt": {
     "join": true
@@ -263,7 +263,7 @@
    "end": 90.359
   },
   {
-   "sub": "훗날 인터뷰에서 그는 이 숫자를 이렇게 회상했습니다.",
+   "sub": "훗날 인터뷰에서 그는 이 숫자를 이렇게 회상했습니다",
    "shot": "interviewDoc",
    "opt": {
     "mood": "calm"
@@ -274,7 +274,7 @@
    "end": 94.068
   },
   {
-   "sub": "\"짐작일 수밖에 없었습니다.\"",
+   "sub": "\"짐작일 수밖에 없었습니다\"",
    "shot": "interviewDoc",
    "opt": {
     "mood": "calm",
@@ -286,7 +286,7 @@
    "end": 96.741
   },
   {
-   "sub": "35mm 필름 1피트에는 그림 16장이 들어갑니다.",
+   "sub": "35mm 필름 1피트에는 그림 16장이 들어갑니다",
    "shot": "filmFoot",
    "opt": {
     "mood": "calm"
@@ -309,7 +309,7 @@
    "end": 103.413
   },
   {
-   "sub": "1초에 24장이죠.",
+   "sub": "1초에 24장이죠",
    "shot": "filmFoot",
    "opt": {
     "mood": "calm",
@@ -321,7 +321,7 @@
    "end": 105.629
   },
   {
-   "sub": "24라는 숫자는 이렇게 정해졌습니다.",
+   "sub": "24라는 숫자는 이렇게 정해졌습니다",
    "shot": "reveal24",
    "opt": {
     "mood": "reveal"
@@ -343,7 +343,7 @@
    "end": 113.948
   },
   {
-   "sub": "들려주면서 유성영화 시대가 열립니다.",
+   "sub": "들려주면서 유성영화 시대가 열립니다",
    "shot": "jazzSinger",
    "opt": {
     "mood": "calm",
@@ -366,7 +366,7 @@
    "end": 119.589
   },
   {
-   "sub": "무비톤도 같은 24장을 택했습니다.",
+   "sub": "무비톤도 같은 24장을 택했습니다",
    "shot": "movietone",
    "opt": {
     "mood": "calm",
@@ -378,7 +378,7 @@
    "end": 122.5
   },
   {
-   "sub": "그 뒤로 1초에 24장은 극장의 기준이 됐습니다.",
+   "sub": "그 뒤로 1초에 24장은 극장의 기준이 됐습니다",
    "shot": "doorsClose",
    "opt": {
     "mood": "question"
@@ -389,7 +389,7 @@
    "end": 126.167
   },
   {
-   "sub": "문제는 극장 밖에서 생깁니다.",
+   "sub": "문제는 극장 밖에서 생깁니다",
    "shot": "doorsClose",
    "opt": {
     "mood": "question",
@@ -401,7 +401,7 @@
    "end": 129.477
   },
   {
-   "sub": "1953년., 미국 가정에는 이미 흑백 TV가 많이 팔려 있었습니다.",
+   "sub": "1953년, 미국 가정에는 이미 흑백 TV가 많이 팔려 있었습니다",
    "shot": "room",
    "opt": {
     "mood": "calm"
@@ -412,7 +412,7 @@
    "end": 135.727
   },
   {
-   "sub": "흑백 방송은 1초에 30장씩 화면을 보냈습니다.",
+   "sub": "흑백 방송은 1초에 30장씩 화면을 보냈습니다",
    "shot": "frames30",
    "opt": {
     "mood": "calm"
@@ -423,7 +423,7 @@
    "end": 139.373
   },
   {
-   "sub": "이제 남은 숙제는 컬러였죠.",
+   "sub": "이제 남은 숙제는 컬러였죠",
    "shot": "frames30",
    "opt": {
     "mood": "calm",
@@ -446,7 +446,7 @@
    "end": 145.579
   },
   {
-   "sub": "컬러 방식을 먼저 승인했습니다.",
+   "sub": "컬러 방식을 먼저 승인했습니다",
    "shot": "cbsWheel",
    "opt": {
     "mood": "tense",
@@ -470,7 +470,7 @@
    "end": 150.445
   },
   {
-   "sub": "이미 팔린 흑백 TV로는 볼 수 없었습니다.",
+   "sub": "이미 팔린 흑백 TV로는 볼 수 없었습니다",
    "shot": "cbsWheel",
    "opt": {
     "mood": "tense",
@@ -493,7 +493,7 @@
    "end": 157.234
   },
   {
-   "sub": "결국 이 방식을 거둬들입니다.",
+   "sub": "결국 이 방식을 거둬들입니다",
    "shot": "cbsWheel",
    "opt": {
     "join": true
@@ -504,7 +504,7 @@
    "end": 160.042
   },
   {
-   "sub": "같은 해 12월 17일.",
+   "sub": "같은 해 12월 17일",
    "shot": "approval",
    "opt": {
     "mood": "reveal"
@@ -527,7 +527,7 @@
    "end": 167.44
   },
   {
-   "sub": "NTSC를 승인합니다.",
+   "sub": "NTSC를 승인합니다",
    "shot": "approval",
    "opt": {
     "mood": "reveal",
@@ -550,7 +550,7 @@
    "end": 172.631
   },
   {
-   "sub": "함께 실어 보내는 데 있었습니다.",
+   "sub": "함께 실어 보내는 데 있었습니다",
    "shot": "signals",
    "opt": {
     "mood": "calm",
@@ -562,7 +562,7 @@
    "end": 175.664
   },
   {
-   "sub": "그런데 여기서 문제가 생겼습니다.",
+   "sub": "그런데 여기서 문제가 생겼습니다",
    "shot": "signals",
    "opt": {
     "join": true
@@ -573,7 +573,7 @@
    "end": 177.985
   },
   {
-   "sub": "색 신호와 소리 신호의 주파수가 너무 가까웠던 겁니다.",
+   "sub": "색 신호와 소리 신호의 주파수가 너무 가까웠던 겁니다",
    "shot": "signals",
    "opt": {
     "join": true
@@ -584,7 +584,7 @@
    "end": 182.86
   },
   {
-   "sub": "두 신호의 차이는 흑백 화면 위에 작은 점무늬로 나타났습니다.",
+   "sub": "두 신호의 차이는 흑백 화면 위에 작은 점무늬로 나타났습니다",
    "shot": "dots",
    "opt": {
     "mood": "tense"
@@ -595,7 +595,7 @@
    "end": 187.908
   },
   {
-   "sub": "소리 신호를 옮기면 해결됩니다.",
+   "sub": "소리 신호를 옮기면 해결됩니다",
    "shot": "tvGrid",
    "opt": {
     "mood": "tense"
@@ -606,7 +606,7 @@
    "end": 190.581
   },
   {
-   "sub": "하지만 그러면 이미 팔린 TV는 소리를 받지 못하죠.",
+   "sub": "하지만 그러면 이미 팔린 TV는 소리를 받지 못하죠",
    "shot": "tvGrid",
    "opt": {
     "mood": "tense",
@@ -618,7 +618,7 @@
    "end": 194.637
   },
   {
-   "sub": "연방통신위원회도 이 안을 받아들이지 않았습니다.",
+   "sub": "연방통신위원회도 이 안을 받아들이지 않았습니다",
    "shot": "tvGrid",
    "opt": {
     "mood": "tense",
@@ -630,7 +630,7 @@
    "end": 199.199
   },
   {
-   "sub": "기술자들이 고른 방법은 반대쪽이었습니다.",
+   "sub": "기술자들이 고른 방법은 반대쪽이었습니다",
    "shot": "engineers",
    "opt": {
     "mood": "calm"
@@ -641,7 +641,7 @@
    "end": 202.658
   },
   {
-   "sub": "화면 속도를 아주 조금 늦추는 것.",
+   "sub": "화면 속도를 아주 조금 늦추는 것",
    "shot": "engineers",
    "opt": {
     "mood": "calm",
@@ -664,7 +664,7 @@
    "end": 210.323
   },
   {
-   "sub": "0.1% 느려져도 그대로 보였습니다.",
+   "sub": "0.1% 느려져도 그대로 보였습니다",
    "shot": "engineers",
    "opt": {
     "join": true
@@ -686,7 +686,7 @@
    "end": 217.075
   },
   {
-   "sub": "1초에 30장이던 화면은 29.97장이 됐습니다.",
+   "sub": "1초에 30장이던 화면은 29.97장이 됐습니다",
    "shot": "reveal2997",
    "opt": {
     "mood": "reveal",
@@ -720,7 +720,7 @@
    "end": 229.707
   },
   {
-   "sub": "영화도 같은 비율로 늦춰야 했습니다.",
+   "sub": "영화도 같은 비율로 늦춰야 했습니다",
    "shot": "filmToTv",
    "opt": {
     "join": true
@@ -742,7 +742,7 @@
    "end": 236.286
   },
   {
-   "sub": "23.976.",
+   "sub": "23.976",
    "shot": "reveal23976",
    "opt": {
     "mood": "reveal",
@@ -754,7 +754,7 @@
    "end": 241.345
   },
   {
-   "sub": "그리고 지금., 카메라 메뉴를 다시 열어 봅니다.",
+   "sub": "그리고 지금, 카메라 메뉴를 다시 열어 봅니다",
    "shot": "menuReturn",
    "opt": {
     "mood": "calm"
@@ -765,7 +765,7 @@
    "end": 245.516
   },
   {
-   "sub": "23.98은 두 결정이 곱해진 숫자입니다.",
+   "sub": "23.98은 두 결정이 곱해진 숫자입니다",
    "shot": "menuReturn",
    "opt": {
     "join": true
@@ -787,7 +787,7 @@
    "end": 254.903
   },
   {
-   "sub": "1953년 이미 팔린 TV를 지키려고 늦춘 속도.",
+   "sub": "1953년 이미 팔린 TV를 지키려고 늦춘 속도",
    "shot": "menuReturn",
    "opt": {
     "join": true
@@ -821,7 +821,7 @@
    "end": 266.982
   },
   {
-   "sub": "코닥의 이야기를 따라가 보겠습니다.",
+   "sub": "코닥의 이야기를 따라가 보겠습니다",
    "shot": "nextKodak",
    "opt": {
     "mood": "calm",
@@ -852,7 +852,7 @@
      3.703
     ],
     [
-     "twenty-three point nine eight.",
+     "twenty-three point nine eight",
      3.703,
      6.242
     ]
@@ -866,7 +866,7 @@
    "en": 4.101,
    "en_subs": [
     [
-     "Hidden inside it are two decisions made a century ago.",
+     "Hidden inside it are two decisions made a century ago",
      6.692,
      10.794
     ]
@@ -880,12 +880,12 @@
    "en": 3.004,
    "en_subs": [
     [
-     "August, nineteen twenty-six.",
+     "August, nineteen twenty-six",
      12.233,
      14.481
     ],
     [
-     "New York.",
+     "New York",
      14.481,
      15.238
     ]
@@ -904,7 +904,7 @@
      17.346
     ],
     [
-     "the film Don Juan opens.",
+     "the film Don Juan opens",
      17.346,
      19.005
     ]
@@ -923,12 +923,12 @@
      22.381
     ],
     [
-     "an orchestra begins to play.",
+     "an orchestra begins to play",
      22.381,
      24.415
     ],
     [
-     "But there isn't a single musician in the pit.",
+     "But there isn't a single musician in the pit",
      24.415,
      27.172
     ]
@@ -952,7 +952,7 @@
      34.013
     ],
     [
-     "driven by the same motor.",
+     "driven by the same motor",
      34.013,
      35.625
     ]
@@ -966,7 +966,7 @@
    "en": 2.523,
    "en_subs": [
     [
-     "Warner Bros., called it Vitaphone.",
+     "Warner Bros, called it Vitaphone",
      37.074,
      39.597
     ]
@@ -980,7 +980,7 @@
    "en": 6.525,
    "en_subs": [
     [
-     "But it had a weakness.",
+     "But it had a weakness",
      40.972,
      42.498
     ],
@@ -995,7 +995,7 @@
      45.958
     ],
     [
-     "or fell behind.",
+     "or fell behind",
      45.958,
      47.498
     ]
@@ -1014,7 +1014,7 @@
      51.218
     ],
     [
-     "the needle back in place by hand.",
+     "the needle back in place by hand",
      51.218,
      52.982
     ]
@@ -1028,12 +1028,12 @@
    "en": 5.24,
    "en_subs": [
     [
-     "And there was another problem.",
+     "And there was another problem",
      54.316,
      56.02
     ],
     [
-     "Every theater ran its projectors at a different speed.",
+     "Every theater ran its projectors at a different speed",
      56.02,
      59.556
     ]
@@ -1047,7 +1047,7 @@
    "en": 3.17,
    "en_subs": [
     [
-     "The Vitaphone equipment was built by Western Electric.",
+     "The Vitaphone equipment was built by Western Electric",
      62.103,
      65.274
     ]
@@ -1076,7 +1076,7 @@
      70.862
     ],
     [
-     "theaters actually ran their film.",
+     "theaters actually ran their film",
      70.862,
      73.162
     ]
@@ -1095,12 +1095,12 @@
      79.066
     ],
     [
-     "eighty to ninety feet a minute.",
+     "eighty to ninety feet a minute",
      79.066,
      81.27
     ],
     [
-     "Small theaters, over a hundred.",
+     "Small theaters, over a hundred",
      81.27,
      84.051
     ]
@@ -1114,12 +1114,12 @@
    "en": 4.47,
    "en_subs": [
     [
-     "Watkins picked one number in between.",
+     "Watkins picked one number in between",
      84.501,
      86.866
     ],
     [
-     "Ninety feet a minute.",
+     "Ninety feet a minute",
      86.866,
      88.971
     ]
@@ -1133,12 +1133,12 @@
    "en": 4.833,
    "en_subs": [
     [
-     "Years later, he recalled it in an interview.",
+     "Years later, he recalled it in an interview",
      90.359,
      92.973
     ],
     [
-     "\"That had to be a good guess.\"",
+     "\"That had to be a good guess\"",
      92.973,
      95.191
     ]
@@ -1157,12 +1157,12 @@
      99.125
     ],
     [
-     "film holds sixteen frames.",
+     "film holds sixteen frames",
      99.125,
      100.835
     ],
     [
-     "Ninety feet a minute is twenty-four frames a second.",
+     "Ninety feet a minute is twenty-four frames a second",
      100.835,
      104.45
     ]
@@ -1176,7 +1176,7 @@
    "en": 2.037,
    "en_subs": [
     [
-     "That's how twenty-four was born.",
+     "That's how twenty-four was born",
      105.629,
      107.666
     ]
@@ -1200,7 +1200,7 @@
      113.062
     ],
     [
-     "and the talkies arrived.",
+     "and the talkies arrived",
      113.062,
      116.162
     ]
@@ -1219,7 +1219,7 @@
      120.212
     ],
     [
-     "chose the same twenty-four.",
+     "chose the same twenty-four",
      120.212,
      122.05
     ]
@@ -1233,12 +1233,12 @@
    "en": 5.204,
    "en_subs": [
     [
-     "Twenty-four became the standard of the cinema.",
+     "Twenty-four became the standard of the cinema",
      122.5,
      125.434
     ],
     [
-     "The trouble would start outside it.",
+     "The trouble would start outside it",
      125.434,
      127.703
     ]
@@ -1252,12 +1252,12 @@
    "en": 5.799,
    "en_subs": [
     [
-     "Nineteen fifty-three.",
+     "Nineteen fifty-three",
      129.477,
      131.383
     ],
     [
-     "Many American homes already had a black-and-white TV.",
+     "Many American homes already had a black-and-white TV",
      131.383,
      135.277
     ]
@@ -1271,12 +1271,12 @@
    "en": 6.034,
    "en_subs": [
     [
-     "Black-and-white broadcasts sent thirty pictures a second.",
+     "Black-and-white broadcasts sent thirty pictures a second",
      135.727,
      139.557
     ],
     [
-     "Now the challenge was color.",
+     "Now the challenge was color",
      139.557,
      141.761
     ]
@@ -1295,12 +1295,12 @@
      143.564
     ],
     [
-     "the FCC approved CBS's color system.",
+     "the FCC approved CBS's color system",
      143.564,
      147.06
     ],
     [
-     "But the sets people already owned couldn't show it.",
+     "But the sets people already owned couldn't show it",
      147.06,
      149.995
     ]
@@ -1319,7 +1319,7 @@
      156.272
     ],
     [
-     "CBS gave it up.",
+     "CBS gave it up",
      156.272,
      158.003
     ]
@@ -1348,7 +1348,7 @@
      168.515
     ],
     [
-     "NTSC.",
+     "NTSC",
      168.515,
      168.927
     ]
@@ -1367,7 +1367,7 @@
      172.14
     ],
     [
-     "the existing black-and-white signal.",
+     "the existing black-and-white signal",
      172.14,
      174.563
     ]
@@ -1381,12 +1381,12 @@
    "en": 5.212,
    "en_subs": [
     [
-     "But there was a catch.",
+     "But there was a catch",
      175.664,
      177.017
     ],
     [
-     "The color signal sat too close to the sound signal.",
+     "The color signal sat too close to the sound signal",
      177.017,
      180.877
     ]
@@ -1405,7 +1405,7 @@
      185.054
     ],
     [
-     "of dots on black-and-white screens.",
+     "of dots on black-and-white screens",
      185.054,
      187.322
     ]
@@ -1424,12 +1424,12 @@
      190.034
     ],
     [
-     "but every set already sold would lose its sound.",
+     "but every set already sold would lose its sound",
      190.034,
      193.354
     ],
     [
-     "The FCC wouldn't allow it.",
+     "The FCC wouldn't allow it",
      193.354,
      195.133
     ]
@@ -1443,7 +1443,7 @@
    "en": 5.319,
    "en_subs": [
     [
-     "So the engineers went the other way.",
+     "So the engineers went the other way",
      199.199,
      201.388
     ],
@@ -1453,7 +1453,7 @@
      203.609
     ],
     [
-     "just slightly.",
+     "just slightly",
      203.609,
      204.518
     ]
@@ -1472,7 +1472,7 @@
      209.169
     ],
     [
-     "so a slowdown of a tenth of a percent didn't bother them.",
+     "so a slowdown of a tenth of a percent didn't bother them",
      209.169,
      212.567
     ]
@@ -1486,12 +1486,12 @@
    "en": 8.339,
    "en_subs": [
     [
-     "The picture slowed by a thousand over a thousand and one.",
+     "The picture slowed by a thousand over a thousand and one",
      213.894,
      218.089
     ],
     [
-     "Thirty frames a second became twenty-nine point nine seven.",
+     "Thirty frames a second became twenty-nine point nine seven",
      218.089,
      222.233
     ]
@@ -1524,7 +1524,7 @@
      229.179
     ],
     [
-     "the films had to slow down by the same amount.",
+     "the films had to slow down by the same amount",
      229.179,
      232.038
     ]
@@ -1543,7 +1543,7 @@
      236.983
     ],
     [
-     "twenty-three point nine seven six.",
+     "twenty-three point nine seven six",
      236.983,
      240.245
     ]
@@ -1557,7 +1557,7 @@
    "en": 2.188,
    "en_subs": [
     [
-     "And now, back to your camera's menu.",
+     "And now, back to your camera's menu",
      241.345,
      243.534
     ]
@@ -1581,7 +1581,7 @@
      252.669
     ],
     [
-     "and the slowdown that protected the TVs already sold.",
+     "and the slowdown that protected the TVs already sold",
      252.669,
      256.286
     ]
@@ -1600,12 +1600,12 @@
      264.973
     ],
     [
-     "and kept it hidden.",
+     "and kept it hidden",
      264.973,
      266.554
     ],
     [
-     "Kodak.",
+     "Kodak",
      266.554,
      267.52
     ]
