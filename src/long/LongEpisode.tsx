@@ -3,8 +3,11 @@ import {AbsoluteFill, Audio, Sequence, staticFile, useCurrentFrame, interpolate,
 import {EraBg, ChapterLabel, Subtitle, Era} from './eras';
 import {SHOTS as SHOTS1, SHOT_ERA as ERA1} from './shots';
 import {SHOTS2, SHOT_ERA2} from './shots2';
-const SHOTS = {...SHOTS1, ...SHOTS2};
-const SHOT_ERA = {...ERA1, ...SHOT_ERA2};
+import {V3_SHOTS, V3_ERA} from './v3shots';
+const SETS: Record<string, {shots: Record<string, React.FC<any>>; era: Record<string, string>}> = {
+  v2: {shots: {...SHOTS1, ...SHOTS2}, era: {...ERA1, ...SHOT_ERA2}},
+  v3: {shots: V3_SHOTS, era: V3_ERA},
+};
 
 export type Beat = {sub: string; shot: string; opt: any; start: number; end: number; line?: number};
 export type Timeline = {duration: number; beats: Beat[]};
@@ -19,12 +22,13 @@ type Shot = {shot: string; opt: any; era: Era; from: number; to: number; marks: 
 
 const DEFAULT_MOOD: Record<string, Mood> = {
   bigNum: 'reveal', strike: 'reveal', equation: 'reveal', fraction: 'reveal', bigCrt: 'reveal', diff: 'reveal',
-  signalClash: 'tense', tvGrid: 'tense', glitchNum: 'tense', soundMove: 'tense',
+  signalClash: 'tense', tvGrid: 'tense', needle: 'tense', dots: 'tense', reveal24: 'reveal', reveal2997: 'reveal', reveal23976: 'reveal', watkinsAsk: 'question', nextKodak: 'question', yearRewind: 'travel', glitchNum: 'tense', soundMove: 'tense',
   versus: 'question', sepiaTease: 'question',
 };
 
 /** join 표시가 붙은 마디는 앞 컷에 이어 붙여 한 그림으로 만든다 */
-export const buildShots = (tl: Timeline): Shot[] => {
+export const buildShots = (tl: Timeline, set = 'v2'): Shot[] => {
+  const SHOT_ERA = SETS[set].era;
   const shots: Shot[] = [];
   for (const b of tl.beats) {
     const from = Math.round(b.start * LFPS);
@@ -38,7 +42,7 @@ export const buildShots = (tl: Timeline): Shot[] => {
       last.to = to;
       continue;
     }
-    const era: Era = (b.opt?.era as Era) ?? SHOT_ERA[b.shot] ?? 'now';
+    const era: Era = (b.opt?.era as Era) ?? (SHOT_ERA[b.shot] as Era) ?? 'now';
     shots.push({shot: b.shot, opt: b.opt ?? {}, era, from, to, marks: [], lineMarks: [], lastLine: b.line, mood: (b.opt?.mood as Mood) ?? DEFAULT_MOOD[b.shot] ?? 'calm'});
   }
   // 그림 하나는 최소 MIN_SHOT 동안 보여야 화면 글자를 읽을 수 있다.
@@ -136,15 +140,16 @@ const SubtitleTrack: React.FC<{tl: Timeline}> = ({tl}) => {
   return <Subtitle text={b.sub} />;
 };
 
-const LabelTrack: React.FC<{shots: Shot[]; tl: Timeline}> = ({shots, tl}) => {
+const LabelTrack: React.FC<{shots: Shot[]; tl: Timeline; set: string}> = ({shots, tl, set}) => {
   const f = useCurrentFrame();
   const s = [...shots].reverse().find((x) => f >= x.from + XF / 2) ?? shots[0];
   const b = [...tl.beats].reverse().find((x) => f / LFPS >= x.start) ?? tl.beats[0];
-  return <ChapterLabel era={s.era} ch={(b as any).ch} />;
+  return <ChapterLabel era={s.era} ch={(b as any).ch} v3={set === 'v3'} />;
 };
 
-export const LongEpisode: React.FC<{tl: Timeline; audio: string; noSubs?: boolean}> = ({tl, audio, noSubs}) => {
-  const shots = buildShots(tl);
+export const LongEpisode: React.FC<{tl: Timeline; audio: string; noSubs?: boolean; set?: string}> = ({tl, audio, noSubs, set = 'v2'}) => {
+  const shots = buildShots(tl, set);
+  const SHOTS = SETS[set].shots;
   return (
     <AbsoluteFill style={{background: '#000'}}>
       <Audio src={staticFile(audio)} />
@@ -169,7 +174,7 @@ export const LongEpisode: React.FC<{tl: Timeline; audio: string; noSubs?: boolea
           </Sequence>
         );
       })}
-      <LabelTrack shots={shots} tl={tl} />
+      <LabelTrack shots={shots} tl={tl} set={set} />
       {!noSubs && <SubtitleTrack tl={tl} />}
     </AbsoluteFill>
   );

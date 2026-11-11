@@ -1,0 +1,347 @@
+1
+00:00:00,600 --> 00:00:02,460
+Open your camera's menu
+
+2
+00:00:02,260 --> 00:00:03,903
+and you'll find a number:
+
+3
+00:00:03,703 --> 00:00:06,442
+twenty-three point nine eight.
+
+4
+00:00:06,692 --> 00:00:10,994
+Hidden inside it are two decisions made a century ago.
+
+5
+00:00:12,233 --> 00:00:14,681
+August, nineteen twenty-six.
+
+6
+00:00:14,481 --> 00:00:15,438
+New York.
+
+7
+00:00:15,688 --> 00:00:17,546
+At the Warners' Theatre
+
+8
+00:00:17,346 --> 00:00:19,205
+the film Don Juan opens.
+
+9
+00:00:20,814 --> 00:00:22,581
+As the screen lights up
+
+10
+00:00:22,381 --> 00:00:24,615
+an orchestra begins to play.
+
+11
+00:00:24,415 --> 00:00:27,372
+But there isn't a single musician in the pit.
+
+12
+00:00:27,873 --> 00:00:30,989
+The music is coming from the projection booth
+
+13
+00:00:30,789 --> 00:00:34,213
+from a giant record spinning beside the projector
+
+14
+00:00:34,013 --> 00:00:35,825
+driven by the same motor.
+
+15
+00:00:37,074 --> 00:00:39,797
+Warner Bros., called it Vitaphone.
+
+16
+00:00:40,972 --> 00:00:42,698
+But it had a weakness.
+
+17
+00:00:42,498 --> 00:00:44,223
+If the needle skipped
+
+18
+00:00:44,023 --> 00:00:46,158
+the sound ran ahead of the picture
+
+19
+00:00:45,958 --> 00:00:47,698
+or fell behind.
+
+20
+00:00:49,390 --> 00:00:51,418
+Then the projectionist had to put
+
+21
+00:00:51,218 --> 00:00:53,182
+the needle back in place by hand.
+
+22
+00:00:54,316 --> 00:00:56,220
+And there was another problem.
+
+23
+00:00:56,020 --> 00:00:59,756
+Every theater ran its projectors at a different speed.
+
+24
+00:01:02,103 --> 00:01:05,474
+The Vitaphone equipment was built by Western Electric.
+
+25
+00:01:06,341 --> 00:01:07,889
+One of its engineers
+
+26
+00:01:07,689 --> 00:01:09,000
+Stanley Watkins
+
+27
+00:01:08,800 --> 00:01:11,062
+asked a projectionist how fast
+
+28
+00:01:10,862 --> 00:01:13,362
+theaters actually ran their film.
+
+29
+00:01:15,749 --> 00:01:19,266
+The answer:, big first-run houses
+
+30
+00:01:19,066 --> 00:01:21,470
+eighty to ninety feet a minute.
+
+31
+00:01:21,270 --> 00:01:24,251
+Small theaters, over a hundred.
+
+32
+00:01:24,501 --> 00:01:27,066
+Watkins picked one number in between.
+
+33
+00:01:26,866 --> 00:01:29,171
+Ninety feet a minute.
+
+34
+00:01:30,359 --> 00:01:33,173
+Years later, he recalled it in an interview.
+
+35
+00:01:32,973 --> 00:01:35,391
+"That had to be a good guess."
+
+36
+00:01:36,741 --> 00:01:39,325
+One foot of thirty-five millimeter
+
+37
+00:01:39,125 --> 00:01:41,035
+film holds sixteen frames.
+
+38
+00:01:40,835 --> 00:01:44,650
+Ninety feet a minute is twenty-four frames a second.
+
+39
+00:01:45,629 --> 00:01:47,866
+That's how twenty-four was born.
+
+40
+00:01:48,654 --> 00:01:50,120
+The next October
+
+41
+00:01:49,920 --> 00:01:53,262
+The Jazz Singer let audiences hear an actor sing and speak
+
+42
+00:01:53,062 --> 00:01:56,362
+and the talkies arrived.
+
+43
+00:01:56,612 --> 00:02:00,412
+Fox Movietone, which printed sound onto the film itself
+
+44
+00:02:00,212 --> 00:02:02,250
+chose the same twenty-four.
+
+45
+00:02:02,500 --> 00:02:05,634
+Twenty-four became the standard of the cinema.
+
+46
+00:02:05,434 --> 00:02:07,903
+The trouble would start outside it.
+
+47
+00:02:09,477 --> 00:02:11,583
+Nineteen fifty-three.
+
+48
+00:02:11,383 --> 00:02:15,477
+Many American homes already had a black-and-white TV.
+
+49
+00:02:15,727 --> 00:02:19,757
+Black-and-white broadcasts sent thirty pictures a second.
+
+50
+00:02:19,557 --> 00:02:21,961
+Now the challenge was color.
+
+51
+00:02:22,211 --> 00:02:23,764
+In nineteen fifty
+
+52
+00:02:23,564 --> 00:02:27,260
+the FCC approved CBS's color system.
+
+53
+00:02:27,060 --> 00:02:30,195
+But the sets people already owned couldn't show it.
+
+54
+00:02:34,263 --> 00:02:36,472
+In March nineteen fifty-three
+
+55
+00:02:36,272 --> 00:02:38,203
+CBS gave it up.
+
+56
+00:02:40,042 --> 00:02:42,390
+On December seventeenth that year
+
+57
+00:02:42,190 --> 00:02:46,938
+the FCC approved a new color system
+
+58
+00:02:46,738 --> 00:02:48,715
+that old sets could still show:
+
+59
+00:02:48,515 --> 00:02:49,127
+NTSC.
+
+60
+00:02:49,864 --> 00:02:52,340
+The trick was to tuck the color inside
+
+61
+00:02:52,140 --> 00:02:54,763
+the existing black-and-white signal.
+
+62
+00:02:55,664 --> 00:02:57,217
+But there was a catch.
+
+63
+00:02:57,017 --> 00:03:01,077
+The color signal sat too close to the sound signal.
+
+64
+00:03:02,860 --> 00:03:05,254
+The clash showed up as a fine pattern
+
+65
+00:03:05,054 --> 00:03:07,522
+of dots on black-and-white screens.
+
+66
+00:03:07,908 --> 00:03:10,234
+Moving the sound would fix it
+
+67
+00:03:10,034 --> 00:03:13,554
+but every set already sold would lose its sound.
+
+68
+00:03:13,354 --> 00:03:15,333
+The FCC wouldn't allow it.
+
+69
+00:03:19,199 --> 00:03:21,588
+So the engineers went the other way.
+
+70
+00:03:21,388 --> 00:03:23,809
+They slowed the picture down
+
+71
+00:03:23,609 --> 00:03:24,718
+just slightly.
+
+72
+00:03:25,918 --> 00:03:29,369
+Old sets followed the timing of the broadcast signal
+
+73
+00:03:29,169 --> 00:03:32,767
+so a slowdown of a tenth of a percent didn't bother them.
+
+74
+00:03:33,894 --> 00:03:38,289
+The picture slowed by a thousand over a thousand and one.
+
+75
+00:03:38,089 --> 00:03:42,433
+Thirty frames a second became twenty-nine point nine seven.
+
+76
+00:03:43,333 --> 00:03:45,229
+So what happened to the movies?
+
+77
+00:03:46,474 --> 00:03:49,379
+To show twenty-four frame films on this TV
+
+78
+00:03:49,179 --> 00:03:52,238
+the films had to slow down by the same amount.
+
+79
+00:03:52,880 --> 00:03:57,183
+Twenty-four, times a thousand over a thousand and one:
+
+80
+00:03:56,983 --> 00:04:00,445
+twenty-three point nine seven six.
+
+81
+00:04:01,345 --> 00:04:03,734
+And now, back to your camera's menu.
+
+82
+00:04:05,516 --> 00:04:09,969
+Twenty-three point nine eight is two decisions multiplied:
+
+83
+00:04:09,769 --> 00:04:12,869
+the speed Watkins chose in a projection booth
+
+84
+00:04:12,669 --> 00:04:16,486
+and the slowdown that protected the TVs already sold.
+
+85
+00:04:20,457 --> 00:04:25,173
+Next time:, the company said to have built the first digital camera
+
+86
+00:04:24,973 --> 00:04:26,754
+and kept it hidden.
+
+87
+00:04:26,554 --> 00:04:27,720
+Kodak.

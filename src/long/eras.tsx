@@ -17,7 +17,13 @@ export const INK: Record<Era, {main: string; sub: string; accent: string; serif?
 };
 
 export const MONO = "'IBM Plex Mono', monospace";
-export const SERIF = "'Noto Serif KR', serif";
+// 명조체는 쓰지 않는다. 1927 세피아는 포스터·간판 글꼴(A안)
+export const SERIF = "'Bebas Neue', 'Black Han Sans', sans-serif";
+export const SEPIA_KR = "'Black Han Sans', sans-serif";
+export const CRT_NUM = "'VT323', monospace";
+export const CRT_KR = "'Do Hyeon', sans-serif";
+export const NOW_KR = "'Pretendard', sans-serif";
+export const NOW_NUM = "'Space Grotesk', 'Pretendard', sans-serif";
 
 const NowBg: React.FC = () => {
   const f = useCurrentFrame();
@@ -80,13 +86,19 @@ const SepiaBg: React.FC = () => {
 export const EraBg: React.FC<{era: Era}> = ({era}) => (era === 'now' ? <NowBg /> : era === 'crt' ? <CrtBg /> : <SepiaBg />);
 
 export const CH_LABEL: Record<number, string> = {1: '지금 당신 카메라', 2: '1953년, 컬러TV', 3: '24는 어디서 왔나', 4: '그래서 무엇을 고를까'};
-export const ChapterLabel: React.FC<{era: Era; ch?: number}> = ({era, ch}) => {
+/** v3: 장 이름 대신 연도만 둔다 (언어와 상관없이 읽힌다) */
+export const V3_YEAR: Record<number, string> = {0: '2026', 1: '1926', 2: '1926', 3: '1953', 4: '1953', 5: '2026'};
+export const ChapterLabel: React.FC<{era: Era; ch?: number; v3?: boolean}> = ({era, ch, v3}) => {
+  if (v3) {
+    const c = INK[era];
+    return <div style={{position: 'absolute', left: era === 'sepia' ? 110 : 80, top: 56, fontFamily: era === 'crt' ? CRT_NUM : era === 'sepia' ? "'Bebas Neue'" : NOW_NUM, fontWeight: 700, fontSize: era === 'crt' ? 44 : 38, letterSpacing: 3, color: c.main, opacity: 0.6, zIndex: 20}}>{V3_YEAR[ch ?? 0]}</div>;
+  }
   const [a0, b0] = ERA_LABEL[era];
   const a = ch ? `CHAPTER ${ch}` : a0;
   const b = ch ? CH_LABEL[ch] ?? b0 : b0;
   const c = INK[era];
   return (
-    <div style={{position: 'absolute', left: era === 'sepia' ? 110 : 80, top: 60, fontFamily: FONT, fontWeight: 700, fontSize: 28, letterSpacing: 2, color: c.main, zIndex: 20}}>
+    <div style={{position: 'absolute', left: era === 'sepia' ? 110 : 80, top: 60, fontFamily: "'Pretendard', sans-serif", fontWeight: 600, fontSize: 28, letterSpacing: 2, color: c.main, zIndex: 20}}>
       <span style={{opacity: 0.55, marginRight: 16}}>{a}</span>
       {b}
     </div>
@@ -102,7 +114,7 @@ export const Subtitle: React.FC<{text: string}> = ({text}) => (
         borderRadius: 12,
         background: 'rgba(0,0,0,0.62)',
         color: '#fff',
-        fontFamily: FONT,
+        fontFamily: "'Pretendard', sans-serif",
         fontWeight: 700,
         fontSize: 46,
         letterSpacing: -1,

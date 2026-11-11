@@ -1,0 +1,1615 @@
+{
+ "duration": 271.359,
+ "beats": [
+  {
+   "sub": "카메라 메뉴를 열면",
+   "shot": "menuOpen",
+   "opt": {
+    "mood": "calm"
+   },
+   "line": 0,
+   "ch": 0,
+   "start": 0.6,
+   "end": 2.16
+  },
+  {
+   "sub": "23.98이라는 숫자가 있습니다.",
+   "shot": "menuOpen",
+   "opt": {
+    "mood": "calm",
+    "join": true
+   },
+   "line": 0,
+   "ch": 0,
+   "start": 2.16,
+   "end": 6.692
+  },
+  {
+   "sub": "이 숫자에는, 백 년 전에 내린 두 번의 결정이 숨어 있습니다.",
+   "shot": "yearRewind",
+   "opt": {
+    "mood": "travel"
+   },
+   "line": 1,
+   "ch": 0,
+   "start": 6.692,
+   "end": 12.233
+  },
+  {
+   "sub": "1926년 8월, 뉴욕.",
+   "shot": "theaterOutside",
+   "opt": {
+    "mood": "calm"
+   },
+   "line": 2,
+   "ch": 1,
+   "start": 12.233,
+   "end": 15.688
+  },
+  {
+   "sub": "워너 브라더스 극장에서 영화 〈돈 후안〉이 막을 올렸습니다.",
+   "shot": "theaterInside",
+   "opt": {
+    "mood": "calm"
+   },
+   "line": 3,
+   "ch": 1,
+   "start": 15.688,
+   "end": 20.814
+  },
+  {
+   "sub": "화면이 밝아지자 오케스트라 소리가 흘러나옵니다.",
+   "shot": "emptyPit",
+   "opt": {
+    "mood": "calm"
+   },
+   "line": 4,
+   "ch": 1,
+   "start": 20.814,
+   "end": 24.448
+  },
+  {
+   "sub": "그런데 무대에는 연주자가 한 명도 없었죠.",
+   "shot": "emptyPit",
+   "opt": {
+    "mood": "calm",
+    "join": true
+   },
+   "line": 4,
+   "ch": 1,
+   "start": 24.448,
+   "end": 27.873
+  },
+  {
+   "sub": "소리는 영사실에서 나오고 있었습니다.",
+   "shot": "booth",
+   "opt": {
+    "mood": "reveal"
+   },
+   "line": 5,
+   "ch": 1,
+   "start": 27.873,
+   "end": 30.466
+  },
+  {
+   "sub": "영사기 옆, 영사기와 같은 모터로 돌아가는 커다란 레코드판에서요.",
+   "shot": "booth",
+   "opt": {
+    "mood": "reveal",
+    "join": true
+   },
+   "line": 5,
+   "ch": 1,
+   "start": 30.466,
+   "end": 37.074
+  },
+  {
+   "sub": "워너 브라더스가 '바이타폰'이라고 부른 방식이었습니다.",
+   "shot": "booth",
+   "opt": {
+    "join": true
+   },
+   "line": 6,
+   "ch": 1,
+   "start": 37.074,
+   "end": 40.972
+  },
+  {
+   "sub": "그런데 이 방식에는 약점이 있었습니다.",
+   "shot": "needle",
+   "opt": {
+    "mood": "tense"
+   },
+   "line": 7,
+   "ch": 1,
+   "start": 40.972,
+   "end": 43.942
+  },
+  {
+   "sub": "바늘이 한 번 튀면",
+   "shot": "needle",
+   "opt": {
+    "mood": "tense",
+    "join": true
+   },
+   "line": 7,
+   "ch": 1,
+   "start": 43.942,
+   "end": 45.854
+  },
+  {
+   "sub": "소리가 화면보다 앞서거나 뒤처졌습니다.",
+   "shot": "needle",
+   "opt": {
+    "mood": "tense",
+    "join": true
+   },
+   "line": 7,
+   "ch": 1,
+   "start": 45.854,
+   "end": 49.39
+  },
+  {
+   "sub": "그러면 영사 기사가 손으로 바늘 위치를 다시 맞춰야 했습니다.",
+   "shot": "needle",
+   "opt": {
+    "join": true
+   },
+   "line": 8,
+   "ch": 1,
+   "start": 49.39,
+   "end": 54.316
+  },
+  {
+   "sub": "문제는 하나 더 있었습니다.",
+   "shot": "theaterSpeeds",
+   "opt": {
+    "mood": "tense"
+   },
+   "line": 9,
+   "ch": 1,
+   "start": 54.316,
+   "end": 57.226
+  },
+  {
+   "sub": "극장마다, 영사기를 돌리는 속도가 달랐던 겁니다.",
+   "shot": "theaterSpeeds",
+   "opt": {
+    "mood": "tense",
+    "join": true
+   },
+   "line": 9,
+   "ch": 1,
+   "start": 57.226,
+   "end": 62.103
+  },
+  {
+   "sub": "바이타폰 장비를 만든 회사는 웨스턴 일렉트릭이었습니다.",
+   "shot": "company",
+   "opt": {
+    "mood": "calm"
+   },
+   "line": 10,
+   "ch": 2,
+   "start": 62.103,
+   "end": 66.341
+  },
+  {
+   "sub": "이 회사 기술자 스탠리 왓킨스는 영사 기사에게 물었습니다.",
+   "shot": "watkinsAsk",
+   "opt": {
+    "mood": "calm"
+   },
+   "line": 11,
+   "ch": 2,
+   "start": 66.341,
+   "end": 71.27
+  },
+  {
+   "sub": "극장에서 실제로 필름을 얼마나 빨리 돌리느냐고요.",
+   "shot": "watkinsAsk",
+   "opt": {
+    "mood": "calm",
+    "join": true
+   },
+   "line": 11,
+   "ch": 2,
+   "start": 71.27,
+   "end": 75.749
+  },
+  {
+   "sub": "큰 개봉관은 1분에 80에서 90피트",
+   "shot": "speedsAlign",
+   "opt": {
+    "mood": "calm"
+   },
+   "line": 12,
+   "ch": 2,
+   "start": 75.749,
+   "end": 79.085
+  },
+  {
+   "sub": "작은 극장은 100피트가 넘는다는 답이 돌아왔습니다.",
+   "shot": "speedsAlign",
+   "opt": {
+    "mood": "calm",
+    "join": true
+   },
+   "line": 12,
+   "ch": 2,
+   "start": 79.085,
+   "end": 84.501
+  },
+  {
+   "sub": "왓킨스는 그 사이에서 숫자 하나를 골랐습니다.",
+   "shot": "speedsAlign",
+   "opt": {
+    "join": true
+   },
+   "line": 13,
+   "ch": 2,
+   "start": 84.501,
+   "end": 88.166
+  },
+  {
+   "sub": "1분에 90피트.",
+   "shot": "speedsAlign",
+   "opt": {
+    "join": true
+   },
+   "line": 13,
+   "ch": 2,
+   "start": 88.166,
+   "end": 90.359
+  },
+  {
+   "sub": "훗날 인터뷰에서 그는 이 숫자를 이렇게 회상했습니다.",
+   "shot": "interviewDoc",
+   "opt": {
+    "mood": "calm"
+   },
+   "line": 14,
+   "ch": 2,
+   "start": 90.359,
+   "end": 94.068
+  },
+  {
+   "sub": "\"짐작일 수밖에 없었습니다.\"",
+   "shot": "interviewDoc",
+   "opt": {
+    "mood": "calm",
+    "join": true
+   },
+   "line": 14,
+   "ch": 2,
+   "start": 94.068,
+   "end": 96.741
+  },
+  {
+   "sub": "35mm 필름 1피트에는 그림 16장이 들어갑니다.",
+   "shot": "filmFoot",
+   "opt": {
+    "mood": "calm"
+   },
+   "line": 15,
+   "ch": 2,
+   "start": 96.741,
+   "end": 101.384
+  },
+  {
+   "sub": "1분에 90피트를 돌리면",
+   "shot": "filmFoot",
+   "opt": {
+    "mood": "calm",
+    "join": true
+   },
+   "line": 15,
+   "ch": 2,
+   "start": 101.384,
+   "end": 103.413
+  },
+  {
+   "sub": "1초에 24장이죠.",
+   "shot": "filmFoot",
+   "opt": {
+    "mood": "calm",
+    "join": true
+   },
+   "line": 15,
+   "ch": 2,
+   "start": 103.413,
+   "end": 105.629
+  },
+  {
+   "sub": "24라는 숫자는 이렇게 정해졌습니다.",
+   "shot": "reveal24",
+   "opt": {
+    "mood": "reveal"
+   },
+   "line": 16,
+   "ch": 2,
+   "start": 105.629,
+   "end": 108.654
+  },
+  {
+   "sub": "이듬해 10월, 영화 〈재즈 싱어〉가 배우의 노래와 대사를",
+   "shot": "jazzSinger",
+   "opt": {
+    "mood": "calm"
+   },
+   "line": 17,
+   "ch": 2,
+   "start": 108.654,
+   "end": 113.948
+  },
+  {
+   "sub": "들려주면서 유성영화 시대가 열립니다.",
+   "shot": "jazzSinger",
+   "opt": {
+    "mood": "calm",
+    "join": true
+   },
+   "line": 17,
+   "ch": 2,
+   "start": 113.948,
+   "end": 116.612
+  },
+  {
+   "sub": "필름 위에 소리를 새기는 폭스의",
+   "shot": "movietone",
+   "opt": {
+    "mood": "calm"
+   },
+   "line": 18,
+   "ch": 2,
+   "start": 116.612,
+   "end": 119.589
+  },
+  {
+   "sub": "무비톤도 같은 24장을 택했습니다.",
+   "shot": "movietone",
+   "opt": {
+    "mood": "calm",
+    "join": true
+   },
+   "line": 18,
+   "ch": 2,
+   "start": 119.589,
+   "end": 122.5
+  },
+  {
+   "sub": "그 뒤로 1초에 24장은 극장의 기준이 됐습니다.",
+   "shot": "doorsClose",
+   "opt": {
+    "mood": "question"
+   },
+   "line": 19,
+   "ch": 2,
+   "start": 122.5,
+   "end": 126.167
+  },
+  {
+   "sub": "문제는 극장 밖에서 생깁니다.",
+   "shot": "doorsClose",
+   "opt": {
+    "mood": "question",
+    "join": true
+   },
+   "line": 19,
+   "ch": 2,
+   "start": 126.167,
+   "end": 129.477
+  },
+  {
+   "sub": "1953년., 미국 가정에는 이미 흑백 TV가 많이 팔려 있었습니다.",
+   "shot": "room",
+   "opt": {
+    "mood": "calm"
+   },
+   "line": 20,
+   "ch": 3,
+   "start": 129.477,
+   "end": 135.727
+  },
+  {
+   "sub": "흑백 방송은 1초에 30장씩 화면을 보냈습니다.",
+   "shot": "frames30",
+   "opt": {
+    "mood": "calm"
+   },
+   "line": 21,
+   "ch": 3,
+   "start": 135.727,
+   "end": 139.373
+  },
+  {
+   "sub": "이제 남은 숙제는 컬러였죠.",
+   "shot": "frames30",
+   "opt": {
+    "mood": "calm",
+    "join": true
+   },
+   "line": 21,
+   "ch": 3,
+   "start": 139.373,
+   "end": 142.211
+  },
+  {
+   "sub": "연방통신위원회는 1950년에 CBS의",
+   "shot": "cbsWheel",
+   "opt": {
+    "mood": "tense"
+   },
+   "line": 22,
+   "ch": 3,
+   "start": 142.211,
+   "end": 145.579
+  },
+  {
+   "sub": "컬러 방식을 먼저 승인했습니다.",
+   "shot": "cbsWheel",
+   "opt": {
+    "mood": "tense",
+    "join": true
+   },
+   "line": 22,
+   "ch": 3,
+   "start": 145.579,
+   "end": 148.056
+  },
+  {
+   "sub": "그런데 이 방식으로 방송하면",
+   "shot": "cbsWheel",
+   "opt": {
+    "mood": "tense",
+    "join": true
+   },
+   "line": 22,
+   "ch": 3,
+   "start": 148.056,
+   "end": 150.445
+  },
+  {
+   "sub": "이미 팔린 흑백 TV로는 볼 수 없었습니다.",
+   "shot": "cbsWheel",
+   "opt": {
+    "mood": "tense",
+    "join": true
+   },
+   "line": 22,
+   "ch": 3,
+   "start": 150.445,
+   "end": 154.263
+  },
+  {
+   "sub": "CBS는 1953년 3월",
+   "shot": "cbsWheel",
+   "opt": {
+    "join": true
+   },
+   "line": 23,
+   "ch": 3,
+   "start": 154.263,
+   "end": 157.234
+  },
+  {
+   "sub": "결국 이 방식을 거둬들입니다.",
+   "shot": "cbsWheel",
+   "opt": {
+    "join": true
+   },
+   "line": 23,
+   "ch": 3,
+   "start": 157.234,
+   "end": 160.042
+  },
+  {
+   "sub": "같은 해 12월 17일.",
+   "shot": "approval",
+   "opt": {
+    "mood": "reveal"
+   },
+   "line": 24,
+   "ch": 3,
+   "start": 160.042,
+   "end": 162.118
+  },
+  {
+   "sub": "연방통신위원회는 흑백 TV로도 볼 수 있는 새 컬러 방식",
+   "shot": "approval",
+   "opt": {
+    "mood": "reveal",
+    "join": true
+   },
+   "line": 24,
+   "ch": 3,
+   "start": 162.118,
+   "end": 167.44
+  },
+  {
+   "sub": "NTSC를 승인합니다.",
+   "shot": "approval",
+   "opt": {
+    "mood": "reveal",
+    "join": true
+   },
+   "line": 24,
+   "ch": 3,
+   "start": 167.44,
+   "end": 169.864
+  },
+  {
+   "sub": "비결은 기존 흑백 신호 안에 색 정보를",
+   "shot": "signals",
+   "opt": {
+    "mood": "calm"
+   },
+   "line": 25,
+   "ch": 3,
+   "start": 169.864,
+   "end": 172.631
+  },
+  {
+   "sub": "함께 실어 보내는 데 있었습니다.",
+   "shot": "signals",
+   "opt": {
+    "mood": "calm",
+    "join": true
+   },
+   "line": 25,
+   "ch": 3,
+   "start": 172.631,
+   "end": 175.664
+  },
+  {
+   "sub": "그런데 여기서 문제가 생겼습니다.",
+   "shot": "signals",
+   "opt": {
+    "join": true
+   },
+   "line": 26,
+   "ch": 3,
+   "start": 175.664,
+   "end": 177.985
+  },
+  {
+   "sub": "색 신호와 소리 신호의 주파수가 너무 가까웠던 겁니다.",
+   "shot": "signals",
+   "opt": {
+    "join": true
+   },
+   "line": 26,
+   "ch": 3,
+   "start": 177.985,
+   "end": 182.86
+  },
+  {
+   "sub": "두 신호의 차이는 흑백 화면 위에 작은 점무늬로 나타났습니다.",
+   "shot": "dots",
+   "opt": {
+    "mood": "tense"
+   },
+   "line": 27,
+   "ch": 3,
+   "start": 182.86,
+   "end": 187.908
+  },
+  {
+   "sub": "소리 신호를 옮기면 해결됩니다.",
+   "shot": "tvGrid",
+   "opt": {
+    "mood": "tense"
+   },
+   "line": 28,
+   "ch": 3,
+   "start": 187.908,
+   "end": 190.581
+  },
+  {
+   "sub": "하지만 그러면 이미 팔린 TV는 소리를 받지 못하죠.",
+   "shot": "tvGrid",
+   "opt": {
+    "mood": "tense",
+    "join": true
+   },
+   "line": 28,
+   "ch": 3,
+   "start": 190.581,
+   "end": 194.637
+  },
+  {
+   "sub": "연방통신위원회도 이 안을 받아들이지 않았습니다.",
+   "shot": "tvGrid",
+   "opt": {
+    "mood": "tense",
+    "join": true
+   },
+   "line": 28,
+   "ch": 3,
+   "start": 194.637,
+   "end": 199.199
+  },
+  {
+   "sub": "기술자들이 고른 방법은 반대쪽이었습니다.",
+   "shot": "engineers",
+   "opt": {
+    "mood": "calm"
+   },
+   "line": 29,
+   "ch": 3,
+   "start": 199.199,
+   "end": 202.658
+  },
+  {
+   "sub": "화면 속도를 아주 조금 늦추는 것.",
+   "shot": "engineers",
+   "opt": {
+    "mood": "calm",
+    "join": true
+   },
+   "line": 29,
+   "ch": 3,
+   "start": 202.658,
+   "end": 205.918
+  },
+  {
+   "sub": "흑백 TV는 방송 신호에 맞춰 화면 속도를 따라가기 때문에",
+   "shot": "engineers",
+   "opt": {
+    "join": true
+   },
+   "line": 30,
+   "ch": 3,
+   "start": 205.918,
+   "end": 210.323
+  },
+  {
+   "sub": "0.1% 느려져도 그대로 보였습니다.",
+   "shot": "engineers",
+   "opt": {
+    "join": true
+   },
+   "line": 30,
+   "ch": 3,
+   "start": 210.323,
+   "end": 213.894
+  },
+  {
+   "sub": "화면 속도는 1001분의 1000으로 줄었고",
+   "shot": "reveal2997",
+   "opt": {
+    "mood": "reveal"
+   },
+   "line": 31,
+   "ch": 3,
+   "start": 213.894,
+   "end": 217.075
+  },
+  {
+   "sub": "1초에 30장이던 화면은 29.97장이 됐습니다.",
+   "shot": "reveal2997",
+   "opt": {
+    "mood": "reveal",
+    "join": true
+   },
+   "line": 31,
+   "ch": 3,
+   "start": 217.075,
+   "end": 223.333
+  },
+  {
+   "sub": "그럼 극장의 영화는 어떻게 됐을까요?",
+   "shot": "filmToTv",
+   "opt": {
+    "mood": "question"
+   },
+   "line": 32,
+   "ch": 4,
+   "start": 223.333,
+   "end": 226.474
+  },
+  {
+   "sub": "1초에 24장인 영화를 이 TV로 내보내려면",
+   "shot": "filmToTv",
+   "opt": {
+    "join": true
+   },
+   "line": 33,
+   "ch": 4,
+   "start": 226.474,
+   "end": 229.707
+  },
+  {
+   "sub": "영화도 같은 비율로 늦춰야 했습니다.",
+   "shot": "filmToTv",
+   "opt": {
+    "join": true
+   },
+   "line": 33,
+   "ch": 4,
+   "start": 229.707,
+   "end": 232.88
+  },
+  {
+   "sub": "24에 1001분의 1000을 곱하면",
+   "shot": "reveal23976",
+   "opt": {
+    "mood": "reveal"
+   },
+   "line": 34,
+   "ch": 4,
+   "start": 232.88,
+   "end": 236.286
+  },
+  {
+   "sub": "23.976.",
+   "shot": "reveal23976",
+   "opt": {
+    "mood": "reveal",
+    "join": true
+   },
+   "line": 34,
+   "ch": 4,
+   "start": 236.286,
+   "end": 241.345
+  },
+  {
+   "sub": "그리고 지금., 카메라 메뉴를 다시 열어 봅니다.",
+   "shot": "menuReturn",
+   "opt": {
+    "mood": "calm"
+   },
+   "line": 35,
+   "ch": 5,
+   "start": 241.345,
+   "end": 245.516
+  },
+  {
+   "sub": "23.98은 두 결정이 곱해진 숫자입니다.",
+   "shot": "menuReturn",
+   "opt": {
+    "join": true
+   },
+   "line": 36,
+   "ch": 5,
+   "start": 245.516,
+   "end": 249.768
+  },
+  {
+   "sub": "1926년 영사실에서 왓킨스가 고른 속도와",
+   "shot": "menuReturn",
+   "opt": {
+    "join": true
+   },
+   "line": 36,
+   "ch": 5,
+   "start": 249.768,
+   "end": 254.903
+  },
+  {
+   "sub": "1953년 이미 팔린 TV를 지키려고 늦춘 속도.",
+   "shot": "menuReturn",
+   "opt": {
+    "join": true
+   },
+   "line": 36,
+   "ch": 5,
+   "start": 254.903,
+   "end": 260.457
+  },
+  {
+   "sub": "다음 편에서는, 세계 최초의 디지털카메라를 만들고도",
+   "shot": "nextKodak",
+   "opt": {
+    "mood": "calm"
+   },
+   "line": 37,
+   "ch": 5,
+   "start": 260.457,
+   "end": 264.564
+  },
+  {
+   "sub": "내놓지 않았다고 알려진 회사",
+   "shot": "nextKodak",
+   "opt": {
+    "mood": "calm",
+    "join": true
+   },
+   "line": 37,
+   "ch": 5,
+   "start": 264.564,
+   "end": 266.982
+  },
+  {
+   "sub": "코닥의 이야기를 따라가 보겠습니다.",
+   "shot": "nextKodak",
+   "opt": {
+    "mood": "calm",
+    "join": true
+   },
+   "line": 37,
+   "ch": 5,
+   "start": 266.982,
+   "end": 271.359
+  }
+ ],
+ "lines": [
+  {
+   "i": 0,
+   "start": 0.6,
+   "slot": 5.643,
+   "ko": 4.435,
+   "en": 5.643,
+   "en_subs": [
+    [
+     "Open your camera's menu",
+     0.6,
+     2.26
+    ],
+    [
+     "and you'll find a number:",
+     2.26,
+     3.703
+    ],
+    [
+     "twenty-three point nine eight.",
+     3.703,
+     6.242
+    ]
+   ]
+  },
+  {
+   "i": 1,
+   "start": 6.692,
+   "slot": 4.441,
+   "ko": 4.441,
+   "en": 4.101,
+   "en_subs": [
+    [
+     "Hidden inside it are two decisions made a century ago.",
+     6.692,
+     10.794
+    ]
+   ]
+  },
+  {
+   "i": 2,
+   "start": 12.233,
+   "slot": 3.004,
+   "ko": 2.489,
+   "en": 3.004,
+   "en_subs": [
+    [
+     "August, nineteen twenty-six.",
+     12.233,
+     14.481
+    ],
+    [
+     "New York.",
+     14.481,
+     15.238
+    ]
+   ]
+  },
+  {
+   "i": 3,
+   "start": 15.688,
+   "slot": 4.676,
+   "ko": 4.676,
+   "en": 3.318,
+   "en_subs": [
+    [
+     "At the Warners' Theatre",
+     15.688,
+     17.346
+    ],
+    [
+     "the film Don Juan opens.",
+     17.346,
+     19.005
+    ]
+   ]
+  },
+  {
+   "i": 4,
+   "start": 20.814,
+   "slot": 6.609,
+   "ko": 6.609,
+   "en": 6.358,
+   "en_subs": [
+    [
+     "As the screen lights up",
+     20.814,
+     22.381
+    ],
+    [
+     "an orchestra begins to play.",
+     22.381,
+     24.415
+    ],
+    [
+     "But there isn't a single musician in the pit.",
+     24.415,
+     27.172
+    ]
+   ]
+  },
+  {
+   "i": 5,
+   "start": 27.873,
+   "slot": 8.751,
+   "ko": 8.751,
+   "en": 7.752,
+   "en_subs": [
+    [
+     "The music is coming from the projection booth",
+     27.873,
+     30.789
+    ],
+    [
+     "from a giant record spinning beside the projector",
+     30.789,
+     34.013
+    ],
+    [
+     "driven by the same motor.",
+     34.013,
+     35.625
+    ]
+   ]
+  },
+  {
+   "i": 6,
+   "start": 37.074,
+   "slot": 3.449,
+   "ko": 3.449,
+   "en": 2.523,
+   "en_subs": [
+    [
+     "Warner Bros., called it Vitaphone.",
+     37.074,
+     39.597
+    ]
+   ]
+  },
+  {
+   "i": 7,
+   "start": 40.972,
+   "slot": 7.967,
+   "ko": 7.967,
+   "en": 6.525,
+   "en_subs": [
+    [
+     "But it had a weakness.",
+     40.972,
+     42.498
+    ],
+    [
+     "If the needle skipped",
+     42.498,
+     44.023
+    ],
+    [
+     "the sound ran ahead of the picture",
+     44.023,
+     45.958
+    ],
+    [
+     "or fell behind.",
+     45.958,
+     47.498
+    ]
+   ]
+  },
+  {
+   "i": 8,
+   "start": 49.39,
+   "slot": 4.476,
+   "ko": 4.476,
+   "en": 3.592,
+   "en_subs": [
+    [
+     "Then the projectionist had to put",
+     49.39,
+     51.218
+    ],
+    [
+     "the needle back in place by hand.",
+     51.218,
+     52.982
+    ]
+   ]
+  },
+  {
+   "i": 9,
+   "start": 54.316,
+   "slot": 6.687,
+   "ko": 6.687,
+   "en": 5.24,
+   "en_subs": [
+    [
+     "And there was another problem.",
+     54.316,
+     56.02
+    ],
+    [
+     "Every theater ran its projectors at a different speed.",
+     56.02,
+     59.556
+    ]
+   ]
+  },
+  {
+   "i": 10,
+   "start": 62.103,
+   "slot": 3.788,
+   "ko": 3.788,
+   "en": 3.17,
+   "en_subs": [
+    [
+     "The Vitaphone equipment was built by Western Electric.",
+     62.103,
+     65.274
+    ]
+   ]
+  },
+  {
+   "i": 11,
+   "start": 66.341,
+   "slot": 8.958,
+   "ko": 8.958,
+   "en": 6.82,
+   "en_subs": [
+    [
+     "One of its engineers",
+     66.341,
+     67.689
+    ],
+    [
+     "Stanley Watkins",
+     67.689,
+     68.8
+    ],
+    [
+     "asked a projectionist how fast",
+     68.8,
+     70.862
+    ],
+    [
+     "theaters actually ran their film.",
+     70.862,
+     73.162
+    ]
+   ]
+  },
+  {
+   "i": 12,
+   "start": 75.749,
+   "slot": 8.302,
+   "ko": 7.393,
+   "en": 8.302,
+   "en_subs": [
+    [
+     "The answer:, big first-run houses",
+     75.749,
+     79.066
+    ],
+    [
+     "eighty to ninety feet a minute.",
+     79.066,
+     81.27
+    ],
+    [
+     "Small theaters, over a hundred.",
+     81.27,
+     84.051
+    ]
+   ]
+  },
+  {
+   "i": 13,
+   "start": 84.501,
+   "slot": 5.407,
+   "ko": 5.407,
+   "en": 4.47,
+   "en_subs": [
+    [
+     "Watkins picked one number in between.",
+     84.501,
+     86.866
+    ],
+    [
+     "Ninety feet a minute.",
+     86.866,
+     88.971
+    ]
+   ]
+  },
+  {
+   "i": 14,
+   "start": 90.359,
+   "slot": 5.933,
+   "ko": 5.933,
+   "en": 4.833,
+   "en_subs": [
+    [
+     "Years later, he recalled it in an interview.",
+     90.359,
+     92.973
+    ],
+    [
+     "\"That had to be a good guess.\"",
+     92.973,
+     95.191
+    ]
+   ]
+  },
+  {
+   "i": 15,
+   "start": 96.741,
+   "slot": 8.438,
+   "ko": 8.438,
+   "en": 7.708,
+   "en_subs": [
+    [
+     "One foot of thirty-five millimeter",
+     96.741,
+     99.125
+    ],
+    [
+     "film holds sixteen frames.",
+     99.125,
+     100.835
+    ],
+    [
+     "Ninety feet a minute is twenty-four frames a second.",
+     100.835,
+     104.45
+    ]
+   ]
+  },
+  {
+   "i": 16,
+   "start": 105.629,
+   "slot": 2.575,
+   "ko": 2.575,
+   "en": 2.037,
+   "en_subs": [
+    [
+     "That's how twenty-four was born.",
+     105.629,
+     107.666
+    ]
+   ]
+  },
+  {
+   "i": 17,
+   "start": 108.654,
+   "slot": 7.508,
+   "ko": 7.232,
+   "en": 7.508,
+   "en_subs": [
+    [
+     "The next October",
+     108.654,
+     109.92
+    ],
+    [
+     "The Jazz Singer let audiences hear an actor sing and speak",
+     109.92,
+     113.062
+    ],
+    [
+     "and the talkies arrived.",
+     113.062,
+     116.162
+    ]
+   ]
+  },
+  {
+   "i": 18,
+   "start": 116.612,
+   "slot": 5.438,
+   "ko": 4.989,
+   "en": 5.438,
+   "en_subs": [
+    [
+     "Fox Movietone, which printed sound onto the film itself",
+     116.612,
+     120.212
+    ],
+    [
+     "chose the same twenty-four.",
+     120.212,
+     122.05
+    ]
+   ]
+  },
+  {
+   "i": 19,
+   "start": 122.5,
+   "slot": 5.878,
+   "ko": 5.878,
+   "en": 5.204,
+   "en_subs": [
+    [
+     "Twenty-four became the standard of the cinema.",
+     122.5,
+     125.434
+    ],
+    [
+     "The trouble would start outside it.",
+     125.434,
+     127.703
+    ]
+   ]
+  },
+  {
+   "i": 20,
+   "start": 129.477,
+   "slot": 5.799,
+   "ko": 5.595,
+   "en": 5.799,
+   "en_subs": [
+    [
+     "Nineteen fifty-three.",
+     129.477,
+     131.383
+    ],
+    [
+     "Many American homes already had a black-and-white TV.",
+     131.383,
+     135.277
+    ]
+   ]
+  },
+  {
+   "i": 21,
+   "start": 135.727,
+   "slot": 6.034,
+   "ko": 6.012,
+   "en": 6.034,
+   "en_subs": [
+    [
+     "Black-and-white broadcasts sent thirty pictures a second.",
+     135.727,
+     139.557
+    ],
+    [
+     "Now the challenge was color.",
+     139.557,
+     141.761
+    ]
+   ]
+  },
+  {
+   "i": 22,
+   "start": 142.211,
+   "slot": 11.602,
+   "ko": 11.602,
+   "en": 7.784,
+   "en_subs": [
+    [
+     "In nineteen fifty",
+     142.211,
+     143.564
+    ],
+    [
+     "the FCC approved CBS's color system.",
+     143.564,
+     147.06
+    ],
+    [
+     "But the sets people already owned couldn't show it.",
+     147.06,
+     149.995
+    ]
+   ]
+  },
+  {
+   "i": 23,
+   "start": 154.263,
+   "slot": 5.329,
+   "ko": 5.329,
+   "en": 3.74,
+   "en_subs": [
+    [
+     "In March nineteen fifty-three",
+     154.263,
+     156.272
+    ],
+    [
+     "CBS gave it up.",
+     156.272,
+     158.003
+    ]
+   ]
+  },
+  {
+   "i": 24,
+   "start": 160.042,
+   "slot": 9.372,
+   "ko": 9.372,
+   "en": 8.885,
+   "en_subs": [
+    [
+     "On December seventeenth that year",
+     160.042,
+     162.19
+    ],
+    [
+     "the FCC approved a new color system",
+     162.19,
+     166.738
+    ],
+    [
+     "that old sets could still show:",
+     166.738,
+     168.515
+    ],
+    [
+     "NTSC.",
+     168.515,
+     168.927
+    ]
+   ]
+  },
+  {
+   "i": 25,
+   "start": 169.864,
+   "slot": 5.35,
+   "ko": 5.35,
+   "en": 4.699,
+   "en_subs": [
+    [
+     "The trick was to tuck the color inside",
+     169.864,
+     172.14
+    ],
+    [
+     "the existing black-and-white signal.",
+     172.14,
+     174.563
+    ]
+   ]
+  },
+  {
+   "i": 26,
+   "start": 175.664,
+   "slot": 6.746,
+   "ko": 6.746,
+   "en": 5.212,
+   "en_subs": [
+    [
+     "But there was a catch.",
+     175.664,
+     177.017
+    ],
+    [
+     "The color signal sat too close to the sound signal.",
+     177.017,
+     180.877
+    ]
+   ]
+  },
+  {
+   "i": 27,
+   "start": 182.86,
+   "slot": 4.598,
+   "ko": 4.598,
+   "en": 4.461,
+   "en_subs": [
+    [
+     "The clash showed up as a fine pattern",
+     182.86,
+     185.054
+    ],
+    [
+     "of dots on black-and-white screens.",
+     185.054,
+     187.322
+    ]
+   ]
+  },
+  {
+   "i": 28,
+   "start": 187.908,
+   "slot": 10.841,
+   "ko": 10.841,
+   "en": 7.226,
+   "en_subs": [
+    [
+     "Moving the sound would fix it",
+     187.908,
+     190.034
+    ],
+    [
+     "but every set already sold would lose its sound.",
+     190.034,
+     193.354
+    ],
+    [
+     "The FCC wouldn't allow it.",
+     193.354,
+     195.133
+    ]
+   ]
+  },
+  {
+   "i": 29,
+   "start": 199.199,
+   "slot": 6.269,
+   "ko": 6.269,
+   "en": 5.319,
+   "en_subs": [
+    [
+     "So the engineers went the other way.",
+     199.199,
+     201.388
+    ],
+    [
+     "They slowed the picture down",
+     201.388,
+     203.609
+    ],
+    [
+     "just slightly.",
+     203.609,
+     204.518
+    ]
+   ]
+  },
+  {
+   "i": 30,
+   "start": 205.918,
+   "slot": 7.526,
+   "ko": 7.526,
+   "en": 6.649,
+   "en_subs": [
+    [
+     "Old sets followed the timing of the broadcast signal",
+     205.918,
+     209.169
+    ],
+    [
+     "so a slowdown of a tenth of a percent didn't bother them.",
+     209.169,
+     212.567
+    ]
+   ]
+  },
+  {
+   "i": 31,
+   "start": 213.894,
+   "slot": 8.339,
+   "ko": 7.517,
+   "en": 8.339,
+   "en_subs": [
+    [
+     "The picture slowed by a thousand over a thousand and one.",
+     213.894,
+     218.089
+    ],
+    [
+     "Thirty frames a second became twenty-nine point nine seven.",
+     218.089,
+     222.233
+    ]
+   ]
+  },
+  {
+   "i": 32,
+   "start": 223.333,
+   "slot": 2.691,
+   "ko": 2.691,
+   "en": 1.696,
+   "en_subs": [
+    [
+     "So what happened to the movies?",
+     223.333,
+     225.029
+    ]
+   ]
+  },
+  {
+   "i": 33,
+   "start": 226.474,
+   "slot": 5.956,
+   "ko": 5.956,
+   "en": 5.564,
+   "en_subs": [
+    [
+     "To show twenty-four frame films on this TV",
+     226.474,
+     229.179
+    ],
+    [
+     "the films had to slow down by the same amount.",
+     229.179,
+     232.038
+    ]
+   ]
+  },
+  {
+   "i": 34,
+   "start": 232.88,
+   "slot": 7.366,
+   "ko": 5.399,
+   "en": 7.366,
+   "en_subs": [
+    [
+     "Twenty-four, times a thousand over a thousand and one:",
+     232.88,
+     236.983
+    ],
+    [
+     "twenty-three point nine seven six.",
+     236.983,
+     240.245
+    ]
+   ]
+  },
+  {
+   "i": 35,
+   "start": 241.345,
+   "slot": 3.721,
+   "ko": 3.721,
+   "en": 2.188,
+   "en_subs": [
+    [
+     "And now, back to your camera's menu.",
+     241.345,
+     243.534
+    ]
+   ]
+  },
+  {
+   "i": 36,
+   "start": 245.516,
+   "slot": 14.491,
+   "ko": 14.491,
+   "en": 10.77,
+   "en_subs": [
+    [
+     "Twenty-three point nine eight is two decisions multiplied:",
+     245.516,
+     249.769
+    ],
+    [
+     "the speed Watkins chose in a projection booth",
+     249.769,
+     252.669
+    ],
+    [
+     "and the slowdown that protected the TVs already sold.",
+     252.669,
+     256.286
+    ]
+   ]
+  },
+  {
+   "i": 37,
+   "start": 260.457,
+   "slot": 8.902,
+   "ko": 8.902,
+   "en": 7.063,
+   "en_subs": [
+    [
+     "Next time:, the company said to have built the first digital camera",
+     260.457,
+     264.973
+    ],
+    [
+     "and kept it hidden.",
+     264.973,
+     266.554
+    ],
+    [
+     "Kodak.",
+     266.554,
+     267.52
+    ]
+   ]
+  }
+ ]
+}

@@ -1,8 +1,12 @@
 import '@fontsource/noto-sans-kr/400.css';
 import '@fontsource/noto-sans-kr/700.css';
 import '@fontsource/noto-sans-kr/900.css';
-import '@fontsource/noto-serif-kr/700.css';
-import '@fontsource/noto-serif-kr/900.css';
+import '@fontsource/black-han-sans/400.css';
+import '@fontsource/bebas-neue/400.css';
+import '@fontsource/vt323/400.css';
+import '@fontsource/do-hyeon/400.css';
+import '@fontsource/space-grotesk/700.css';
+import 'pretendard/dist/web/static/pretendard.css';
 import '@fontsource/ibm-plex-mono/400.css';
 import '@fontsource/ibm-plex-mono/600.css';
 import {interpolate, Easing} from 'remotion';

@@ -8,3 +8,7 @@ public/*/concat.txt
 public/*/sfx/music.*
 # 서명이 들어간 파일 주소
 longform/*/voice_urls.json
+public/*/narration_*.wav
+public/*/mix_*.wav
+public/*/ko/*.wav
+public/*/en/*.wav
