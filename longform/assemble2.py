@@ -53,7 +53,7 @@ def chunks(text, maxlen):
     return res
 
 
-def place(text, wav, d, maxlen):
+def place(text, wav, d, maxlen, strip=True):
     """자막 조각마다 문장 안에서의 시작·끝 시간(초)"""
     cs = chunks(text, maxlen)
     gaps = silences(wav)
@@ -64,7 +64,9 @@ def place(text, wav, d, maxlen):
         cand = [g for g in gaps if abs(g - est) < 1.2 and g > b[-1] + 0.6]
         b.append(min(cand, key=lambda g: abs(g - est)) if cand else est)
     b.append(d)
-    # 자막 끝의 온점은 뺀다 (물음표·따옴표는 둔다). 23.976 같은 소수점은 끝이 아니라서 남는다
+    # 한국어 자막 끝의 온점은 뺀다 (물음표·따옴표는 둔다). 23.976 같은 소수점은 끝이 아니라서 남는다
+    if not strip:
+        return [(c, b[k], b[k + 1]) for k, c in enumerate(cs)]
     return [(re.sub(r'\.(?=[\s,]|["”’〉]?$)', '', c), b[k], b[k + 1]) for k, c in enumerate(cs)]
 
 
@@ -75,6 +77,12 @@ for i, L in enumerate(S['lines']):
     if prev is not None:
         t += CH_GAP if L['ch'] != prev else GAP
     prev = L['ch']
+    if L.get('silent'):
+        # 말없이 그림만 보여 주는 자리 (자막 없음)
+        beats.append({'sub': '', 'shot': L['shot'], 'opt': {'mood': L['mood']} if L.get('mood') else {}, 'line': i, 'ch': L['ch'], 'start': round(t, 3), 'end': round(t + L['silent'], 3)})
+        lines.append({'i': i, 'start': round(t, 3), 'slot': L['silent'], 'ko': 0, 'en': 0, 'en_subs': []})
+        t += L['silent']
+        continue
     d = {}
     for lang in ('ko', 'en'):
         w = f'{P}/{lang}/{i:02d}.wav'
@@ -84,7 +92,7 @@ for i, L in enumerate(S['lines']):
     for lang in ('ko', 'en'):
         segs[lang].append((t, f'{P}/{lang}/{i:02d}.wav'))
     ko = place(L['sub'], f'{P}/ko/{i:02d}.wav', d['ko'], 34)
-    en = place(L['en'], f'{P}/en/{i:02d}.wav', d['en'], 60)
+    en = place(L['en'], f'{P}/en/{i:02d}.wav', d['en'], 60, strip=False)
     for k, (c, a, b) in enumerate(ko):
         opt = {'mood': L['mood']} if L.get('mood') else {}
         if k > 0 or L.get('join'): opt['join'] = True
@@ -119,7 +127,7 @@ def ts(x):
 # 자막 파일: 실제로 말하는 동안만 띄운다
 ko_srt, n = [], 0
 for L in lines:
-    for b in [x for x in beats if x['line'] == L['i']]:
+    for b in [x for x in beats if x['line'] == L['i'] and x['sub']]:
         n += 1
         end = min(b['end'], L['start'] + L['ko'] + 0.2)
         ko_srt.append(f"{n}\n{ts(b['start'])} --> {ts(end)}\n{b['sub']}\n")

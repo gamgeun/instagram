@@ -25,8 +25,8 @@ export const CRT_KR = "'Do Hyeon', sans-serif";
 export const NOW_KR = "'Pretendard', sans-serif";
 export const NOW_NUM = "'Space Grotesk', 'Pretendard', sans-serif";
 
-const NowBg: React.FC = () => {
-  const f = useCurrentFrame();
+const NowBg: React.FC<{off: number}> = ({off}) => {
+  const f = useCurrentFrame() + off;
   return (
     <AbsoluteFill style={{background: '#000'}}>
       <div
@@ -45,8 +45,8 @@ const NowBg: React.FC = () => {
   );
 };
 
-const CrtBg: React.FC = () => {
-  const f = useCurrentFrame();
+const CrtBg: React.FC<{off: number}> = ({off}) => {
+  const f = useCurrentFrame() + off;
   return (
     <AbsoluteFill style={{background: 'radial-gradient(ellipse at 50% 45%, #15464f, #06131a 72%)'}}>
       <AbsoluteFill style={{background: 'repeating-linear-gradient(0deg, rgba(0,0,0,0.22) 0 2px, transparent 2px 5px)'}} />
@@ -56,8 +56,11 @@ const CrtBg: React.FC = () => {
   );
 };
 
-const SepiaBg: React.FC = () => {
-  const f = useCurrentFrame();
+/** 필름 구멍 간격. 움직임을 이 간격으로 되풀이해야 구멍이 튀지 않고 이어져 보인다 */
+const PITCH = 135;
+const SepiaBg: React.FC<{off: number}> = ({off}) => {
+  // 컷마다 프레임이 0부터 시작하므로, 영상 전체 프레임(off 더함)으로 움직여야 컷이 바뀌어도 이어진다
+  const f = useCurrentFrame() + off;
   const flick = 0.92 + random(`fl${Math.floor(f / 2)}`) * 0.08;
   const sx = 300 + random(`sx${Math.floor(f / 6)}`) * 1300;
   return (
@@ -72,9 +75,9 @@ const SepiaBg: React.FC = () => {
       />
       <div style={{position: 'absolute', top: 0, bottom: 0, left: sx, width: 2, background: 'rgba(40,25,10,0.35)'}} />
       {[0, 1].map((s) => (
-        <div key={s} style={{position: 'absolute', top: 0, bottom: 0, [s ? 'right' : 'left']: 0, width: 70, background: '#1b120a', display: 'flex', flexDirection: 'column', justifyContent: 'space-around', alignItems: 'center', transform: `translateY(${(f * 6) % 180 - 90}px)`}}>
-          {Array.from({length: 8}).map((_, i) => (
-            <div key={i} style={{width: 30, height: 44, borderRadius: 6, background: '#c9b07f'}} />
+        <div key={s} style={{position: 'absolute', top: 0, bottom: 0, [s ? 'right' : 'left']: 0, width: 70, background: '#1b120a', overflow: 'hidden'}}>
+          {Array.from({length: 10}).map((_, i) => (
+            <div key={i} style={{position: 'absolute', left: 20, top: (i - 1) * PITCH + 45 + ((f * 6) % PITCH), width: 30, height: 44, borderRadius: 6, background: '#c9b07f'}} />
           ))}
         </div>
       ))}
@@ -83,7 +86,7 @@ const SepiaBg: React.FC = () => {
   );
 };
 
-export const EraBg: React.FC<{era: Era}> = ({era}) => (era === 'now' ? <NowBg /> : era === 'crt' ? <CrtBg /> : <SepiaBg />);
+export const EraBg: React.FC<{era: Era; off?: number}> = ({era, off = 0}) => (era === 'now' ? <NowBg off={off} /> : era === 'crt' ? <CrtBg off={off} /> : <SepiaBg off={off} />);
 
 export const CH_LABEL: Record<number, string> = {1: '지금 당신 카메라', 2: '1953년, 컬러TV', 3: '24는 어디서 왔나', 4: '그래서 무엇을 고를까'};
 /** v3: 장 이름 대신 연도만 둔다 (언어와 상관없이 읽힌다) */
@@ -105,7 +108,7 @@ export const ChapterLabel: React.FC<{era: Era; ch?: number; v3?: boolean}> = ({e
   );
 };
 
-export const Subtitle: React.FC<{text: string}> = ({text}) => (
+export const Subtitle: React.FC<{text: string}> = ({text}) => !text ? null : (
   <div style={{position: 'absolute', left: 0, right: 0, bottom: 64, textAlign: 'center', zIndex: 20}}>
     <span
       style={{

@@ -164,7 +164,7 @@ export const LongEpisode: React.FC<{tl: Timeline; audio: string; noSubs?: boolea
         return (
           <Sequence key={i} from={from} durationInFrames={dur}>
             <BgFade dur={dur} first={first || !eraChanged}>
-              <EraBg era={s.era} />
+              <EraBg era={s.era} off={from} />
             </BgFade>
             <DepthXfade dur={dur} first={first} lastShot={lastShot}>
               <MoodCam mood={s.mood} dur={dur} marks={s.marks}>

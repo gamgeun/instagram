@@ -133,10 +133,11 @@
   {
    "ch": 2,
    "shot": "reveal24",
-   "sub": "24라는 숫자는 이렇게 정해졌습니다.",
-   "tts": "이십사라는 숫자는 이렇게 정해졌습니다.",
-   "en": "That's how twenty-four was born.",
-   "mood": "reveal"
+   "sub": "",
+   "tts": "",
+   "en": "",
+   "mood": "reveal",
+   "silent": 2.0
   },
   {
    "ch": 2,
@@ -173,9 +174,9 @@
   {
    "ch": 3,
    "shot": "frames30",
-   "sub": "흑백 방송은 1초에 30장씩 화면을 보냈습니다. 이제 남은 숙제는 컬러였죠.",
-   "tts": "흑백 방송은 일 초에 서른 장씩 화면을 보냈습니다. 이제 남은 숙제는 컬러였죠.",
-   "en": "Black-and-white broadcasts sent thirty pictures a second. Now the challenge was color.",
+   "sub": "흑백 방송은 1초에 30장씩 화면을 보냈습니다. 방송국들이 다음으로 준비한 것은 컬러 방송이었죠.",
+   "tts": "흑백 방송은 일 초에 서른 장씩 화면을 보냈습니다. 방송국들이 다음으로 준비한 것은 컬러 방송이었죠.",
+   "en": "Black-and-white broadcasts sent thirty pictures a second. What broadcasters prepared next was color.",
    "mood": "calm"
   },
   {
@@ -237,9 +238,9 @@
   {
    "ch": 3,
    "shot": "engineers",
-   "sub": "기술자들이 고른 방법은 반대쪽이었습니다. 화면 속도를 아주 조금 늦추는 것.",
-   "tts": "기술자들이 고른 방법은 반대쪽이었습니다. 화면 속도를 아주 조금 늦추는 것.",
-   "en": "So the engineers went the other way. They slowed the picture down, just slightly.",
+   "sub": "NTSC 위원회 기술자들이 고른 방법은 반대쪽이었습니다. 화면 속도를 아주 조금 늦추는 것.",
+   "tts": "엔티에스씨 위원회 기술자들이 고른 방법은 반대쪽이었습니다. 화면 속도를 아주 조금 늦추는 것.",
+   "en": "The NTSC committee's engineers went the other way. They slowed the picture down, just slightly.",
    "mood": "calm"
   },
   {
@@ -269,9 +270,9 @@
   {
    "ch": 4,
    "shot": "filmToTv",
-   "sub": "1초에 24장인 영화를 이 TV로 내보내려면, 영화도 같은 비율로 늦춰야 했습니다.",
-   "tts": "일 초에 스물네 장인 영화를 이 티비로 내보내려면, 영화도 같은 비율로 늦춰야 했습니다.",
-   "en": "To show twenty-four frame films on this TV, the films had to slow down by the same amount.",
+   "sub": "1초에 24장인 영화를 29.97장짜리 TV 방송으로 내보내려면, 영화도 같은 비율로 늦춰야 했습니다.",
+   "tts": "일 초에 스물네 장인 영화를 이십구 점 구칠 장짜리 티비 방송으로 내보내려면, 영화도 같은 비율로 늦춰야 했습니다.",
+   "en": "To broadcast twenty-four frame films on twenty-nine point nine seven TV, the films had to slow down by the same amount.",
    "join": true
   },
   {
@@ -301,9 +302,9 @@
   {
    "ch": 5,
    "shot": "nextKodak",
-   "sub": "다음 편에서는, 세계 최초의 디지털카메라를 만들고도 내놓지 않았다고 알려진 회사, 코닥의 이야기를 따라가 보겠습니다.",
-   "tts": "다음 편에서는, 세계 최초의 디지털카메라를 만들고도 내놓지 않았다고 알려진 회사, 코닥의 이야기를 따라가 보겠습니다.",
-   "en": "Next time: the company said to have built the first digital camera, and kept it hidden. Kodak.",
+   "sub": "다음 편에서는, 세계 최초의 디지털카메라를 만들고도 내놓지 않았다고 알려진 회사, 코닥이 1975년에 만든 시제품을 왜 팔지 않았는지, 남은 기록으로 확인합니다.",
+   "tts": "다음 편에서는, 세계 최초의 디지털카메라를 만들고도 내놓지 않았다고 알려진 회사, 코닥이 천구백칠십오 년에 만든 시제품을 왜 팔지 않았는지, 남은 기록으로 확인합니다.",
+   "en": "Next time: Kodak built a digital camera in nineteen seventy-five, and never sold it. We'll look at what the records say about why.",
    "mood": "calm"
   }
  ],
