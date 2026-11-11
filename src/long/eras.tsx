@@ -74,6 +74,17 @@ const SepiaBg: React.FC<{off: number}> = ({off}) => {
         }}
       />
       <div style={{position: 'absolute', top: 0, bottom: 0, left: sx, width: 2, background: 'rgba(40,25,10,0.35)'}} />
+      <AbsoluteFill style={{boxShadow: 'inset 0 0 260px rgba(30,15,5,0.85)'}} />
+    </AbsoluteFill>
+  );
+};
+
+/** 세피아 시대 좌우 필름 구멍. 그림 위에 따로 얹어서, 배경을 덮는 컷에서도 끊기지 않는다 */
+export const SepiaStrips: React.FC<{opacity: number}> = ({opacity}) => {
+  const f = useCurrentFrame();
+  if (opacity <= 0) return null;
+  return (
+    <AbsoluteFill style={{opacity, zIndex: 15, pointerEvents: 'none'}}>
       {[0, 1].map((s) => (
         <div key={s} style={{position: 'absolute', top: 0, bottom: 0, [s ? 'right' : 'left']: 0, width: 70, background: '#1b120a', overflow: 'hidden'}}>
           {Array.from({length: 10}).map((_, i) => (
@@ -81,7 +92,6 @@ const SepiaBg: React.FC<{off: number}> = ({off}) => {
           ))}
         </div>
       ))}
-      <AbsoluteFill style={{boxShadow: 'inset 0 0 260px rgba(30,15,5,0.85)'}} />
     </AbsoluteFill>
   );
 };

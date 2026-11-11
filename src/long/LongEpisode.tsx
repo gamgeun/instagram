@@ -1,6 +1,6 @@
 import React from 'react';
 import {AbsoluteFill, Audio, Sequence, staticFile, useCurrentFrame, interpolate, Easing, random} from 'remotion';
-import {EraBg, ChapterLabel, Subtitle, Era} from './eras';
+import {EraBg, ChapterLabel, Subtitle, Era, SepiaStrips} from './eras';
 import {SHOTS as SHOTS1, SHOT_ERA as ERA1} from './shots';
 import {SHOTS2, SHOT_ERA2} from './shots2';
 import {V3_SHOTS, V3_ERA} from './v3shots';
@@ -140,6 +140,19 @@ const SubtitleTrack: React.FC<{tl: Timeline}> = ({tl}) => {
   return <Subtitle text={b.sub} />;
 };
 
+/** 지금 보이는 컷이 세피아면 필름 구멍을 보이고, 시대가 바뀔 때 전환 길이만큼 서서히 나타나거나 사라진다 */
+const StripTrack: React.FC<{shots: Shot[]}> = ({shots}) => {
+  const f = useCurrentFrame();
+  const i = shots.findIndex((x, k) => f < (k === shots.length - 1 ? Infinity : shots[k + 1].from));
+  const cur = shots[Math.max(0, i)];
+  const prev = shots[i - 1];
+  const on = cur.era === 'sepia' ? 1 : 0;
+  const was = prev && prev.era === 'sepia' ? 1 : 0;
+  const p = interpolate(f, [cur.from, cur.from + XF], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const o = prev ? was + (on - was) * p : on;
+  return <SepiaStrips opacity={o} />;
+};
+
 const LabelTrack: React.FC<{shots: Shot[]; tl: Timeline; set: string}> = ({shots, tl, set}) => {
   const f = useCurrentFrame();
   const s = [...shots].reverse().find((x) => f >= x.from + XF / 2) ?? shots[0];
@@ -174,6 +187,7 @@ export const LongEpisode: React.FC<{tl: Timeline; audio: string; noSubs?: boolea
           </Sequence>
         );
       })}
+      <StripTrack shots={shots} />
       <LabelTrack shots={shots} tl={tl} set={set} />
       {!noSubs && <SubtitleTrack tl={tl} />}
     </AbsoluteFill>
