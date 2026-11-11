@@ -143,7 +143,7 @@ const LabelTrack: React.FC<{shots: Shot[]; tl: Timeline}> = ({shots, tl}) => {
   return <ChapterLabel era={s.era} ch={(b as any).ch} />;
 };
 
-export const LongEpisode: React.FC<{tl: Timeline; audio: string}> = ({tl, audio}) => {
+export const LongEpisode: React.FC<{tl: Timeline; audio: string; noSubs?: boolean}> = ({tl, audio, noSubs}) => {
   const shots = buildShots(tl);
   return (
     <AbsoluteFill style={{background: '#000'}}>
@@ -170,7 +170,7 @@ export const LongEpisode: React.FC<{tl: Timeline; audio: string}> = ({tl, audio}
         );
       })}
       <LabelTrack shots={shots} tl={tl} />
-      <SubtitleTrack tl={tl} />
+      {!noSubs && <SubtitleTrack tl={tl} />}
     </AbsoluteFill>
   );
 };
