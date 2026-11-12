@@ -585,16 +585,31 @@ const NextKodak: React.FC<P> = ({dur}) => {
   );
 };
 
+/** 끝 화면: 이야기가 끝났다는 표시. 제목만 영어·한국어로 */
+const EndCard: React.FC<P> = ({dur}) => {
+  const f = useCurrentFrame();
+  const a = ease(f, 0, 18);
+  const b = ease(f, 10, 28);
+  const out = 1 - ease(f, dur - 14, dur);
+  return (
+    <AbsoluteFill style={{...center, opacity: out}}>
+      <div style={{fontFamily: NOW_NUM, fontWeight: 700, fontSize: 220, lineHeight: 1, color: '#fff', opacity: a, transform: `translateY(${(1 - a) * 20}px)`, letterSpacing: -4}}>23.98p</div>
+      <div style={{fontFamily: NOW_NUM, fontWeight: 700, fontSize: 56, marginTop: 30, opacity: b, backgroundImage: 'linear-gradient(90deg,#8E9BFF,#C77DFF)', WebkitBackgroundClip: 'text', color: 'transparent'}}>Why not 24?</div>
+      <div style={{fontFamily: "'Pretendard', sans-serif", fontWeight: 600, fontSize: 34, marginTop: 12, color: 'rgba(255,255,255,.6)', opacity: b}}>왜 24가 아닐까</div>
+    </AbsoluteFill>
+  );
+};
+
 export const V3_ERA: Record<string, 'now' | 'crt' | 'sepia'> = {
   menuOpen: 'now', yearRewind: 'now', theaterOutside: 'sepia', theaterInside: 'sepia', emptyPit: 'sepia', booth: 'sepia', needle: 'sepia', theaterSpeeds: 'sepia',
   company: 'sepia', watkinsAsk: 'sepia', speedsAlign: 'sepia', interviewDoc: 'sepia', filmFoot: 'sepia', reveal24: 'sepia', jazzSinger: 'sepia', movietone: 'sepia', doorsClose: 'sepia',
   room: 'crt', frames30: 'crt', cbsWheel: 'crt', approval: 'crt', signals: 'crt', dots: 'crt', tvGrid: 'crt', engineers: 'crt', reveal2997: 'crt', filmToTv: 'crt', reveal23976: 'crt',
-  menuReturn: 'now', nextKodak: 'now',
+  menuReturn: 'now', endCard: 'now', nextKodak: 'now',
 };
 export const V3_SHOTS: Record<string, React.FC<any>> = {
   menuOpen: MenuOpen, yearRewind: YearRewind, theaterOutside: TheaterOutside, theaterInside: TheaterInside, emptyPit: EmptyPit, booth: Booth, needle: Needle,
   theaterSpeeds: TheaterSpeeds, company: Company, watkinsAsk: WatkinsAsk, speedsAlign: SpeedsAlign, interviewDoc: InterviewDoc, filmFoot: FilmFoot, reveal24: Reveal24,
   jazzSinger: JazzSinger, movietone: Movietone, doorsClose: DoorsClose, room: RoomV3, frames30: Frames30, cbsWheel: CbsWheel, approval: Approval, signals: Signals,
-  dots: Dots, tvGrid: S1.tvGrid, engineers: Engineers, reveal2997: Reveal2997, filmToTv: FilmToTv, reveal23976: Reveal23976, menuReturn: MenuReturn, nextKodak: NextKodak,
+  dots: Dots, tvGrid: S1.tvGrid, engineers: Engineers, reveal2997: Reveal2997, filmToTv: FilmToTv, reveal23976: Reveal23976, menuReturn: MenuReturn, endCard: EndCard, nextKodak: NextKodak,
 };
 void S2;

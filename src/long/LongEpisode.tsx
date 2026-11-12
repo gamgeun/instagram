@@ -1,6 +1,6 @@
 import React from 'react';
 import {AbsoluteFill, Audio, Sequence, staticFile, useCurrentFrame, interpolate, Easing, random} from 'remotion';
-import {EraBg, ChapterLabel, Subtitle, Era, SepiaStrips} from './eras';
+import {EraBg, ChapterLabel, Subtitle, Era, SepiaStrips, NameTag} from './eras';
 import {SHOTS as SHOTS1, SHOT_ERA as ERA1} from './shots';
 import {SHOTS2, SHOT_ERA2} from './shots2';
 import {V3_SHOTS, V3_ERA} from './v3shots';
@@ -9,7 +9,8 @@ const SETS: Record<string, {shots: Record<string, React.FC<any>>; era: Record<st
   v3: {shots: V3_SHOTS, era: V3_ERA},
 };
 
-export type Beat = {sub: string; shot: string; opt: any; start: number; end: number; line?: number};
+export type NameTagT = {en: string; sub?: string | null; ko?: string | null};
+export type Beat = {sub: string; shot: string; opt: any; start: number; end: number; line?: number; say?: number; label?: NameTagT; label2?: NameTagT};
 export type Timeline = {duration: number; beats: Beat[]};
 export const LFPS = 30;
 /** 앞뒤 컷이 겹치며 바뀌는 프레임 수 (0.5초) */
@@ -137,6 +138,8 @@ const SubtitleTrack: React.FC<{tl: Timeline}> = ({tl}) => {
   const f = useCurrentFrame();
   const t = f / LFPS;
   const b = tl.beats.find((x) => t >= x.start && t < x.end) ?? tl.beats[tl.beats.length - 1];
+  // 그림이 먼저 나오는 동안(say 전)에는 자막을 띄우지 않는다
+  if (b.say !== undefined && t < b.say) return null;
   return <Subtitle text={b.sub} />;
 };
 
@@ -151,6 +154,22 @@ const StripTrack: React.FC<{shots: Shot[]}> = ({shots}) => {
   const p = interpolate(f, [cur.from, cur.from + XF], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   const o = prev ? was + (on - was) * p : on;
   return <SepiaStrips opacity={o} />;
+};
+
+/** 고유명사 이름표: 내레이션에 처음 나오는 순간 2.6초. label2가 있으면 이어서 2.6초 */
+const TAG_LEN = 78;
+const NameTrack: React.FC<{tl: Timeline; shots: Shot[]}> = ({tl, shots}) => {
+  const f = useCurrentFrame();
+  const items: {tag: NameTagT; from: number}[] = [];
+  for (const b of tl.beats) {
+    const at0 = Math.round((b.say ?? b.start) * LFPS);
+    if (b.label) items.push({tag: b.label, from: at0});
+    if (b.label2) items.push({tag: b.label2, from: at0 + TAG_LEN});
+  }
+  const it = items.find((x) => f >= x.from && f < x.from + TAG_LEN);
+  if (!it) return null;
+  const era = ([...shots].reverse().find((x) => f >= x.from) ?? shots[0]).era;
+  return <NameTag tag={it.tag} era={era} local={f - it.from} len={TAG_LEN} />;
 };
 
 const LabelTrack: React.FC<{shots: Shot[]; tl: Timeline; set: string}> = ({shots, tl, set}) => {
@@ -188,6 +207,7 @@ export const LongEpisode: React.FC<{tl: Timeline; audio: string; noSubs?: boolea
         );
       })}
       <StripTrack shots={shots} />
+      {set === 'v3' && <NameTrack tl={tl} shots={shots} />}
       <LabelTrack shots={shots} tl={tl} set={set} />
       {!noSubs && <SubtitleTrack tl={tl} />}
     </AbsoluteFill>

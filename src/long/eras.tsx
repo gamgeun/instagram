@@ -1,5 +1,5 @@
 import React from 'react';
-import {AbsoluteFill, useCurrentFrame, random} from 'remotion';
+import {AbsoluteFill, useCurrentFrame, random, interpolate, Easing} from 'remotion';
 import {FONT} from '../theme';
 
 export type Era = 'now' | 'crt' | 'sepia';
@@ -137,3 +137,22 @@ export const Subtitle: React.FC<{text: string}> = ({text}) => !text ? null : (
     </span>
   </div>
 );
+
+/** 고유명사 이름표. 영어는 그대로, 한국어는 필요할 때만 영어 아래에 작게 */
+export const NameTag: React.FC<{tag: {en: string; sub?: string | null; ko?: string | null}; era: Era; local: number; len: number}> = ({tag, era, local, len}) => {
+  const c = INK[era];
+  const op = interpolate(local, [0, 8, len - 10, len], [0, 1, 1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const x = interpolate(local, [0, 12], [-16, 0], {extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
+  const font = era === 'sepia' ? "'Bebas Neue', sans-serif" : era === 'crt' ? CRT_NUM : NOW_NUM;
+  const big = era === 'crt' ? 80 : era === 'sepia' ? 72 : 60;
+  const bg = era === 'sepia' ? 'rgba(239,226,196,0.82)' : 'rgba(0,0,0,0.45)';
+  return (
+    <div style={{position: 'absolute', left: era === 'sepia' ? 120 : 90, bottom: 170, opacity: op, transform: `translateX(${x}px)`, zIndex: 18, padding: '10px 22px 12px', background: bg, borderLeft: `6px solid ${c.accent}`}}>
+      <div style={{fontFamily: font, fontWeight: 700, fontSize: big, lineHeight: 1, color: c.main, letterSpacing: era === 'sepia' ? 2 : 0}}>
+        {tag.en}
+        {tag.sub ? <span style={{fontSize: big * 0.55, opacity: 0.7, marginLeft: 16}}>{tag.sub}</span> : null}
+      </div>
+      {tag.ko ? <div style={{fontFamily: NOW_KR, fontWeight: 600, fontSize: 36, color: c.sub, marginTop: 8}}>{tag.ko}</div> : null}
+    </div>
+  );
+};
