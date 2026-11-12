@@ -27,7 +27,7 @@ const Root: React.FC = () => (
       {id: 'SH-01b', from: 164.8, to: 219.0, titleEn: 'Why TV runs at 29.97', titleKo: 'TV가 29.97인 이유'},
       {id: 'SH-01c', from: 219.4, to: 263.0, titleEn: 'Why 23.98, not 24', titleKo: '23.98이 24가 아닌 이유'},
     ].map((s) => (
-      <Composition key={s.id} id={s.id} component={LongShort as any} durationInFrames={Math.round((s.to - s.from) * LFPS)} fps={LFPS} width={1080} height={1920} defaultProps={{tl: ep01v3tl, audio: 'ep01v3/mix_ko.wav', ...s}} />
+      <Composition key={s.id} id={s.id} component={LongShort as any} durationInFrames={Math.round((s.to - s.from + 5.6) * LFPS)} fps={LFPS} width={1080} height={1920} defaultProps={{tl: ep01v3tl, audio: 'ep01v3/mix_ko.wav', intro: [0, 5.6], ...s}} />
     ))}
     <Still id="LF-01-thumb" component={Thumb01} width={1280} height={720} />
     <Composition id="SMP-A" component={SampleA} durationInFrames={SAMPLE_FRAMES} fps={30} width={1920} height={1080} />

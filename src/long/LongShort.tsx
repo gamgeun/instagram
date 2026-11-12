@@ -5,7 +5,7 @@ import {AbsoluteFill, Sequence, useCurrentFrame, interpolate} from 'remotion';
 import {LongEpisode, Timeline, LFPS} from './LongEpisode';
 import {NOW_NUM} from './eras';
 
-export type ShortProps = {tl: Timeline; audio: string; from: number; to: number; titleEn: string; titleKo: string};
+export type ShortProps = {tl: Timeline; audio: string; from: number; to: number; titleEn: string; titleKo: string; intro?: [number, number]};
 
 const Subs: React.FC<{tl: Timeline; offset: number}> = ({tl, offset}) => {
   const f = useCurrentFrame();
@@ -19,10 +19,23 @@ const Subs: React.FC<{tl: Timeline; offset: number}> = ({tl, offset}) => {
   );
 };
 
-export const LongShort: React.FC<ShortProps> = ({tl, audio, from, to, titleEn, titleKo}) => {
+/** 롱폼의 한 구간: 그림과 자막을 그 구간만큼 보여 준다 */
+const Seg: React.FC<{tl: Timeline; audio: string; fromF: number}> = ({tl, audio, fromF}) => (
+  <>
+    <div style={{position: 'absolute', left: 0, top: 656, width: 1920, height: 1080, transform: 'scale(0.5625)', transformOrigin: '0 0', overflow: 'hidden'}}>
+      <Sequence from={-fromF}>
+        <LongEpisode tl={tl} audio={audio} noSubs set="v3" />
+      </Sequence>
+    </div>
+    <Subs tl={tl} offset={fromF} />
+  </>
+);
+
+/** intro가 있으면 롱폼 첫 문장(카메라 메뉴의 23.98)을 먼저 붙이고 본 구간으로 넘어간다 */
+export const LongShort: React.FC<ShortProps> = ({tl, audio, from, to, titleEn, titleKo, intro}) => {
   const f = useCurrentFrame();
-  const fromF = Math.round(from * LFPS);
-  const dur = Math.round((to - from) * LFPS);
+  const introF = intro ? Math.round((intro[1] - intro[0]) * LFPS) : 0;
+  const dur = introF + Math.round((to - from) * LFPS);
   const out = interpolate(f, [dur - 12, dur], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   return (
     <AbsoluteFill style={{background: '#000', opacity: out}}>
@@ -30,13 +43,14 @@ export const LongShort: React.FC<ShortProps> = ({tl, audio, from, to, titleEn, t
         <div style={{fontFamily: NOW_NUM, fontWeight: 700, fontSize: 76, lineHeight: 1.1, color: '#fff', letterSpacing: -1}}>{titleEn}</div>
         <div style={{fontFamily: "'Pretendard', sans-serif", fontWeight: 700, fontSize: 52, marginTop: 18, backgroundImage: 'linear-gradient(90deg,#8E9BFF,#C77DFF)', WebkitBackgroundClip: 'text', color: 'transparent'}}>{titleKo}</div>
       </div>
-      {/* 롱폼 1920x1080을 폭 1080에 맞춰 0.5625배로 */}
-      <div style={{position: 'absolute', left: 0, top: 656, width: 1920, height: 1080, transform: 'scale(0.5625)', transformOrigin: '0 0', overflow: 'hidden'}}>
-        <Sequence from={-fromF}>
-          <LongEpisode tl={tl} audio={audio} noSubs set="v3" />
+      {intro && (
+        <Sequence durationInFrames={introF}>
+          <Seg tl={tl} audio={audio} fromF={Math.round(intro[0] * LFPS)} />
         </Sequence>
-      </div>
-      <Subs tl={tl} offset={fromF} />
+      )}
+      <Sequence from={introF}>
+        <Seg tl={tl} audio={audio} fromF={Math.round(from * LFPS)} />
+      </Sequence>
     </AbsoluteFill>
   );
 };
