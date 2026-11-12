@@ -74,6 +74,7 @@ def place(text, wav, d, maxlen, strip=True):
 # 쉼 규칙 (DECISIONS 2026-11-12). 문장 역할에 따라 쉼 길이를 다르게 둔다
 PAUSE = {'flow': 0.35, 'same': 0.6, 'shot': 0.9, 'chapter': 1.4, 'reveal': 1.2}
 LEAD = 0.5      # 그림이 바뀔 때 그림이 먼저 나오고 이만큼 뒤에 말이 시작된다
+EN_SPILL = 0.5   # 영어가 다음 쉼 안으로 넘어가도 되는 길이
 EN_MAX = 1.08   # 영어가 한국어보다 길면 이 배율까지 빠르게 한다. 넘치면 영어 문장을 줄여야 한다
 DRY = '--dry' in sys.argv
 
@@ -121,9 +122,11 @@ for i, L in enumerate(S['lines']):
         if not DRY:
             fit(f'{P}/en/{aid:02d}.wav', f'{P}/en/{aid:02d}.fit.wav', ratio)
         d['en'] = d['en'] / ratio
-        if d['en'] > d['ko'] + 0.3:
+        if d['en'] > d['ko'] + EN_SPILL:
             warn.append(f'{i}번 영어가 {d["en"] - d["ko"]:.1f}초 김 → 영어 문장을 줄일 것')
-    slot = max(d.values())
+    # 영어가 조금 길면 다음 쉼(최소 0.6초) 안으로 0.5초까지 넘어가게 둔다. 한국어 뒤에 빈 시간이 생기지 않는다
+
+    slot = max(d['ko'], d['en'] - EN_SPILL)
     en_w = f'{P}/en/{aid:02d}.fit.wav' if ratio > 1 else f'{P}/en/{aid:02d}.wav'
     segs['ko'].append((t, f'{P}/ko/{aid:02d}.wav'))
     segs['en'].append((t, en_w))

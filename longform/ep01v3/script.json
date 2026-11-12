@@ -5,18 +5,30 @@
   {
    "ch": 0,
    "shot": "menuOpen",
-   "sub": "카메라 메뉴를 열면, 23.98이라는 숫자가 있습니다.",
-   "tts": "카메라 메뉴를 열면, 이십삼 점 구팔이라는 숫자가 있습니다.",
-   "en": "Open your camera's menu, and you'll find a number: twenty-three point nine eight.",
-   "mood": "calm"
+   "sub": "카메라 메뉴를 열면, 23.98이 보입니다.",
+   "tts": "카메라 메뉴를 열면, 이십삼 점 구팔이 보입니다.",
+   "en": "Open your camera's menu, and you'll see twenty-three point nine eight.",
+   "mood": "calm",
+   "aid": 0,
+   "regen": [
+    "ko",
+    "en"
+   ],
+   "why": "번역투 존재 구문(~라는 숫자가 있습니다)"
   },
   {
    "ch": 0,
    "shot": "yearRewind",
-   "sub": "이 숫자에는, 백 년 전에 내린 두 번의 결정이 숨어 있습니다.",
-   "tts": "이 숫자에는, 백 년 전에 내린 두 번의 결정이 숨어 있습니다.",
-   "en": "Hidden inside it are two decisions made a century ago.",
-   "mood": "travel"
+   "sub": "백 년 전으로 거슬러 올라갑니다.",
+   "tts": "백 년 전으로 거슬러 올라갑니다.",
+   "en": "The story starts a hundred years ago.",
+   "mood": "travel",
+   "aid": 1,
+   "regen": [
+    "ko",
+    "en"
+   ],
+   "why": "번역투(~에는 ~이 숨어 있습니다)·비유. 사용자 제안 문장"
   },
   {
    "ch": 1,
@@ -24,15 +36,26 @@
    "sub": "1926년 8월, 뉴욕.",
    "tts": "천구백이십육 년 팔 월, 뉴욕.",
    "en": "August, nineteen twenty-six. New York.",
-   "mood": "calm"
+   "mood": "calm",
+   "aid": 2
   },
   {
    "ch": 1,
    "shot": "theaterInside",
-   "sub": "워너 브라더스 극장에서 영화 〈돈 후안〉이 막을 올렸습니다.",
-   "tts": "워너 브라더스 극장에서 영화 돈 후안이 막을 올렸습니다.",
+   "sub": "워너 브라더스 극장에서 영화 〈돈 후안〉이 개봉했습니다.",
+   "tts": "워너 브라더스 극장에서 영화 돈 후안이 개봉했습니다.",
    "en": "At the Warners' Theatre, the film Don Juan opens.",
-   "mood": "calm"
+   "mood": "calm",
+   "aid": 3,
+   "regen": [
+    "ko",
+    "en"
+   ],
+   "why": "관용 표현(막을 올리다) → 사실 그대로",
+   "label": {
+    "en": "Don Juan",
+    "sub": "1926"
+   }
   },
   {
    "ch": 1,
@@ -40,7 +63,8 @@
    "sub": "화면이 밝아지자 오케스트라 소리가 흘러나옵니다. 그런데 무대에는 연주자가 한 명도 없었죠.",
    "tts": "화면이 밝아지자 오케스트라 소리가 흘러나옵니다. 그런데 무대에는 연주자가 한 명도 없었죠.",
    "en": "As the screen lights up, an orchestra begins to play. But there isn't a single musician in the pit.",
-   "mood": "calm"
+   "mood": "calm",
+   "aid": 4
   },
   {
    "ch": 1,
@@ -48,7 +72,8 @@
    "sub": "소리는 영사실에서 나오고 있었습니다. 영사기 옆, 영사기와 같은 모터로 돌아가는 커다란 레코드판에서요.",
    "tts": "소리는 영사실에서 나오고 있었습니다. 영사기 옆, 영사기와 같은 모터로 돌아가는 커다란 레코드판에서요.",
    "en": "The music is coming from the projection booth, from a giant record spinning beside the projector, driven by the same motor.",
-   "mood": "reveal"
+   "mood": "reveal",
+   "aid": 5
   },
   {
    "ch": 1,
@@ -56,15 +81,26 @@
    "sub": "워너 브라더스가 '바이타폰'이라고 부른 방식이었습니다.",
    "tts": "워너 브라더스가 바이타폰이라고 부른 방식이었습니다.",
    "en": "Warner Bros. called it Vitaphone.",
-   "join": true
+   "join": true,
+   "aid": 6,
+   "label": {
+    "en": "Vitaphone",
+    "sub": null
+   }
   },
   {
    "ch": 1,
    "shot": "needle",
-   "sub": "그런데 이 방식에는 약점이 있었습니다. 바늘이 한 번 튀면, 소리가 화면보다 앞서거나 뒤처졌습니다.",
-   "tts": "그런데 이 방식에는 약점이 있었습니다. 바늘이 한 번 튀면, 소리가 화면보다 앞서거나 뒤처졌습니다.",
-   "en": "But it had a weakness. If the needle skipped, the sound ran ahead of the picture, or fell behind.",
-   "mood": "tense"
+   "sub": "그런데 바늘이 한 번 튀면, 소리가 화면보다 앞서거나 뒤처졌습니다.",
+   "tts": "그런데 바늘이 한 번 튀면, 소리가 화면보다 앞서거나 뒤처졌습니다.",
+   "en": "But if the needle skipped, the sound ran ahead of the picture, or fell behind.",
+   "mood": "tense",
+   "aid": 7,
+   "regen": [
+    "ko",
+    "en"
+   ],
+   "why": "예고 문장(이 방식에는 약점이 있었습니다) 삭제"
   },
   {
    "ch": 1,
@@ -72,23 +108,40 @@
    "sub": "그러면 영사 기사가 손으로 바늘 위치를 다시 맞춰야 했습니다.",
    "tts": "그러면 영사 기사가 손으로 바늘 위치를 다시 맞춰야 했습니다.",
    "en": "Then the projectionist had to put the needle back in place by hand.",
-   "join": true
+   "join": true,
+   "aid": 8
   },
   {
    "ch": 1,
    "shot": "theaterSpeeds",
-   "sub": "문제는 하나 더 있었습니다. 극장마다, 영사기를 돌리는 속도가 달랐던 겁니다.",
-   "tts": "문제는 하나 더 있었습니다. 극장마다, 영사기를 돌리는 속도가 달랐던 겁니다.",
-   "en": "And there was another problem. Every theater ran its projectors at a different speed.",
-   "mood": "tense"
+   "sub": "극장마다 영사기를 돌리는 속도도 달랐습니다.",
+   "tts": "극장마다 영사기를 돌리는 속도도 달랐습니다.",
+   "en": "And every theater ran its projectors at a different speed.",
+   "mood": "tense",
+   "aid": 9,
+   "regen": [
+    "ko",
+    "en"
+   ],
+   "why": "예고 문장(문제는 하나 더 있었습니다) 삭제"
   },
   {
    "ch": 2,
    "shot": "company",
-   "sub": "바이타폰 장비를 만든 회사는 웨스턴 일렉트릭이었습니다.",
-   "tts": "바이타폰 장비를 만든 회사는 웨스턴 일렉트릭이었습니다.",
-   "en": "The Vitaphone equipment was built by Western Electric.",
-   "mood": "calm"
+   "sub": "바이타폰 장비는 웨스턴 일렉트릭이 만들었습니다.",
+   "tts": "바이타폰 장비는 웨스턴 일렉트릭이 만들었습니다.",
+   "en": "Western Electric built the Vitaphone equipment.",
+   "mood": "calm",
+   "aid": 10,
+   "regen": [
+    "ko",
+    "en"
+   ],
+   "why": "번역투(~를 만든 회사는 ~였습니다)",
+   "label": {
+    "en": "Western Electric",
+    "sub": null
+   }
   },
   {
    "ch": 2,
@@ -96,15 +149,26 @@
    "sub": "이 회사 기술자 스탠리 왓킨스는 영사 기사에게 물었습니다. 극장에서 실제로 필름을 얼마나 빨리 돌리느냐고요.",
    "tts": "이 회사 기술자 스탠리 왓킨스는 영사 기사에게 물었습니다. 극장에서 실제로 필름을 얼마나 빨리 돌리느냐고요.",
    "en": "One of its engineers, Stanley Watkins, asked a projectionist how fast theaters actually ran their film.",
-   "mood": "calm"
+   "mood": "calm",
+   "aid": 11,
+   "label": {
+    "en": "Stanley Watkins",
+    "sub": null
+   }
   },
   {
    "ch": 2,
    "shot": "speedsAlign",
-   "sub": "큰 개봉관은 1분에 80에서 90피트, 작은 극장은 100피트가 넘는다는 답이 돌아왔습니다.",
-   "tts": "큰 개봉관은 일 분에 팔십에서 구십 피트, 작은 극장은 백 피트가 넘는다는 답이 돌아왔습니다.",
-   "en": "The answer: big first-run houses, eighty to ninety feet a minute. Small theaters, over a hundred.",
-   "mood": "calm"
+   "sub": "영사 기사는 큰 개봉관은 1분에 80에서 90피트, 작은 극장은 100피트가 넘는다고 답했습니다.",
+   "tts": "영사 기사는 큰 개봉관은 일 분에 팔십에서 구십 피트, 작은 극장은 백 피트가 넘는다고 답했습니다.",
+   "en": "The projectionist said big first-run houses ran eighty to ninety feet a minute, and small theaters over a hundred.",
+   "mood": "calm",
+   "aid": 12,
+   "regen": [
+    "ko",
+    "en"
+   ],
+   "why": "주어 없는 피동(답이 돌아왔습니다)"
   },
   {
    "ch": 2,
@@ -112,15 +176,22 @@
    "sub": "왓킨스는 그 사이에서 숫자 하나를 골랐습니다. 1분에 90피트.",
    "tts": "왓킨스는 그 사이에서 숫자 하나를 골랐습니다. 일 분에 구십 피트.",
    "en": "Watkins picked one number in between. Ninety feet a minute.",
-   "join": true
+   "join": true,
+   "aid": 13
   },
   {
    "ch": 2,
    "shot": "interviewDoc",
-   "sub": "훗날 인터뷰에서 그는 이 숫자를 이렇게 회상했습니다. \"짐작일 수밖에 없었습니다.\"",
-   "tts": "훗날 인터뷰에서 그는 이 숫자를 이렇게 회상했습니다. 짐작일 수밖에 없었습니다.",
-   "en": "Years later, he recalled it in an interview. \"That had to be a good guess.\"",
-   "mood": "calm"
+   "sub": "1970년 인터뷰에서 왓킨스는 이렇게 말했습니다. \"짐작일 수밖에 없었습니다.\"",
+   "tts": "천구백칠십 년 인터뷰에서 왓킨스는 이렇게 말했습니다. 짐작일 수밖에 없었습니다.",
+   "en": "In a nineteen seventy interview, Watkins put it this way: \"That had to be a good guess.\"",
+   "mood": "calm",
+   "aid": 14,
+   "regen": [
+    "ko",
+    "en"
+   ],
+   "why": "모호한 시점(훗날)·지시어(이 숫자를)"
   },
   {
    "ch": 2,
@@ -128,7 +199,8 @@
    "sub": "35mm 필름 1피트에는 그림 16장이 들어갑니다. 1분에 90피트를 돌리면, 1초에 24장이죠.",
    "tts": "삼십오 밀리 필름 일 피트에는 그림 열여섯 장이 들어갑니다. 일 분에 구십 피트를 돌리면, 일 초에 스물네 장이죠.",
    "en": "One foot of thirty-five millimeter film holds sixteen frames. Ninety feet a minute is twenty-four frames a second.",
-   "mood": "calm"
+   "mood": "calm",
+   "aid": 15
   },
   {
    "ch": 2,
@@ -137,15 +209,26 @@
    "tts": "",
    "en": "",
    "mood": "reveal",
-   "silent": 2.0
+   "silent": 2.0,
+   "aid": 16
   },
   {
    "ch": 2,
    "shot": "jazzSinger",
-   "sub": "이듬해 10월, 영화 〈재즈 싱어〉가 배우의 노래와 대사를 들려주면서 유성영화 시대가 열립니다.",
-   "tts": "이듬해 시 월, 영화 재즈 싱어가 배우의 노래와 대사를 들려주면서 유성영화 시대가 열립니다.",
-   "en": "The next October, The Jazz Singer let audiences hear an actor sing and speak, and the talkies arrived.",
-   "mood": "calm"
+   "sub": "이듬해 10월, 영화 〈재즈 싱어〉에서 관객은 배우가 노래하고 말하는 소리를 들었습니다.",
+   "tts": "이듬해 시 월, 영화 재즈 싱어에서 관객은 배우가 노래하고 말하는 소리를 들었습니다.",
+   "en": "The next October, in The Jazz Singer, audiences heard an actor sing and speak.",
+   "mood": "calm",
+   "aid": 17,
+   "regen": [
+    "ko",
+    "en"
+   ],
+   "why": "상투 비유(유성영화 시대가 열립니다)",
+   "label": {
+    "en": "The Jazz Singer",
+    "sub": "1927"
+   }
   },
   {
    "ch": 2,
@@ -153,23 +236,40 @@
    "sub": "필름 위에 소리를 새기는 폭스의 무비톤도 같은 24장을 택했습니다.",
    "tts": "필름 위에 소리를 새기는 폭스의 무비톤도 같은 스물네 장을 택했습니다.",
    "en": "Fox Movietone, which printed sound onto the film itself, chose the same twenty-four.",
-   "mood": "calm"
+   "mood": "calm",
+   "aid": 18,
+   "label": {
+    "en": "Fox Movietone",
+    "sub": null
+   }
   },
   {
    "ch": 2,
    "shot": "doorsClose",
-   "sub": "그 뒤로 1초에 24장은 극장의 기준이 됐습니다. 문제는 극장 밖에서 생깁니다.",
-   "tts": "그 뒤로 일 초에 스물네 장은 극장의 기준이 됐습니다. 문제는 극장 밖에서 생깁니다.",
-   "en": "Twenty-four became the standard of the cinema. The trouble would start outside it.",
-   "mood": "question"
+   "sub": "그 뒤로 1초에 24장은 극장의 기준이 됐습니다.",
+   "tts": "그 뒤로 일 초에 스물네 장은 극장의 기준이 됐습니다.",
+   "en": "From then on, twenty-four frames a second was the standard in theaters.",
+   "mood": "question",
+   "aid": 19,
+   "regen": [
+    "ko",
+    "en"
+   ],
+   "why": "예고 문장(문제는 극장 밖에서 생깁니다) 삭제"
   },
   {
    "ch": 3,
    "shot": "room",
-   "sub": "1953년. 미국 가정에는 이미 흑백 TV가 많이 팔려 있었습니다.",
-   "tts": "천구백오십삼 년. 미국 가정에는 이미 흑백 티비가 많이 팔려 있었습니다.",
-   "en": "Nineteen fifty-three. Many American homes already had a black-and-white TV.",
-   "mood": "calm"
+   "sub": "1953년, 미국에서는 흑백 TV가 이미 많이 팔렸습니다.",
+   "tts": "천구백오십삼 년, 미국에서는 흑백 티비가 이미 많이 팔렸습니다.",
+   "en": "By nineteen fifty-three, Americans had already bought many black-and-white TVs.",
+   "mood": "calm",
+   "aid": 20,
+   "regen": [
+    "ko",
+    "en"
+   ],
+   "why": "번역투 존재 구문(가정에는 ~팔려 있었습니다)"
   },
   {
    "ch": 3,
@@ -177,7 +277,8 @@
    "sub": "흑백 방송은 1초에 30장씩 화면을 보냈습니다. 방송국들이 다음으로 준비한 것은 컬러 방송이었죠.",
    "tts": "흑백 방송은 일 초에 서른 장씩 화면을 보냈습니다. 방송국들이 다음으로 준비한 것은 컬러 방송이었죠.",
    "en": "Black-and-white broadcasts sent thirty pictures a second. What broadcasters prepared next was color.",
-   "mood": "calm"
+   "mood": "calm",
+   "aid": 21
   },
   {
    "ch": 3,
@@ -185,7 +286,16 @@
    "sub": "연방통신위원회는 1950년에 CBS의 컬러 방식을 먼저 승인했습니다. 그런데 이 방식으로 방송하면, 이미 팔린 흑백 TV로는 볼 수 없었습니다.",
    "tts": "연방통신위원회는 천구백오십 년에 씨비에스의 컬러 방식을 먼저 승인했습니다. 그런데 이 방식으로 방송하면, 이미 팔린 흑백 티비로는 볼 수 없었습니다.",
    "en": "In nineteen fifty, the FCC approved CBS's color system. But the sets people already owned couldn't show it.",
-   "mood": "tense"
+   "mood": "tense",
+   "aid": 22,
+   "label": {
+    "en": "FCC",
+    "ko": "미국 연방통신위원회"
+   },
+   "label2": {
+    "en": "CBS",
+    "sub": null
+   }
   },
   {
    "ch": 3,
@@ -193,7 +303,8 @@
    "sub": "CBS는 1953년 3월, 결국 이 방식을 거둬들입니다.",
    "tts": "씨비에스는 천구백오십삼 년 삼 월, 결국 이 방식을 거둬들입니다.",
    "en": "In March nineteen fifty-three, CBS gave it up.",
-   "join": true
+   "join": true,
+   "aid": 23
   },
   {
    "ch": 3,
@@ -201,31 +312,53 @@
    "sub": "같은 해 12월 17일. 연방통신위원회는 흑백 TV로도 볼 수 있는 새 컬러 방식, NTSC를 승인합니다.",
    "tts": "같은 해 십이 월 십칠 일. 연방통신위원회는 흑백 티비로도 볼 수 있는 새 컬러 방식, 엔티에스씨를 승인합니다.",
    "en": "On December seventeenth that year, the FCC approved a new color system that old sets could still show: NTSC.",
-   "mood": "reveal"
+   "mood": "reveal",
+   "aid": 24,
+   "label": {
+    "en": "NTSC",
+    "sub": null
+   }
   },
   {
    "ch": 3,
    "shot": "signals",
-   "sub": "비결은 기존 흑백 신호 안에 색 정보를 함께 실어 보내는 데 있었습니다.",
-   "tts": "비결은 기존 흑백 신호 안에 색 정보를 함께 실어 보내는 데 있었습니다.",
-   "en": "The trick was to tuck the color inside the existing black-and-white signal.",
-   "mood": "calm"
+   "sub": "NTSC는 흑백 신호를 그대로 두고, 그 안에 색 정보를 더해 보냈습니다.",
+   "tts": "엔티에스씨는 흑백 신호를 그대로 두고, 그 안에 색 정보를 더해 보냈습니다.",
+   "en": "NTSC kept the black-and-white signal as it was, and added the color information inside it.",
+   "mood": "calm",
+   "aid": 25,
+   "regen": [
+    "ko",
+    "en"
+   ],
+   "why": "번역투(비결은 ~데 있었습니다)"
   },
   {
    "ch": 3,
    "shot": "signals",
-   "sub": "그런데 여기서 문제가 생겼습니다. 색 신호와 소리 신호의 주파수가 너무 가까웠던 겁니다.",
-   "tts": "그런데 여기서 문제가 생겼습니다. 색 신호와 소리 신호의 주파수가 너무 가까웠던 겁니다.",
-   "en": "But there was a catch. The color signal sat too close to the sound signal.",
-   "join": true
+   "sub": "그런데 더한 색 신호의 주파수가 소리 신호와 너무 가까웠습니다.",
+   "tts": "그런데 더한 색 신호의 주파수가 소리 신호와 너무 가까웠습니다.",
+   "en": "But the added color signal was too close in frequency to the sound signal.",
+   "join": true,
+   "aid": 26,
+   "regen": [
+    "ko",
+    "en"
+   ],
+   "why": "예고 문장(여기서 문제가 생겼습니다) 삭제"
   },
   {
    "ch": 3,
    "shot": "dots",
    "sub": "두 신호의 차이는 흑백 화면 위에 작은 점무늬로 나타났습니다.",
    "tts": "두 신호의 차이는 흑백 화면 위에 작은 점무늬로 나타났습니다.",
-   "en": "The clash showed up as a fine pattern of dots on black-and-white screens.",
-   "mood": "tense"
+   "en": "The difference between the two showed up as a fine pattern of dots on black-and-white screens.",
+   "mood": "tense",
+   "aid": 27,
+   "regen": [
+    "en"
+   ],
+   "why": "영어만 수정(clash 비유)"
   },
   {
    "ch": 3,
@@ -233,7 +366,8 @@
    "sub": "소리 신호를 옮기면 해결됩니다. 하지만 그러면 이미 팔린 TV는 소리를 받지 못하죠. 연방통신위원회도 이 안을 받아들이지 않았습니다.",
    "tts": "소리 신호를 옮기면 해결됩니다. 하지만 그러면 이미 팔린 티비는 소리를 받지 못하죠. 연방통신위원회도 이 안을 받아들이지 않았습니다.",
    "en": "Moving the sound would fix it, but every set already sold would lose its sound. The FCC wouldn't allow it.",
-   "mood": "tense"
+   "mood": "tense",
+   "aid": 28
   },
   {
    "ch": 3,
@@ -241,7 +375,8 @@
    "sub": "NTSC 위원회 기술자들이 고른 방법은 반대쪽이었습니다. 화면 속도를 아주 조금 늦추는 것.",
    "tts": "엔티에스씨 위원회 기술자들이 고른 방법은 반대쪽이었습니다. 화면 속도를 아주 조금 늦추는 것.",
    "en": "The NTSC committee's engineers went the other way. They slowed the picture down, just slightly.",
-   "mood": "calm"
+   "mood": "calm",
+   "aid": 29
   },
   {
    "ch": 3,
@@ -249,15 +384,21 @@
    "sub": "흑백 TV는 방송 신호에 맞춰 화면 속도를 따라가기 때문에, 0.1% 느려져도 그대로 보였습니다.",
    "tts": "흑백 티비는 방송 신호에 맞춰 화면 속도를 따라가기 때문에, 영 점 일 퍼센트 느려져도 그대로 보였습니다.",
    "en": "Old sets followed the timing of the broadcast signal, so a slowdown of a tenth of a percent didn't bother them.",
-   "join": true
+   "join": true,
+   "aid": 30
   },
   {
    "ch": 3,
    "shot": "reveal2997",
    "sub": "화면 속도는 1001분의 1000으로 줄었고, 1초에 30장이던 화면은 29.97장이 됐습니다.",
    "tts": "화면 속도는 천일 분의 천으로 줄었고, 일 초에 서른 장이던 화면은 이십구 점 구칠 장이 됐습니다.",
-   "en": "The picture slowed by a thousand over a thousand and one. Thirty frames a second became twenty-nine point nine seven.",
-   "mood": "reveal"
+   "en": "The picture slowed to a thousand over a thousand and one. Thirty frames became twenty-nine point nine seven.",
+   "mood": "reveal",
+   "aid": 31,
+   "regen": [
+    "en"
+   ],
+   "why": "영어만 줄임(한국어보다 길어 뒤가 빔)"
   },
   {
    "ch": 4,
@@ -265,7 +406,8 @@
    "sub": "그럼 극장의 영화는 어떻게 됐을까요?",
    "tts": "그럼 극장의 영화는 어떻게 됐을까요?",
    "en": "So what happened to the movies?",
-   "mood": "question"
+   "mood": "question",
+   "aid": 32
   },
   {
    "ch": 4,
@@ -273,39 +415,77 @@
    "sub": "1초에 24장인 영화를 29.97장짜리 TV 방송으로 내보내려면, 영화도 같은 비율로 늦춰야 했습니다.",
    "tts": "일 초에 스물네 장인 영화를 이십구 점 구칠 장짜리 티비 방송으로 내보내려면, 영화도 같은 비율로 늦춰야 했습니다.",
    "en": "To broadcast twenty-four frame films on twenty-nine point nine seven TV, the films had to slow down by the same amount.",
-   "join": true
+   "join": true,
+   "aid": 33
   },
   {
    "ch": 4,
    "shot": "reveal23976",
    "sub": "24에 1001분의 1000을 곱하면, 23.976.",
    "tts": "이십사에 천일 분의 천을 곱하면, 이십삼 점 구칠육.",
-   "en": "Twenty-four, times a thousand over a thousand and one: twenty-three point nine seven six.",
-   "mood": "reveal"
+   "en": "Twenty-four, slowed by a tenth of a percent: twenty-three point nine seven six.",
+   "mood": "reveal",
+   "aid": 34,
+   "regen": [
+    "en"
+   ],
+   "why": "영어만 줄임(한국어보다 1.4초 김)"
   },
   {
    "ch": 5,
    "shot": "menuReturn",
-   "sub": "그리고 지금. 카메라 메뉴를 다시 열어 봅니다.",
-   "tts": "그리고 지금. 카메라 메뉴를 다시 열어 봅니다.",
-   "en": "And now, back to your camera's menu.",
-   "mood": "calm"
+   "sub": "다시 2026년. 카메라 메뉴를 열면 지금도 23.98이 보입니다.",
+   "tts": "다시 이천이십육 년. 카메라 메뉴를 열면 지금도 이십삼 점 구팔이 보입니다.",
+   "en": "Back to twenty twenty-six. Open the camera menu, and twenty-three point nine eight is still there.",
+   "mood": "calm",
+   "aid": 35,
+   "regen": [
+    "ko",
+    "en"
+   ],
+   "why": "예고형 화법(다시 열어 봅니다)"
   },
   {
    "ch": 5,
    "shot": "menuReturn",
-   "sub": "23.98은 두 결정이 곱해진 숫자입니다. 1926년 영사실에서 왓킨스가 고른 속도와, 1953년 이미 팔린 TV를 지키려고 늦춘 속도.",
-   "tts": "이십삼 점 구팔은 두 결정이 곱해진 숫자입니다. 천구백이십육 년 영사실에서 왓킨스가 고른 속도와, 천구백오십삼 년 이미 팔린 티비를 지키려고 늦춘 속도.",
-   "en": "Twenty-three point nine eight is two decisions multiplied: the speed Watkins chose in a projection booth, and the slowdown that protected the TVs already sold.",
-   "join": true
+   "sub": "23.98은 1926년 왓킨스가 고른 24에, 1953년 이미 팔린 TV를 지키려고 늦춘 비율을 곱한 숫자입니다.",
+   "tts": "이십삼 점 구팔은 천구백이십육 년 왓킨스가 고른 이십사에, 천구백오십삼 년 이미 팔린 티비를 지키려고 늦춘 비율을 곱한 숫자입니다.",
+   "en": "Twenty-three point nine eight is the twenty-four Watkins chose in nineteen twenty-six, multiplied by the slowdown of nineteen fifty-three that protected the TVs already sold.",
+   "join": true,
+   "aid": 36,
+   "regen": [
+    "ko",
+    "en"
+   ],
+   "why": "1번에서 \"두 결정\"을 뺐으므로 구체적으로"
+  },
+  {
+   "ch": 5,
+   "shot": "endCard",
+   "sub": "",
+   "tts": "",
+   "en": "",
+   "silent": 2.5,
+   "mood": "calm",
+   "why": "이야기가 끝났다는 표시"
   },
   {
    "ch": 5,
    "shot": "nextKodak",
-   "sub": "다음 편에서는, 세계 최초의 디지털카메라를 만들고도 내놓지 않았다고 알려진 회사, 코닥이 1975년에 만든 시제품을 왜 팔지 않았는지, 남은 기록으로 확인합니다.",
-   "tts": "다음 편에서는, 세계 최초의 디지털카메라를 만들고도 내놓지 않았다고 알려진 회사, 코닥이 천구백칠십오 년에 만든 시제품을 왜 팔지 않았는지, 남은 기록으로 확인합니다.",
-   "en": "Next time: Kodak built a digital camera in nineteen seventy-five, and never sold it. We'll look at what the records say about why.",
-   "mood": "calm"
+   "sub": "다음 편은 코닥입니다. 1975년, 코닥은 디지털카메라를 만들고도 팔지 않았습니다. 왜였을까요?",
+   "tts": "다음 편은 코닥입니다. 천구백칠십오 년, 코닥은 디지털카메라를 만들고도 팔지 않았습니다. 왜였을까요?",
+   "en": "Next time: Kodak. In nineteen seventy-five, Kodak built a digital camera, and never sold it. Why?",
+   "mood": "calm",
+   "aid": 37,
+   "regen": [
+    "ko",
+    "en"
+   ],
+   "why": "예고형 화법(남은 기록으로 확인합니다)",
+   "label": {
+    "en": "KODAK",
+    "sub": null
+   }
   }
  ],
  "sources": {
