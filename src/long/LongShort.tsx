@@ -20,16 +20,28 @@ const Subs: React.FC<{tl: Timeline; offset: number}> = ({tl, offset}) => {
 };
 
 /** 롱폼의 한 구간: 그림과 자막을 그 구간만큼 보여 준다 */
-const Seg: React.FC<{tl: Timeline; audio: string; fromF: number}> = ({tl, audio, fromF}) => (
+/** XF_A: 앞 구간과 본 구간이 겹치며 소리가 바뀌는 길이 (0.3초) */
+const XF_A = 9;
+const Seg: React.FC<{tl: Timeline; audio: string; fromF: number; fadeIn?: boolean; fadeOutAt?: number}> = ({tl, audio, fromF, fadeIn, fadeOutAt}) => {
+  // Audio의 volume 함수는 롱폼 기준 프레임을 받는다. 구간 안 프레임 = 롱폼 프레임 - fromF
+  const volume = (ef: number) => {
+    const local = ef - fromF;
+    let v = 1;
+    if (fadeIn) v *= interpolate(local, [0, XF_A], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+    if (fadeOutAt !== undefined) v *= interpolate(local, [fadeOutAt, fadeOutAt + XF_A], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+    return v;
+  };
+  return (
   <>
     <div style={{position: 'absolute', left: 0, top: 656, width: 1920, height: 1080, transform: 'scale(0.5625)', transformOrigin: '0 0', overflow: 'hidden'}}>
       <Sequence from={-fromF}>
-        <LongEpisode tl={tl} audio={audio} noSubs set="v3" />
+        <LongEpisode tl={tl} audio={audio} noSubs set="v3" volume={volume} />
       </Sequence>
     </div>
     <Subs tl={tl} offset={fromF} />
   </>
-);
+  );
+};
 
 /** intro가 있으면 롱폼 첫 문장(카메라 메뉴의 23.98)을 먼저 붙이고 본 구간으로 넘어간다 */
 export const LongShort: React.FC<ShortProps> = ({tl, audio, from, to, titleEn, titleKo, intro}) => {
@@ -44,12 +56,12 @@ export const LongShort: React.FC<ShortProps> = ({tl, audio, from, to, titleEn, t
         <div style={{fontFamily: "'Pretendard', sans-serif", fontWeight: 700, fontSize: 52, marginTop: 18, backgroundImage: 'linear-gradient(90deg,#8E9BFF,#C77DFF)', WebkitBackgroundClip: 'text', color: 'transparent'}}>{titleKo}</div>
       </div>
       {intro && (
-        <Sequence durationInFrames={introF}>
-          <Seg tl={tl} audio={audio} fromF={Math.round(intro[0] * LFPS)} />
+        <Sequence durationInFrames={introF + XF_A}>
+          <Seg tl={tl} audio={audio} fromF={Math.round(intro[0] * LFPS)} fadeOutAt={introF} />
         </Sequence>
       )}
       <Sequence from={introF}>
-        <Seg tl={tl} audio={audio} fromF={Math.round(from * LFPS)} />
+        <Seg tl={tl} audio={audio} fromF={Math.round(from * LFPS)} fadeIn={!!intro} />
       </Sequence>
     </AbsoluteFill>
   );

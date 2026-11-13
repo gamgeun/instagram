@@ -179,12 +179,12 @@ const LabelTrack: React.FC<{shots: Shot[]; tl: Timeline; set: string}> = ({shots
   return <ChapterLabel era={s.era} ch={(b as any).ch} v3={set === 'v3'} />;
 };
 
-export const LongEpisode: React.FC<{tl: Timeline; audio: string; noSubs?: boolean; set?: string}> = ({tl, audio, noSubs, set = 'v2'}) => {
+export const LongEpisode: React.FC<{tl: Timeline; audio: string; noSubs?: boolean; set?: string; volume?: (f: number) => number}> = ({tl, audio, noSubs, set = 'v2', volume}) => {
   const shots = buildShots(tl, set);
   const SHOTS = SETS[set].shots;
   return (
     <AbsoluteFill style={{background: '#000'}}>
-      <Audio src={staticFile(audio)} />
+      <Audio src={staticFile(audio)} volume={volume} />
       {shots.map((s, i) => {
         const first = i === 0;
         const lastShot = i === shots.length - 1;
