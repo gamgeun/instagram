@@ -23,9 +23,8 @@ const Subs: React.FC<{tl: Timeline; offset: number}> = ({tl, offset}) => {
 /** XF_A: 앞 구간과 본 구간이 겹치며 소리가 바뀌는 길이 (0.3초) */
 const XF_A = 9;
 const Seg: React.FC<{tl: Timeline; audio: string; fromF: number; fadeIn?: boolean; fadeOutAt?: number}> = ({tl, audio, fromF, fadeIn, fadeOutAt}) => {
-  // Audio의 volume 함수는 롱폼 기준 프레임을 받는다. 구간 안 프레임 = 롱폼 프레임 - fromF
-  const volume = (ef: number) => {
-    const local = ef - fromF;
+  // Audio의 volume 함수는 구간이 시작된 뒤의 프레임(0부터)을 받는다 (렌더해서 확인함)
+  const volume = (local: number) => {
     let v = 1;
     if (fadeIn) v *= interpolate(local, [0, XF_A], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
     if (fadeOutAt !== undefined) v *= interpolate(local, [fadeOutAt, fadeOutAt + XF_A], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
