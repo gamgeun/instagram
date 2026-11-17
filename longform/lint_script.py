@@ -19,7 +19,9 @@ RULES = [
 S = json.load(open(sys.argv[1]))
 bad = 0
 for i, L in enumerate(S['lines']):
-    for sent in re.split(r'(?<=[.?!])\s+', L.get('sub', '')):
+    # 따옴표 안은 남의 말(인용·예시)이라 검사하지 않는다
+    body = re.sub(r'"[^"]*"|“[^”]*”', '', L.get('sub', ''))
+    for sent in re.split(r'(?<=[.?!])\s+', body):
         for pat, why in RULES:
             m = re.search(pat, sent)
             if m:
